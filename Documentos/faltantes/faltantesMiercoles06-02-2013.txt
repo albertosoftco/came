@@ -1,0 +1,25 @@
+CORNEJO--
+	corregir detallado
+	terminar prototipos
+	subir mysql script que YO borre
+	
+SELENE
+	documento de arquitectura
+	verificar detallado 
+	
+
+ALBERTO
+	Verificar patron de diseño abstract factory 
+	terminar diagrama de clases 
+	diseño de subsistemas 
+ 	UML ****
+
+
+RODOLFO
+	verificar lista dew riesgos	
+	terminar y revisar vision
+	meter detallado al formato 
+
+
+
+LA MAYORIA DEBE DE ESTAR CASI COMPLETO PARA EL MIERCOLES 06/03/2013
