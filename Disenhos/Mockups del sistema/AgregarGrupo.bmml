@@ -1,0 +1,45 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="825" measuredH="187" mockupW="466" mockupH="170">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="359" y="17" w="466" h="170" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Agregar%20Grupo</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="374" y="56" w="-1" h="-1" measuredW="105" measuredH="21" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Nombre%20del%20grupo</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="494" y="53" w="-1" h="-1" measuredW="79" measuredH="26" zOrder="2" locked="false" isInGroup="-1"/>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="594" y="56" w="-1" h="-1" measuredW="64" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Capacidad</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::NumericStepper" x="691" y="54" w="52" h="-1" measuredW="41" measuredH="24" zOrder="4" locked="false" isInGroup="-1"/>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="374" y="92" w="-1" h="-1" measuredW="49" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Maestro</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::ComboBox" x="438" y="90" w="-1" h="-1" measuredW="84" measuredH="46" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Maestro1%0AMaestro2</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Button" x="572" y="115" w="-1" h="-1" measuredW="70" measuredH="27" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>AdmGrupos%26bm%3BAdmGrupos.bmml%26bm%3BAdmGrupos.bmml%26bm%3BAdmGrupos.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22213%2C98%2C283%2C125%22%20href%3D%22AdmGrupos.bmml%22%20alt%3D%22AdmGrupos%22%20id%3D%228%22/%3E</map>
+        <text>Aceptar</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Button" x="666" y="114" w="-1" h="-1" measuredW="77" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>AdmGrupos%26bm%3BAdmGrupos.bmml%26bm%3BAdmGrupos.bmml%26bm%3BAdmGrupos.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22307%2C97%2C384%2C124%22%20href%3D%22AdmGrupos.bmml%22%20alt%3D%22AdmGrupos%22%20id%3D%229%22/%3E</map>
+        <text>Cancelar</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
