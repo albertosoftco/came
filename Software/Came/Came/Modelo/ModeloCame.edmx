@@ -1,0 +1,1627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="cameModelo.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="cameModeloStoreContainer">
+          <EntitySet Name="Actividad" EntityType="cameModelo.Store.Actividad" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Actividad_Ejercicio" EntityType="cameModelo.Store.Actividad_Ejercicio" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Alergia" EntityType="cameModelo.Store.Alergia" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Alumno" EntityType="cameModelo.Store.Alumno" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Alumno_Alergia" EntityType="cameModelo.Store.Alumno_Alergia" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Alumno_Medicamento" EntityType="cameModelo.Store.Alumno_Medicamento" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Diagnostico" EntityType="cameModelo.Store.Diagnostico" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Diagnostico_Discapacidad" EntityType="cameModelo.Store.Diagnostico_Discapacidad" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Discapacidad" EntityType="cameModelo.Store.Discapacidad" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Discapacidad_Factor" EntityType="cameModelo.Store.Discapacidad_Factor" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Ejercicio" EntityType="cameModelo.Store.Ejercicio" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Factor" EntityType="cameModelo.Store.Factor" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Grupo" EntityType="cameModelo.Store.Grupo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Grupo_Alumno" EntityType="cameModelo.Store.Grupo_Alumno" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Maestro" EntityType="cameModelo.Store.Maestro" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Maestro_Grupo" EntityType="cameModelo.Store.Maestro_Grupo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Medicamento" EntityType="cameModelo.Store.Medicamento" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Programa" EntityType="cameModelo.Store.Programa" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Programa_Actividad" EntityType="cameModelo.Store.Programa_Actividad" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Rutina" EntityType="cameModelo.Store.Rutina" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Rutina_Programa" EntityType="cameModelo.Store.Rutina_Programa" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tutor" EntityType="cameModelo.Store.Tutor" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuario" EntityType="cameModelo.Store.Usuario" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Actividad_Ejercicio_ibfk_1" Association="cameModelo.Store.FK_Actividad_Ejercicio_ibfk_1">
+            <End Role="Ejercicio" EntitySet="Ejercicio" />
+            <End Role="Actividad_Ejercicio" EntitySet="Actividad_Ejercicio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Actividad_Ejercicio_ibfk_2" Association="cameModelo.Store.FK_Actividad_Ejercicio_ibfk_2">
+            <End Role="Actividad" EntitySet="Actividad" />
+            <End Role="Actividad_Ejercicio" EntitySet="Actividad_Ejercicio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumno_Alergia_ibfk_1" Association="cameModelo.Store.FK_Alumno_Alergia_ibfk_1">
+            <End Role="Alumno" EntitySet="Alumno" />
+            <End Role="Alumno_Alergia" EntitySet="Alumno_Alergia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumno_Alergia_ibfk_2" Association="cameModelo.Store.FK_Alumno_Alergia_ibfk_2">
+            <End Role="Alergia" EntitySet="Alergia" />
+            <End Role="Alumno_Alergia" EntitySet="Alumno_Alergia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumno_ibfk_1" Association="cameModelo.Store.FK_Alumno_ibfk_1">
+            <End Role="Tutor" EntitySet="Tutor" />
+            <End Role="Alumno" EntitySet="Alumno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumno_ibfk_2" Association="cameModelo.Store.FK_Alumno_ibfk_2">
+            <End Role="Diagnostico" EntitySet="Diagnostico" />
+            <End Role="Alumno" EntitySet="Alumno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumno_ibfk_3" Association="cameModelo.Store.FK_Alumno_ibfk_3">
+            <End Role="Grupo" EntitySet="Grupo" />
+            <End Role="Alumno" EntitySet="Alumno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumno_ibfk_4" Association="cameModelo.Store.FK_Alumno_ibfk_4">
+            <End Role="Rutina" EntitySet="Rutina" />
+            <End Role="Alumno" EntitySet="Alumno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumno_Medicamento_ibfk_1" Association="cameModelo.Store.FK_Alumno_Medicamento_ibfk_1">
+            <End Role="Alumno" EntitySet="Alumno" />
+            <End Role="Alumno_Medicamento" EntitySet="Alumno_Medicamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumno_Medicamento_ibfk_2" Association="cameModelo.Store.FK_Alumno_Medicamento_ibfk_2">
+            <End Role="Medicamento" EntitySet="Medicamento" />
+            <End Role="Alumno_Medicamento" EntitySet="Alumno_Medicamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Diagnostico_Discapacidad_ibfk_1" Association="cameModelo.Store.FK_Diagnostico_Discapacidad_ibfk_1">
+            <End Role="Diagnostico" EntitySet="Diagnostico" />
+            <End Role="Diagnostico_Discapacidad" EntitySet="Diagnostico_Discapacidad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Diagnostico_Discapacidad_ibfk_2" Association="cameModelo.Store.FK_Diagnostico_Discapacidad_ibfk_2">
+            <End Role="Discapacidad" EntitySet="Discapacidad" />
+            <End Role="Diagnostico_Discapacidad" EntitySet="Diagnostico_Discapacidad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Discapacidad_Factor_ibfk_1" Association="cameModelo.Store.FK_Discapacidad_Factor_ibfk_1">
+            <End Role="Discapacidad" EntitySet="Discapacidad" />
+            <End Role="Discapacidad_Factor" EntitySet="Discapacidad_Factor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Discapacidad_Factor_ibfk_2" Association="cameModelo.Store.FK_Discapacidad_Factor_ibfk_2">
+            <End Role="Factor" EntitySet="Factor" />
+            <End Role="Discapacidad_Factor" EntitySet="Discapacidad_Factor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grupo_Alumno_ibfk_1" Association="cameModelo.Store.FK_Grupo_Alumno_ibfk_1">
+            <End Role="Grupo" EntitySet="Grupo" />
+            <End Role="Grupo_Alumno" EntitySet="Grupo_Alumno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grupo_Alumno_ibfk_2" Association="cameModelo.Store.FK_Grupo_Alumno_ibfk_2">
+            <End Role="Alumno" EntitySet="Alumno" />
+            <End Role="Grupo_Alumno" EntitySet="Grupo_Alumno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grupo_ibfk_1" Association="cameModelo.Store.FK_Grupo_ibfk_1">
+            <End Role="Maestro" EntitySet="Maestro" />
+            <End Role="Grupo" EntitySet="Grupo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Maestro_Grupo_ibfk_1" Association="cameModelo.Store.FK_Maestro_Grupo_ibfk_1">
+            <End Role="Maestro" EntitySet="Maestro" />
+            <End Role="Maestro_Grupo" EntitySet="Maestro_Grupo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Maestro_Grupo_ibfk_2" Association="cameModelo.Store.FK_Maestro_Grupo_ibfk_2">
+            <End Role="Grupo" EntitySet="Grupo" />
+            <End Role="Maestro_Grupo" EntitySet="Maestro_Grupo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Programa_Actividad_ibfk_1" Association="cameModelo.Store.FK_Programa_Actividad_ibfk_1">
+            <End Role="Programa" EntitySet="Programa" />
+            <End Role="Programa_Actividad" EntitySet="Programa_Actividad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Programa_Actividad_ibfk_2" Association="cameModelo.Store.FK_Programa_Actividad_ibfk_2">
+            <End Role="Actividad" EntitySet="Actividad" />
+            <End Role="Programa_Actividad" EntitySet="Programa_Actividad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rutina_programa_ibfk_1" Association="cameModelo.Store.FK_Rutina_programa_ibfk_1">
+            <End Role="Rutina" EntitySet="Rutina" />
+            <End Role="Rutina_Programa" EntitySet="Rutina_Programa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rutina_Programa_ibfk_2" Association="cameModelo.Store.FK_Rutina_Programa_ibfk_2">
+            <End Role="Programa" EntitySet="Programa" />
+            <End Role="Rutina_Programa" EntitySet="Rutina_Programa" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Actividad">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Tipo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Actividad_Ejercicio">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="IdActividad" Type="int" Nullable="false" />
+          <Property Name="IdEjercicio" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Alergia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="1000" />
+          <Property Name="Tratamiento" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Alumno">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Apellidos" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Direccion" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="IdTutor" Type="int" Nullable="false" />
+          <Property Name="FechaNacimiento" Type="datetime" Nullable="false" />
+          <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+          <Property Name="CURP" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="GradoAcademico" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="TallaUniforme" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="IdDiagnostico" Type="int" Nullable="false" />
+          <Property Name="IdGrupo" Type="int" Nullable="false" />
+          <Property Name="IdRutina" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Alumno_Alergia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="IdAlumno" Type="int" Nullable="false" />
+          <Property Name="IdAlergia" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Alumno_Medicamento">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="IdAlumno" Type="int" Nullable="false" />
+          <Property Name="IdMedicamento" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Diagnostico">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Diagnostico_Discapacidad">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="IdDiagnostico" Type="int" Nullable="false" />
+          <Property Name="IdDiscapacidad" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Discapacidad">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Discapacidad_Factor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="IdDiscapacidad" Type="int" Nullable="false" />
+          <Property Name="IdFactor" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ejercicio">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="1000" />
+          <Property Name="Tipo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Factor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Grupo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Capacidad" Type="int" Nullable="false" />
+          <Property Name="IdMaestro" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Grupo_Alumno">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="IdGrupo" Type="int" Nullable="false" />
+          <Property Name="IdAlumno" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Maestro">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Direccion" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Email" Type="varchar" MaxLength="1000" />
+          <Property Name="Telefono" Type="varchar" MaxLength="1000" />
+          <Property Name="Celular" Type="varchar" MaxLength="1000" />
+          <Property Name="Rfc" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="FechaIngreso" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Maestro_Grupo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="IdMaestro" Type="int" Nullable="false" />
+          <Property Name="IdGrupo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Medicamento">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="1000" />
+          <Property Name="Horas" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Programa">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Programa_Actividad">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="IdPrograma" Type="int" Nullable="false" />
+          <Property Name="IdActividad" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rutina">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="IdMaestro" Type="int" Nullable="false" />
+          <Property Name="Lugar" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Finalidad" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Horario" Type="varchar" Nullable="false" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Rutina_Programa">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="IdRutina" Type="int" Nullable="false" />
+          <Property Name="IdPrograma" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tutor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Direccion" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Telefono" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Celular" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Direccion" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Telefono" Type="varchar" MaxLength="1000" />
+          <Property Name="Email" Type="varchar" MaxLength="1000" />
+          <Property Name="Celular" Type="varchar" MaxLength="1000" />
+          <Property Name="Permisos" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Contrasenha" Type="varchar" Nullable="false" MaxLength="1000" />
+        </EntityType>
+        <Association Name="FK_Actividad_Ejercicio_ibfk_1">
+          <End Role="Ejercicio" Type="cameModelo.Store.Ejercicio" Multiplicity="1" />
+          <End Role="Actividad_Ejercicio" Type="cameModelo.Store.Actividad_Ejercicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ejercicio">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Actividad_Ejercicio">
+              <PropertyRef Name="IdEjercicio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Actividad_Ejercicio_ibfk_2">
+          <End Role="Actividad" Type="cameModelo.Store.Actividad" Multiplicity="1" />
+          <End Role="Actividad_Ejercicio" Type="cameModelo.Store.Actividad_Ejercicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actividad">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Actividad_Ejercicio">
+              <PropertyRef Name="IdActividad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumno_Alergia_ibfk_1">
+          <End Role="Alumno" Type="cameModelo.Store.Alumno" Multiplicity="1" />
+          <End Role="Alumno_Alergia" Type="cameModelo.Store.Alumno_Alergia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alumno">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Alumno_Alergia">
+              <PropertyRef Name="IdAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumno_Alergia_ibfk_2">
+          <End Role="Alergia" Type="cameModelo.Store.Alergia" Multiplicity="1" />
+          <End Role="Alumno_Alergia" Type="cameModelo.Store.Alumno_Alergia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alergia">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Alumno_Alergia">
+              <PropertyRef Name="IdAlergia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumno_ibfk_1">
+          <End Role="Tutor" Type="cameModelo.Store.Tutor" Multiplicity="1" />
+          <End Role="Alumno" Type="cameModelo.Store.Alumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tutor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Alumno">
+              <PropertyRef Name="IdTutor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumno_ibfk_2">
+          <End Role="Diagnostico" Type="cameModelo.Store.Diagnostico" Multiplicity="1" />
+          <End Role="Alumno" Type="cameModelo.Store.Alumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Diagnostico">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Alumno">
+              <PropertyRef Name="IdDiagnostico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumno_ibfk_3">
+          <End Role="Grupo" Type="cameModelo.Store.Grupo" Multiplicity="1" />
+          <End Role="Alumno" Type="cameModelo.Store.Alumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Alumno">
+              <PropertyRef Name="IdGrupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumno_ibfk_4">
+          <End Role="Rutina" Type="cameModelo.Store.Rutina" Multiplicity="1" />
+          <End Role="Alumno" Type="cameModelo.Store.Alumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rutina">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Alumno">
+              <PropertyRef Name="IdRutina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumno_Medicamento_ibfk_1">
+          <End Role="Alumno" Type="cameModelo.Store.Alumno" Multiplicity="1" />
+          <End Role="Alumno_Medicamento" Type="cameModelo.Store.Alumno_Medicamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alumno">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Alumno_Medicamento">
+              <PropertyRef Name="IdAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumno_Medicamento_ibfk_2">
+          <End Role="Medicamento" Type="cameModelo.Store.Medicamento" Multiplicity="1" />
+          <End Role="Alumno_Medicamento" Type="cameModelo.Store.Alumno_Medicamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicamento">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Alumno_Medicamento">
+              <PropertyRef Name="IdMedicamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Diagnostico_Discapacidad_ibfk_1">
+          <End Role="Diagnostico" Type="cameModelo.Store.Diagnostico" Multiplicity="1" />
+          <End Role="Diagnostico_Discapacidad" Type="cameModelo.Store.Diagnostico_Discapacidad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Diagnostico">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Diagnostico_Discapacidad">
+              <PropertyRef Name="IdDiagnostico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Diagnostico_Discapacidad_ibfk_2">
+          <End Role="Discapacidad" Type="cameModelo.Store.Discapacidad" Multiplicity="1" />
+          <End Role="Diagnostico_Discapacidad" Type="cameModelo.Store.Diagnostico_Discapacidad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Discapacidad">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Diagnostico_Discapacidad">
+              <PropertyRef Name="IdDiscapacidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Discapacidad_Factor_ibfk_1">
+          <End Role="Discapacidad" Type="cameModelo.Store.Discapacidad" Multiplicity="1" />
+          <End Role="Discapacidad_Factor" Type="cameModelo.Store.Discapacidad_Factor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Discapacidad">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Discapacidad_Factor">
+              <PropertyRef Name="IdDiscapacidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Discapacidad_Factor_ibfk_2">
+          <End Role="Factor" Type="cameModelo.Store.Factor" Multiplicity="1" />
+          <End Role="Discapacidad_Factor" Type="cameModelo.Store.Discapacidad_Factor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Factor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Discapacidad_Factor">
+              <PropertyRef Name="IdFactor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grupo_Alumno_ibfk_1">
+          <End Role="Grupo" Type="cameModelo.Store.Grupo" Multiplicity="1" />
+          <End Role="Grupo_Alumno" Type="cameModelo.Store.Grupo_Alumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Grupo_Alumno">
+              <PropertyRef Name="IdGrupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grupo_Alumno_ibfk_2">
+          <End Role="Alumno" Type="cameModelo.Store.Alumno" Multiplicity="1" />
+          <End Role="Grupo_Alumno" Type="cameModelo.Store.Grupo_Alumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alumno">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Grupo_Alumno">
+              <PropertyRef Name="IdAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grupo_ibfk_1">
+          <End Role="Maestro" Type="cameModelo.Store.Maestro" Multiplicity="1" />
+          <End Role="Grupo" Type="cameModelo.Store.Grupo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maestro">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Grupo">
+              <PropertyRef Name="IdMaestro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Maestro_Grupo_ibfk_1">
+          <End Role="Maestro" Type="cameModelo.Store.Maestro" Multiplicity="1" />
+          <End Role="Maestro_Grupo" Type="cameModelo.Store.Maestro_Grupo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maestro">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Maestro_Grupo">
+              <PropertyRef Name="IdMaestro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Maestro_Grupo_ibfk_2">
+          <End Role="Grupo" Type="cameModelo.Store.Grupo" Multiplicity="1" />
+          <End Role="Maestro_Grupo" Type="cameModelo.Store.Maestro_Grupo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Maestro_Grupo">
+              <PropertyRef Name="IdGrupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Programa_Actividad_ibfk_1">
+          <End Role="Programa" Type="cameModelo.Store.Programa" Multiplicity="1" />
+          <End Role="Programa_Actividad" Type="cameModelo.Store.Programa_Actividad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Programa">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Programa_Actividad">
+              <PropertyRef Name="IdPrograma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Programa_Actividad_ibfk_2">
+          <End Role="Actividad" Type="cameModelo.Store.Actividad" Multiplicity="1" />
+          <End Role="Programa_Actividad" Type="cameModelo.Store.Programa_Actividad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actividad">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Programa_Actividad">
+              <PropertyRef Name="IdActividad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rutina_programa_ibfk_1">
+          <End Role="Rutina" Type="cameModelo.Store.Rutina" Multiplicity="1" />
+          <End Role="Rutina_Programa" Type="cameModelo.Store.Rutina_Programa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rutina">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Rutina_Programa">
+              <PropertyRef Name="IdRutina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rutina_Programa_ibfk_2">
+          <End Role="Programa" Type="cameModelo.Store.Programa" Multiplicity="1" />
+          <End Role="Rutina_Programa" Type="cameModelo.Store.Rutina_Programa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Programa">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Rutina_Programa">
+              <PropertyRef Name="IdPrograma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="cameModelo" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Entidades" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Actividad" EntityType="cameModelo.Actividad" />
+          <EntitySet Name="Actividad_Ejercicio" EntityType="cameModelo.Actividad_Ejercicio" />
+          <EntitySet Name="Alergia" EntityType="cameModelo.Alergia" />
+          <EntitySet Name="Alumno" EntityType="cameModelo.Alumno" />
+          <EntitySet Name="Alumno_Alergia" EntityType="cameModelo.Alumno_Alergia" />
+          <EntitySet Name="Alumno_Medicamento" EntityType="cameModelo.Alumno_Medicamento" />
+          <EntitySet Name="Diagnostico" EntityType="cameModelo.Diagnostico" />
+          <EntitySet Name="Diagnostico_Discapacidad" EntityType="cameModelo.Diagnostico_Discapacidad" />
+          <EntitySet Name="Discapacidad" EntityType="cameModelo.Discapacidad" />
+          <EntitySet Name="Discapacidad_Factor" EntityType="cameModelo.Discapacidad_Factor" />
+          <EntitySet Name="Ejercicio" EntityType="cameModelo.Ejercicio" />
+          <EntitySet Name="Factor" EntityType="cameModelo.Factor" />
+          <EntitySet Name="Grupo" EntityType="cameModelo.Grupo" />
+          <EntitySet Name="Grupo_Alumno" EntityType="cameModelo.Grupo_Alumno" />
+          <EntitySet Name="Maestro" EntityType="cameModelo.Maestro" />
+          <EntitySet Name="Maestro_Grupo" EntityType="cameModelo.Maestro_Grupo" />
+          <EntitySet Name="Medicamento" EntityType="cameModelo.Medicamento" />
+          <EntitySet Name="Programa" EntityType="cameModelo.Programa" />
+          <EntitySet Name="Programa_Actividad" EntityType="cameModelo.Programa_Actividad" />
+          <EntitySet Name="Rutina" EntityType="cameModelo.Rutina" />
+          <EntitySet Name="Rutina_Programa" EntityType="cameModelo.Rutina_Programa" />
+          <EntitySet Name="Tutor" EntityType="cameModelo.Tutor" />
+          <EntitySet Name="Usuario" EntityType="cameModelo.Usuario" />
+          <AssociationSet Name="FK_Actividad_Ejercicio_ibfk_2" Association="cameModelo.FK_Actividad_Ejercicio_ibfk_2">
+            <End Role="Actividad" EntitySet="Actividad" />
+            <End Role="Actividad_Ejercicio" EntitySet="Actividad_Ejercicio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Programa_Actividad_ibfk_2" Association="cameModelo.FK_Programa_Actividad_ibfk_2">
+            <End Role="Actividad" EntitySet="Actividad" />
+            <End Role="Programa_Actividad" EntitySet="Programa_Actividad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Actividad_Ejercicio_ibfk_1" Association="cameModelo.FK_Actividad_Ejercicio_ibfk_1">
+            <End Role="Ejercicio" EntitySet="Ejercicio" />
+            <End Role="Actividad_Ejercicio" EntitySet="Actividad_Ejercicio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumno_Alergia_ibfk_2" Association="cameModelo.FK_Alumno_Alergia_ibfk_2">
+            <End Role="Alergia" EntitySet="Alergia" />
+            <End Role="Alumno_Alergia" EntitySet="Alumno_Alergia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumno_Alergia_ibfk_1" Association="cameModelo.FK_Alumno_Alergia_ibfk_1">
+            <End Role="Alumno" EntitySet="Alumno" />
+            <End Role="Alumno_Alergia" EntitySet="Alumno_Alergia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumno_ibfk_1" Association="cameModelo.FK_Alumno_ibfk_1">
+            <End Role="Tutor" EntitySet="Tutor" />
+            <End Role="Alumno" EntitySet="Alumno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumno_ibfk_2" Association="cameModelo.FK_Alumno_ibfk_2">
+            <End Role="Diagnostico" EntitySet="Diagnostico" />
+            <End Role="Alumno" EntitySet="Alumno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumno_ibfk_3" Association="cameModelo.FK_Alumno_ibfk_3">
+            <End Role="Grupo" EntitySet="Grupo" />
+            <End Role="Alumno" EntitySet="Alumno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumno_ibfk_4" Association="cameModelo.FK_Alumno_ibfk_4">
+            <End Role="Rutina" EntitySet="Rutina" />
+            <End Role="Alumno" EntitySet="Alumno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumno_Medicamento_ibfk_1" Association="cameModelo.FK_Alumno_Medicamento_ibfk_1">
+            <End Role="Alumno" EntitySet="Alumno" />
+            <End Role="Alumno_Medicamento" EntitySet="Alumno_Medicamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grupo_Alumno_ibfk_2" Association="cameModelo.FK_Grupo_Alumno_ibfk_2">
+            <End Role="Alumno" EntitySet="Alumno" />
+            <End Role="Grupo_Alumno" EntitySet="Grupo_Alumno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alumno_Medicamento_ibfk_2" Association="cameModelo.FK_Alumno_Medicamento_ibfk_2">
+            <End Role="Medicamento" EntitySet="Medicamento" />
+            <End Role="Alumno_Medicamento" EntitySet="Alumno_Medicamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Diagnostico_Discapacidad_ibfk_1" Association="cameModelo.FK_Diagnostico_Discapacidad_ibfk_1">
+            <End Role="Diagnostico" EntitySet="Diagnostico" />
+            <End Role="Diagnostico_Discapacidad" EntitySet="Diagnostico_Discapacidad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Diagnostico_Discapacidad_ibfk_2" Association="cameModelo.FK_Diagnostico_Discapacidad_ibfk_2">
+            <End Role="Discapacidad" EntitySet="Discapacidad" />
+            <End Role="Diagnostico_Discapacidad" EntitySet="Diagnostico_Discapacidad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Discapacidad_Factor_ibfk_1" Association="cameModelo.FK_Discapacidad_Factor_ibfk_1">
+            <End Role="Discapacidad" EntitySet="Discapacidad" />
+            <End Role="Discapacidad_Factor" EntitySet="Discapacidad_Factor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Discapacidad_Factor_ibfk_2" Association="cameModelo.FK_Discapacidad_Factor_ibfk_2">
+            <End Role="Factor" EntitySet="Factor" />
+            <End Role="Discapacidad_Factor" EntitySet="Discapacidad_Factor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grupo_Alumno_ibfk_1" Association="cameModelo.FK_Grupo_Alumno_ibfk_1">
+            <End Role="Grupo" EntitySet="Grupo" />
+            <End Role="Grupo_Alumno" EntitySet="Grupo_Alumno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grupo_ibfk_1" Association="cameModelo.FK_Grupo_ibfk_1">
+            <End Role="Maestro" EntitySet="Maestro" />
+            <End Role="Grupo" EntitySet="Grupo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Maestro_Grupo_ibfk_2" Association="cameModelo.FK_Maestro_Grupo_ibfk_2">
+            <End Role="Grupo" EntitySet="Grupo" />
+            <End Role="Maestro_Grupo" EntitySet="Maestro_Grupo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Maestro_Grupo_ibfk_1" Association="cameModelo.FK_Maestro_Grupo_ibfk_1">
+            <End Role="Maestro" EntitySet="Maestro" />
+            <End Role="Maestro_Grupo" EntitySet="Maestro_Grupo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Programa_Actividad_ibfk_1" Association="cameModelo.FK_Programa_Actividad_ibfk_1">
+            <End Role="Programa" EntitySet="Programa" />
+            <End Role="Programa_Actividad" EntitySet="Programa_Actividad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rutina_Programa_ibfk_2" Association="cameModelo.FK_Rutina_Programa_ibfk_2">
+            <End Role="Programa" EntitySet="Programa" />
+            <End Role="Rutina_Programa" EntitySet="Rutina_Programa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rutina_programa_ibfk_1" Association="cameModelo.FK_Rutina_programa_ibfk_1">
+            <End Role="Rutina" EntitySet="Rutina" />
+            <End Role="Rutina_Programa" EntitySet="Rutina_Programa" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Actividad">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Tipo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Actividad_Ejercicio" Relationship="cameModelo.FK_Actividad_Ejercicio_ibfk_2" FromRole="Actividad" ToRole="Actividad_Ejercicio" />
+          <NavigationProperty Name="Programa_Actividad" Relationship="cameModelo.FK_Programa_Actividad_ibfk_2" FromRole="Actividad" ToRole="Programa_Actividad" />
+        </EntityType>
+        <EntityType Name="Actividad_Ejercicio">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="IdActividad" Type="Int32" Nullable="false" />
+          <Property Name="IdEjercicio" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Actividad" Relationship="cameModelo.FK_Actividad_Ejercicio_ibfk_2" FromRole="Actividad_Ejercicio" ToRole="Actividad" />
+          <NavigationProperty Name="Ejercicio" Relationship="cameModelo.FK_Actividad_Ejercicio_ibfk_1" FromRole="Actividad_Ejercicio" ToRole="Ejercicio" />
+        </EntityType>
+        <EntityType Name="Alergia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Tratamiento" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Alumno_Alergia" Relationship="cameModelo.FK_Alumno_Alergia_ibfk_2" FromRole="Alergia" ToRole="Alumno_Alergia" />
+        </EntityType>
+        <EntityType Name="Alumno">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Apellidos" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="IdTutor" Type="Int32" Nullable="false" />
+          <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" />
+          <Property Name="FechaRegistro" Type="DateTime" Nullable="false" />
+          <Property Name="CURP" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="GradoAcademico" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="TallaUniforme" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="IdDiagnostico" Type="Int32" Nullable="false" />
+          <Property Name="IdGrupo" Type="Int32" Nullable="false" />
+          <Property Name="IdRutina" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Alumno_Alergia" Relationship="cameModelo.FK_Alumno_Alergia_ibfk_1" FromRole="Alumno" ToRole="Alumno_Alergia" />
+          <NavigationProperty Name="Tutor" Relationship="cameModelo.FK_Alumno_ibfk_1" FromRole="Alumno" ToRole="Tutor" />
+          <NavigationProperty Name="Diagnostico" Relationship="cameModelo.FK_Alumno_ibfk_2" FromRole="Alumno" ToRole="Diagnostico" />
+          <NavigationProperty Name="Grupo" Relationship="cameModelo.FK_Alumno_ibfk_3" FromRole="Alumno" ToRole="Grupo" />
+          <NavigationProperty Name="Rutina" Relationship="cameModelo.FK_Alumno_ibfk_4" FromRole="Alumno" ToRole="Rutina" />
+          <NavigationProperty Name="Alumno_Medicamento" Relationship="cameModelo.FK_Alumno_Medicamento_ibfk_1" FromRole="Alumno" ToRole="Alumno_Medicamento" />
+          <NavigationProperty Name="Grupo_Alumno" Relationship="cameModelo.FK_Grupo_Alumno_ibfk_2" FromRole="Alumno" ToRole="Grupo_Alumno" />
+        </EntityType>
+        <EntityType Name="Alumno_Alergia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="IdAlumno" Type="Int32" Nullable="false" />
+          <Property Name="IdAlergia" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Alergia" Relationship="cameModelo.FK_Alumno_Alergia_ibfk_2" FromRole="Alumno_Alergia" ToRole="Alergia" />
+          <NavigationProperty Name="Alumno" Relationship="cameModelo.FK_Alumno_Alergia_ibfk_1" FromRole="Alumno_Alergia" ToRole="Alumno" />
+        </EntityType>
+        <EntityType Name="Alumno_Medicamento">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="IdAlumno" Type="Int32" Nullable="false" />
+          <Property Name="IdMedicamento" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Alumno" Relationship="cameModelo.FK_Alumno_Medicamento_ibfk_1" FromRole="Alumno_Medicamento" ToRole="Alumno" />
+          <NavigationProperty Name="Medicamento" Relationship="cameModelo.FK_Alumno_Medicamento_ibfk_2" FromRole="Alumno_Medicamento" ToRole="Medicamento" />
+        </EntityType>
+        <EntityType Name="Diagnostico">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Alumno" Relationship="cameModelo.FK_Alumno_ibfk_2" FromRole="Diagnostico" ToRole="Alumno" />
+          <NavigationProperty Name="Diagnostico_Discapacidad" Relationship="cameModelo.FK_Diagnostico_Discapacidad_ibfk_1" FromRole="Diagnostico" ToRole="Diagnostico_Discapacidad" />
+        </EntityType>
+        <EntityType Name="Diagnostico_Discapacidad">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="IdDiagnostico" Type="Int32" Nullable="false" />
+          <Property Name="IdDiscapacidad" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Diagnostico" Relationship="cameModelo.FK_Diagnostico_Discapacidad_ibfk_1" FromRole="Diagnostico_Discapacidad" ToRole="Diagnostico" />
+          <NavigationProperty Name="Discapacidad" Relationship="cameModelo.FK_Diagnostico_Discapacidad_ibfk_2" FromRole="Diagnostico_Discapacidad" ToRole="Discapacidad" />
+        </EntityType>
+        <EntityType Name="Discapacidad">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Diagnostico_Discapacidad" Relationship="cameModelo.FK_Diagnostico_Discapacidad_ibfk_2" FromRole="Discapacidad" ToRole="Diagnostico_Discapacidad" />
+          <NavigationProperty Name="Discapacidad_Factor" Relationship="cameModelo.FK_Discapacidad_Factor_ibfk_1" FromRole="Discapacidad" ToRole="Discapacidad_Factor" />
+        </EntityType>
+        <EntityType Name="Discapacidad_Factor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="IdDiscapacidad" Type="Int32" Nullable="false" />
+          <Property Name="IdFactor" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Discapacidad" Relationship="cameModelo.FK_Discapacidad_Factor_ibfk_1" FromRole="Discapacidad_Factor" ToRole="Discapacidad" />
+          <NavigationProperty Name="Factor" Relationship="cameModelo.FK_Discapacidad_Factor_ibfk_2" FromRole="Discapacidad_Factor" ToRole="Factor" />
+        </EntityType>
+        <EntityType Name="Ejercicio">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Tipo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Actividad_Ejercicio" Relationship="cameModelo.FK_Actividad_Ejercicio_ibfk_1" FromRole="Ejercicio" ToRole="Actividad_Ejercicio" />
+        </EntityType>
+        <EntityType Name="Factor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Discapacidad_Factor" Relationship="cameModelo.FK_Discapacidad_Factor_ibfk_2" FromRole="Factor" ToRole="Discapacidad_Factor" />
+        </EntityType>
+        <EntityType Name="Grupo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Capacidad" Type="Int32" Nullable="false" />
+          <Property Name="IdMaestro" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Alumno" Relationship="cameModelo.FK_Alumno_ibfk_3" FromRole="Grupo" ToRole="Alumno" />
+          <NavigationProperty Name="Grupo_Alumno" Relationship="cameModelo.FK_Grupo_Alumno_ibfk_1" FromRole="Grupo" ToRole="Grupo_Alumno" />
+          <NavigationProperty Name="Maestro" Relationship="cameModelo.FK_Grupo_ibfk_1" FromRole="Grupo" ToRole="Maestro" />
+          <NavigationProperty Name="Maestro_Grupo" Relationship="cameModelo.FK_Maestro_Grupo_ibfk_2" FromRole="Grupo" ToRole="Maestro_Grupo" />
+        </EntityType>
+        <EntityType Name="Grupo_Alumno">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="IdGrupo" Type="Int32" Nullable="false" />
+          <Property Name="IdAlumno" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Alumno" Relationship="cameModelo.FK_Grupo_Alumno_ibfk_2" FromRole="Grupo_Alumno" ToRole="Alumno" />
+          <NavigationProperty Name="Grupo" Relationship="cameModelo.FK_Grupo_Alumno_ibfk_1" FromRole="Grupo_Alumno" ToRole="Grupo" />
+        </EntityType>
+        <EntityType Name="Maestro">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Telefono" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Celular" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Rfc" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="FechaIngreso" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Grupo" Relationship="cameModelo.FK_Grupo_ibfk_1" FromRole="Maestro" ToRole="Grupo" />
+          <NavigationProperty Name="Maestro_Grupo" Relationship="cameModelo.FK_Maestro_Grupo_ibfk_1" FromRole="Maestro" ToRole="Maestro_Grupo" />
+        </EntityType>
+        <EntityType Name="Maestro_Grupo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="IdMaestro" Type="Int32" Nullable="false" />
+          <Property Name="IdGrupo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Grupo" Relationship="cameModelo.FK_Maestro_Grupo_ibfk_2" FromRole="Maestro_Grupo" ToRole="Grupo" />
+          <NavigationProperty Name="Maestro" Relationship="cameModelo.FK_Maestro_Grupo_ibfk_1" FromRole="Maestro_Grupo" ToRole="Maestro" />
+        </EntityType>
+        <EntityType Name="Medicamento">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Horas" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Alumno_Medicamento" Relationship="cameModelo.FK_Alumno_Medicamento_ibfk_2" FromRole="Medicamento" ToRole="Alumno_Medicamento" />
+        </EntityType>
+        <EntityType Name="Programa">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Programa_Actividad" Relationship="cameModelo.FK_Programa_Actividad_ibfk_1" FromRole="Programa" ToRole="Programa_Actividad" />
+          <NavigationProperty Name="Rutina_Programa" Relationship="cameModelo.FK_Rutina_Programa_ibfk_2" FromRole="Programa" ToRole="Rutina_Programa" />
+        </EntityType>
+        <EntityType Name="Programa_Actividad">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="IdPrograma" Type="Int32" Nullable="false" />
+          <Property Name="IdActividad" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Actividad" Relationship="cameModelo.FK_Programa_Actividad_ibfk_2" FromRole="Programa_Actividad" ToRole="Actividad" />
+          <NavigationProperty Name="Programa" Relationship="cameModelo.FK_Programa_Actividad_ibfk_1" FromRole="Programa_Actividad" ToRole="Programa" />
+        </EntityType>
+        <EntityType Name="Rutina">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="IdMaestro" Type="Int32" Nullable="false" />
+          <Property Name="Lugar" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Finalidad" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Horario" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Alumno" Relationship="cameModelo.FK_Alumno_ibfk_4" FromRole="Rutina" ToRole="Alumno" />
+          <NavigationProperty Name="Rutina_Programa" Relationship="cameModelo.FK_Rutina_programa_ibfk_1" FromRole="Rutina" ToRole="Rutina_Programa" />
+        </EntityType>
+        <EntityType Name="Rutina_Programa">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="IdRutina" Type="Int32" Nullable="false" />
+          <Property Name="IdPrograma" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Programa" Relationship="cameModelo.FK_Rutina_Programa_ibfk_2" FromRole="Rutina_Programa" ToRole="Programa" />
+          <NavigationProperty Name="Rutina" Relationship="cameModelo.FK_Rutina_programa_ibfk_1" FromRole="Rutina_Programa" ToRole="Rutina" />
+        </EntityType>
+        <EntityType Name="Tutor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Telefono" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Celular" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Alumno" Relationship="cameModelo.FK_Alumno_ibfk_1" FromRole="Tutor" ToRole="Alumno" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Telefono" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Celular" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Permisos" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Contrasenha" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Actividad_Ejercicio_ibfk_2">
+          <End Role="Actividad" Type="cameModelo.Actividad" Multiplicity="1" />
+          <End Role="Actividad_Ejercicio" Type="cameModelo.Actividad_Ejercicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actividad">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Actividad_Ejercicio">
+              <PropertyRef Name="IdActividad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Programa_Actividad_ibfk_2">
+          <End Role="Actividad" Type="cameModelo.Actividad" Multiplicity="1" />
+          <End Role="Programa_Actividad" Type="cameModelo.Programa_Actividad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actividad">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Programa_Actividad">
+              <PropertyRef Name="IdActividad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Actividad_Ejercicio_ibfk_1">
+          <End Role="Ejercicio" Type="cameModelo.Ejercicio" Multiplicity="1" />
+          <End Role="Actividad_Ejercicio" Type="cameModelo.Actividad_Ejercicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ejercicio">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Actividad_Ejercicio">
+              <PropertyRef Name="IdEjercicio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumno_Alergia_ibfk_2">
+          <End Role="Alergia" Type="cameModelo.Alergia" Multiplicity="1" />
+          <End Role="Alumno_Alergia" Type="cameModelo.Alumno_Alergia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alergia">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Alumno_Alergia">
+              <PropertyRef Name="IdAlergia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumno_Alergia_ibfk_1">
+          <End Role="Alumno" Type="cameModelo.Alumno" Multiplicity="1" />
+          <End Role="Alumno_Alergia" Type="cameModelo.Alumno_Alergia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alumno">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Alumno_Alergia">
+              <PropertyRef Name="IdAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumno_ibfk_1">
+          <End Role="Tutor" Type="cameModelo.Tutor" Multiplicity="1" />
+          <End Role="Alumno" Type="cameModelo.Alumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tutor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Alumno">
+              <PropertyRef Name="IdTutor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumno_ibfk_2">
+          <End Role="Diagnostico" Type="cameModelo.Diagnostico" Multiplicity="1" />
+          <End Role="Alumno" Type="cameModelo.Alumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Diagnostico">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Alumno">
+              <PropertyRef Name="IdDiagnostico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumno_ibfk_3">
+          <End Role="Grupo" Type="cameModelo.Grupo" Multiplicity="1" />
+          <End Role="Alumno" Type="cameModelo.Alumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Alumno">
+              <PropertyRef Name="IdGrupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumno_ibfk_4">
+          <End Role="Rutina" Type="cameModelo.Rutina" Multiplicity="1" />
+          <End Role="Alumno" Type="cameModelo.Alumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rutina">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Alumno">
+              <PropertyRef Name="IdRutina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumno_Medicamento_ibfk_1">
+          <End Role="Alumno" Type="cameModelo.Alumno" Multiplicity="1" />
+          <End Role="Alumno_Medicamento" Type="cameModelo.Alumno_Medicamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alumno">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Alumno_Medicamento">
+              <PropertyRef Name="IdAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grupo_Alumno_ibfk_2">
+          <End Role="Alumno" Type="cameModelo.Alumno" Multiplicity="1" />
+          <End Role="Grupo_Alumno" Type="cameModelo.Grupo_Alumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alumno">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Grupo_Alumno">
+              <PropertyRef Name="IdAlumno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alumno_Medicamento_ibfk_2">
+          <End Role="Medicamento" Type="cameModelo.Medicamento" Multiplicity="1" />
+          <End Role="Alumno_Medicamento" Type="cameModelo.Alumno_Medicamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicamento">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Alumno_Medicamento">
+              <PropertyRef Name="IdMedicamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Diagnostico_Discapacidad_ibfk_1">
+          <End Role="Diagnostico" Type="cameModelo.Diagnostico" Multiplicity="1" />
+          <End Role="Diagnostico_Discapacidad" Type="cameModelo.Diagnostico_Discapacidad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Diagnostico">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Diagnostico_Discapacidad">
+              <PropertyRef Name="IdDiagnostico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Diagnostico_Discapacidad_ibfk_2">
+          <End Role="Discapacidad" Type="cameModelo.Discapacidad" Multiplicity="1" />
+          <End Role="Diagnostico_Discapacidad" Type="cameModelo.Diagnostico_Discapacidad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Discapacidad">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Diagnostico_Discapacidad">
+              <PropertyRef Name="IdDiscapacidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Discapacidad_Factor_ibfk_1">
+          <End Role="Discapacidad" Type="cameModelo.Discapacidad" Multiplicity="1" />
+          <End Role="Discapacidad_Factor" Type="cameModelo.Discapacidad_Factor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Discapacidad">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Discapacidad_Factor">
+              <PropertyRef Name="IdDiscapacidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Discapacidad_Factor_ibfk_2">
+          <End Role="Factor" Type="cameModelo.Factor" Multiplicity="1" />
+          <End Role="Discapacidad_Factor" Type="cameModelo.Discapacidad_Factor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Factor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Discapacidad_Factor">
+              <PropertyRef Name="IdFactor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grupo_Alumno_ibfk_1">
+          <End Role="Grupo" Type="cameModelo.Grupo" Multiplicity="1" />
+          <End Role="Grupo_Alumno" Type="cameModelo.Grupo_Alumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Grupo_Alumno">
+              <PropertyRef Name="IdGrupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grupo_ibfk_1">
+          <End Role="Maestro" Type="cameModelo.Maestro" Multiplicity="1" />
+          <End Role="Grupo" Type="cameModelo.Grupo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maestro">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Grupo">
+              <PropertyRef Name="IdMaestro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Maestro_Grupo_ibfk_2">
+          <End Role="Grupo" Type="cameModelo.Grupo" Multiplicity="1" />
+          <End Role="Maestro_Grupo" Type="cameModelo.Maestro_Grupo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Maestro_Grupo">
+              <PropertyRef Name="IdGrupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Maestro_Grupo_ibfk_1">
+          <End Role="Maestro" Type="cameModelo.Maestro" Multiplicity="1" />
+          <End Role="Maestro_Grupo" Type="cameModelo.Maestro_Grupo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maestro">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Maestro_Grupo">
+              <PropertyRef Name="IdMaestro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Programa_Actividad_ibfk_1">
+          <End Role="Programa" Type="cameModelo.Programa" Multiplicity="1" />
+          <End Role="Programa_Actividad" Type="cameModelo.Programa_Actividad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Programa">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Programa_Actividad">
+              <PropertyRef Name="IdPrograma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rutina_Programa_ibfk_2">
+          <End Role="Programa" Type="cameModelo.Programa" Multiplicity="1" />
+          <End Role="Rutina_Programa" Type="cameModelo.Rutina_Programa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Programa">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Rutina_Programa">
+              <PropertyRef Name="IdPrograma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rutina_programa_ibfk_1">
+          <End Role="Rutina" Type="cameModelo.Rutina" Multiplicity="1" />
+          <End Role="Rutina_Programa" Type="cameModelo.Rutina_Programa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rutina">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Rutina_Programa">
+              <PropertyRef Name="IdRutina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="cameModeloStoreContainer" CdmEntityContainer="Entidades">
+          <EntitySetMapping Name="Actividad"><EntityTypeMapping TypeName="cameModelo.Actividad"><MappingFragment StoreEntitySet="Actividad">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+            <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Actividad_Ejercicio"><EntityTypeMapping TypeName="cameModelo.Actividad_Ejercicio"><MappingFragment StoreEntitySet="Actividad_Ejercicio">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="IdActividad" ColumnName="IdActividad" />
+            <ScalarProperty Name="IdEjercicio" ColumnName="IdEjercicio" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Alergia"><EntityTypeMapping TypeName="cameModelo.Alergia"><MappingFragment StoreEntitySet="Alergia">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+            <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+            <ScalarProperty Name="Tratamiento" ColumnName="Tratamiento" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Alumno"><EntityTypeMapping TypeName="cameModelo.Alumno"><MappingFragment StoreEntitySet="Alumno">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+            <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+            <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+            <ScalarProperty Name="IdTutor" ColumnName="IdTutor" />
+            <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+            <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+            <ScalarProperty Name="CURP" ColumnName="CURP" />
+            <ScalarProperty Name="GradoAcademico" ColumnName="GradoAcademico" />
+            <ScalarProperty Name="TallaUniforme" ColumnName="TallaUniforme" />
+            <ScalarProperty Name="IdDiagnostico" ColumnName="IdDiagnostico" />
+            <ScalarProperty Name="IdGrupo" ColumnName="IdGrupo" />
+            <ScalarProperty Name="IdRutina" ColumnName="IdRutina" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Alumno_Alergia"><EntityTypeMapping TypeName="cameModelo.Alumno_Alergia"><MappingFragment StoreEntitySet="Alumno_Alergia">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="IdAlumno" ColumnName="IdAlumno" />
+            <ScalarProperty Name="IdAlergia" ColumnName="IdAlergia" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Alumno_Medicamento"><EntityTypeMapping TypeName="cameModelo.Alumno_Medicamento"><MappingFragment StoreEntitySet="Alumno_Medicamento">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="IdAlumno" ColumnName="IdAlumno" />
+            <ScalarProperty Name="IdMedicamento" ColumnName="IdMedicamento" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Diagnostico"><EntityTypeMapping TypeName="cameModelo.Diagnostico"><MappingFragment StoreEntitySet="Diagnostico">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+            <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Diagnostico_Discapacidad"><EntityTypeMapping TypeName="cameModelo.Diagnostico_Discapacidad"><MappingFragment StoreEntitySet="Diagnostico_Discapacidad">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="IdDiagnostico" ColumnName="IdDiagnostico" />
+            <ScalarProperty Name="IdDiscapacidad" ColumnName="IdDiscapacidad" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Discapacidad"><EntityTypeMapping TypeName="cameModelo.Discapacidad"><MappingFragment StoreEntitySet="Discapacidad">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+            <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Discapacidad_Factor"><EntityTypeMapping TypeName="cameModelo.Discapacidad_Factor"><MappingFragment StoreEntitySet="Discapacidad_Factor">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="IdDiscapacidad" ColumnName="IdDiscapacidad" />
+            <ScalarProperty Name="IdFactor" ColumnName="IdFactor" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Ejercicio"><EntityTypeMapping TypeName="cameModelo.Ejercicio"><MappingFragment StoreEntitySet="Ejercicio">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+            <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+            <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Factor"><EntityTypeMapping TypeName="cameModelo.Factor"><MappingFragment StoreEntitySet="Factor">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Grupo"><EntityTypeMapping TypeName="cameModelo.Grupo"><MappingFragment StoreEntitySet="Grupo">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+            <ScalarProperty Name="Capacidad" ColumnName="Capacidad" />
+            <ScalarProperty Name="IdMaestro" ColumnName="IdMaestro" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Grupo_Alumno"><EntityTypeMapping TypeName="cameModelo.Grupo_Alumno"><MappingFragment StoreEntitySet="Grupo_Alumno">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="IdGrupo" ColumnName="IdGrupo" />
+            <ScalarProperty Name="IdAlumno" ColumnName="IdAlumno" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Maestro"><EntityTypeMapping TypeName="cameModelo.Maestro"><MappingFragment StoreEntitySet="Maestro">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+            <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+            <ScalarProperty Name="Email" ColumnName="Email" />
+            <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+            <ScalarProperty Name="Celular" ColumnName="Celular" />
+            <ScalarProperty Name="Rfc" ColumnName="Rfc" />
+            <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Maestro_Grupo"><EntityTypeMapping TypeName="cameModelo.Maestro_Grupo"><MappingFragment StoreEntitySet="Maestro_Grupo">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="IdMaestro" ColumnName="IdMaestro" />
+            <ScalarProperty Name="IdGrupo" ColumnName="IdGrupo" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Medicamento"><EntityTypeMapping TypeName="cameModelo.Medicamento"><MappingFragment StoreEntitySet="Medicamento">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+            <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+            <ScalarProperty Name="Horas" ColumnName="Horas" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Programa"><EntityTypeMapping TypeName="cameModelo.Programa"><MappingFragment StoreEntitySet="Programa">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Programa_Actividad"><EntityTypeMapping TypeName="cameModelo.Programa_Actividad"><MappingFragment StoreEntitySet="Programa_Actividad">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="IdPrograma" ColumnName="IdPrograma" />
+            <ScalarProperty Name="IdActividad" ColumnName="IdActividad" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Rutina"><EntityTypeMapping TypeName="cameModelo.Rutina"><MappingFragment StoreEntitySet="Rutina">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+            <ScalarProperty Name="IdMaestro" ColumnName="IdMaestro" />
+            <ScalarProperty Name="Lugar" ColumnName="Lugar" />
+            <ScalarProperty Name="Finalidad" ColumnName="Finalidad" />
+            <ScalarProperty Name="Horario" ColumnName="Horario" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Rutina_Programa"><EntityTypeMapping TypeName="cameModelo.Rutina_Programa"><MappingFragment StoreEntitySet="Rutina_Programa">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="IdRutina" ColumnName="IdRutina" />
+            <ScalarProperty Name="IdPrograma" ColumnName="IdPrograma" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Tutor"><EntityTypeMapping TypeName="cameModelo.Tutor"><MappingFragment StoreEntitySet="Tutor">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+            <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+            <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+            <ScalarProperty Name="Celular" ColumnName="Celular" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Usuario"><EntityTypeMapping TypeName="cameModelo.Usuario"><MappingFragment StoreEntitySet="Usuario">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+            <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+            <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+            <ScalarProperty Name="Email" ColumnName="Email" />
+            <ScalarProperty Name="Celular" ColumnName="Celular" />
+            <ScalarProperty Name="Permisos" ColumnName="Permisos" />
+            <ScalarProperty Name="UserName" ColumnName="UserName" />
+            <ScalarProperty Name="Contrasenha" ColumnName="Contrasenha" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ModeloCame">
+        <EntityTypeShape EntityType="cameModelo.Actividad" Width="1.5" PointX="10.75" PointY="11.75" Height="1.9802864583333353" IsExpanded="true" />
+        <EntityTypeShape EntityType="cameModelo.Actividad_Ejercicio" Width="1.5" PointX="13" PointY="11.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="cameModelo.Alergia" Width="1.5" PointX="5.25" PointY="1.75" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="cameModelo.Alumno" Width="1.5" PointX="5.25" PointY="5.25" Height="4.8648079427083326" IsExpanded="true" />
+        <EntityTypeShape EntityType="cameModelo.Alumno_Alergia" Width="1.5" PointX="7.5" PointY="3.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="cameModelo.Alumno_Medicamento" Width="1.5" PointX="7.5" PointY="9.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="cameModelo.Diagnostico" Width="1.5" PointX="3" PointY="3.625" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="cameModelo.Diagnostico_Discapacidad" Width="1.5" PointX="15" PointY="3.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="cameModelo.Discapacidad" Width="1.5" PointX="12.75" PointY="3.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="cameModelo.Discapacidad_Factor" Width="1.5" PointX="15" PointY="0.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="cameModelo.Ejercicio" Width="1.5" PointX="10.75" PointY="14.75" Height="1.9802864583333353" IsExpanded="true" />
+        <EntityTypeShape EntityType="cameModelo.Factor" Width="1.5" PointX="12.75" PointY="1.125" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="cameModelo.Grupo" Width="1.5" PointX="3" PointY="6.5" Height="2.5571907552083397" IsExpanded="true" />
+        <EntityTypeShape EntityType="cameModelo.Grupo_Alumno" Width="1.5" PointX="10.5" PointY="6.75" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="cameModelo.Maestro" Width="1.5" PointX="0.75" PointY="6.25" Height="2.9417936197916683" IsExpanded="true" />
+        <EntityTypeShape EntityType="cameModelo.Maestro_Grupo" Width="1.5" PointX="8.25" PointY="6.75" Height="1.9802864583333397" IsExpanded="true" />
+        <EntityTypeShape EntityType="cameModelo.Medicamento" Width="1.5" PointX="5.25" PointY="11.75" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="cameModelo.Programa" Width="1.5" PointX="6" PointY="14.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="cameModelo.Programa_Actividad" Width="1.5" PointX="13" PointY="15.125" Height="1.9802864583333371" IsExpanded="true" />
+        <EntityTypeShape EntityType="cameModelo.Rutina" Width="1.5" PointX="3" PointY="10.375" Height="2.5571907552083388" IsExpanded="true" />
+        <EntityTypeShape EntityType="cameModelo.Rutina_Programa" Width="1.5" PointX="8.25" PointY="12.625" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="cameModelo.Tutor" Width="1.5" PointX="3" PointY="13.625" Height="2.172587890624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="cameModelo.Usuario" Width="1.5" PointX="9.75" PointY="2.125" Height="2.7494921875000102" IsExpanded="true" />
+        <AssociationConnector Association="cameModelo.FK_Actividad_Ejercicio_ibfk_2" ManuallyRouted="false">
+          <ConnectorPoint PointX="12.25" PointY="12.740143229166666" />
+          <ConnectorPoint PointX="13" PointY="12.740143229166666" />
+        </AssociationConnector>
+        <AssociationConnector Association="cameModelo.FK_Programa_Actividad_ibfk_2" ManuallyRouted="false">
+          <ConnectorPoint PointX="12.25" PointY="13.730286458333335" />
+          <ConnectorPoint PointX="12.625" PointY="14.105286458333335" />
+          <ConnectorPoint PointX="12.625" PointY="16.115143229166669" />
+          <ConnectorPoint PointX="13" PointY="16.115143229166669" />
+        </AssociationConnector>
+        <AssociationConnector Association="cameModelo.FK_Actividad_Ejercicio_ibfk_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="12.25" PointY="14.812306692307692" />
+          <ConnectorPoint PointX="12.56607443490112" PointY="14.496232257406572" />
+          <ConnectorPoint PointX="12.683925565098878" PointY="14.378381127208815" />
+          <ConnectorPoint PointX="12.8125" PointY="14.249806692307693" />
+          <ConnectorPoint PointX="12.8125" PointY="13.266466843749999" />
+          <ConnectorPoint PointX="13" PointY="13.266466843749999" />
+        </AssociationConnector>
+        <AssociationConnector Association="cameModelo.FK_Alumno_Alergia_ibfk_2" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="2.7401432291666667" />
+          <ConnectorPoint PointX="8.25" PointY="2.7401432291666667" />
+          <ConnectorPoint PointX="8.25" PointY="3.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="cameModelo.FK_Alumno_Alergia_ibfk_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="5.4901432291666659" />
+          <ConnectorPoint PointX="6.916666666666667" PointY="5.490143229166665" />
+          <ConnectorPoint PointX="7.083333333333333" PointY="5.4901432291666659" />
+          <ConnectorPoint PointX="7.166666666666667" PointY="5.490143229166665" />
+          <ConnectorPoint PointX="7.333333333333333" PointY="5.4901432291666659" />
+          <ConnectorPoint PointX="7.5" PointY="5.4901432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="cameModelo.FK_Alumno_ibfk_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="13.626152846153847" />
+          <ConnectorPoint PointX="4.875" PointY="13.251152846153847" />
+          <ConnectorPoint PointX="4.875" PointY="7.6824039713541659" />
+          <ConnectorPoint PointX="5.25" PointY="7.6824039713541659" />
+        </AssociationConnector>
+        <AssociationConnector Association="cameModelo.FK_Alumno_ibfk_2" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="5.4276432291666659" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="5.427643229166665" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="5.4276432291666659" />
+          <ConnectorPoint PointX="5.25" PointY="5.4276432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="cameModelo.FK_Alumno_ibfk_3" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="8.4322973632812523" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="8.4322973632812523" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="8.4322973632812523" />
+          <ConnectorPoint PointX="5.25" PointY="8.4322973632812523" />
+        </AssociationConnector>
+        <AssociationConnector Association="cameModelo.FK_Alumno_ibfk_4" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="10.438460538461539" />
+          <ConnectorPoint PointX="4.6910744349011209" PointY="10.247386103560418" />
+          <ConnectorPoint PointX="4.8089255650988791" PointY="10.129534973362661" />
+          <ConnectorPoint PointX="4.8160744349011209" PointY="10.122386103560418" />
+          <ConnectorPoint PointX="4.9339255650988791" PointY="10.004534973362661" />
+          <ConnectorPoint PointX="5.0625" PointY="9.87596053846154" />
+          <ConnectorPoint PointX="5.0625" PointY="10.303460788862179" />
+          <ConnectorPoint PointX="5.251152846153845" PointY="10.114807942708332" />
+        </AssociationConnector>
+        <AssociationConnector Association="cameModelo.FK_Alumno_Medicamento_ibfk_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="9.9324039713541659" />
+          <ConnectorPoint PointX="6.916666666666667" PointY="9.9324039713541659" />
+          <ConnectorPoint PointX="7.083333333333333" PointY="9.9324039713541659" />
+          <ConnectorPoint PointX="7.166666666666667" PointY="9.9324039713541659" />
+          <ConnectorPoint PointX="7.333333333333333" PointY="9.9324039713541659" />
+          <ConnectorPoint PointX="7.5" PointY="9.9324039713541659" />
+        </AssociationConnector>
+        <AssociationConnector Association="cameModelo.FK_Grupo_Alumno_ibfk_2" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="9.2088937291666682" />
+          <ConnectorPoint PointX="6.916666666666667" PointY="9.2088937291666682" />
+          <ConnectorPoint PointX="7.083333333333333" PointY="9.2088937291666682" />
+          <ConnectorPoint PointX="7.166666666666667" PointY="9.2088937291666682" />
+          <ConnectorPoint PointX="7.333333333333333" PointY="9.2088937291666682" />
+          <ConnectorPoint PointX="11.25" PointY="9.2088937291666682" />
+          <ConnectorPoint PointX="11.25" PointY="8.7302864583333388" />
+        </AssociationConnector>
+        <AssociationConnector Association="cameModelo.FK_Alumno_Medicamento_ibfk_2" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="12.15625" />
+          <ConnectorPoint PointX="7.84375" PointY="12.15625" />
+          <ConnectorPoint PointX="7.84375" PointY="11.730286458333332" />
+        </AssociationConnector>
+        <AssociationConnector Association="cameModelo.FK_Diagnostico_Discapacidad_ibfk_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="4.4901432291666667" />
+          <ConnectorPoint PointX="7.25" PointY="4.4901432291666667" />
+          <ConnectorPoint PointX="7.25" PointY="5.9802864583333317" />
+          <ConnectorPoint PointX="15.75" PointY="5.9802864583333317" />
+          <ConnectorPoint PointX="15.75" PointY="5.7302864583333317" />
+        </AssociationConnector>
+        <AssociationConnector Association="cameModelo.FK_Diagnostico_Discapacidad_ibfk_2" ManuallyRouted="false">
+          <ConnectorPoint PointX="14.25" PointY="4.7401432291666659" />
+          <ConnectorPoint PointX="15" PointY="4.7401432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="cameModelo.FK_Discapacidad_Factor_ibfk_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="14.25" PointY="3.75" />
+          <ConnectorPoint PointX="14.625" PointY="3.375" />
+          <ConnectorPoint PointX="14.625" PointY="1.7401432291666659" />
+          <ConnectorPoint PointX="15" PointY="1.7401432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="cameModelo.FK_Discapacidad_Factor_ibfk_2" ManuallyRouted="false">
+          <ConnectorPoint PointX="14.25" PointY="2.2929134114583345" />
+          <ConnectorPoint PointX="14.541666666666666" PointY="2.292913411458334" />
+          <ConnectorPoint PointX="14.708333333333334" PointY="2.2929134114583345" />
+          <ConnectorPoint PointX="15" PointY="2.2929134114583345" />
+        </AssociationConnector>
+        <AssociationConnector Association="cameModelo.FK_Grupo_Alumno_ibfk_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="7.0912024856770834" />
+          <ConnectorPoint PointX="5" PointY="7.0912024856770834" />
+          <ConnectorPoint PointX="5" PointY="5" />
+          <ConnectorPoint PointX="7" PointY="5" />
+          <ConnectorPoint PointX="7" PointY="6.5" />
+          <ConnectorPoint PointX="11.25" PointY="6.5" />
+          <ConnectorPoint PointX="11.25" PointY="6.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="cameModelo.FK_Grupo_ibfk_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.7785953776041694" />
+          <ConnectorPoint PointX="3" PointY="7.7785953776041694" />
+        </AssociationConnector>
+        <AssociationConnector Association="cameModelo.FK_Maestro_Grupo_ibfk_2" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.75" PointY="9.0571907552083388" />
+          <ConnectorPoint PointX="3.75" PointY="9.3071907552083388" />
+          <ConnectorPoint PointX="4.75" PointY="9.3071907552083388" />
+          <ConnectorPoint PointX="4.75" PointY="10.364807942708332" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="10.364807942708332" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="10.364807942708332" />
+          <ConnectorPoint PointX="7.25" PointY="10.364807942708332" />
+          <ConnectorPoint PointX="7.25" PointY="7.7401432291666694" />
+          <ConnectorPoint PointX="8.25" PointY="7.7401432291666694" />
+        </AssociationConnector>
+        <AssociationConnector Association="cameModelo.FK_Maestro_Grupo_ibfk_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="9.1917936197916674" />
+          <ConnectorPoint PointX="1.5" PointY="9.6917936197916674" />
+          <ConnectorPoint PointX="4.625" PointY="9.6917936197916674" />
+          <ConnectorPoint PointX="4.625" PointY="10.356995442708332" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="10.356995442708332" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="10.356995442708332" />
+          <ConnectorPoint PointX="7" PointY="10.356995442708332" />
+          <ConnectorPoint PointX="7" PointY="7.2138196145833344" />
+          <ConnectorPoint PointX="8.25" PointY="7.2138196145833344" />
+        </AssociationConnector>
+        <AssociationConnector Association="cameModelo.FK_Programa_Actividad_ibfk_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="16.537985026041667" />
+          <ConnectorPoint PointX="6.75" PointY="16.949036458333339" />
+          <ConnectorPoint PointX="13" PointY="16.949036458333339" />
+        </AssociationConnector>
+        <AssociationConnector Association="cameModelo.FK_Rutina_Programa_ibfk_2" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="15.643992513020834" />
+          <ConnectorPoint PointX="9" PointY="15.643992513020834" />
+          <ConnectorPoint PointX="9" PointY="14.605286458333339" />
+        </AssociationConnector>
+        <AssociationConnector Association="cameModelo.FK_Rutina_programa_ibfk_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="11.716577646834933" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="11.716577646834933" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="11.716577646834933" />
+          <ConnectorPoint PointX="5" PointY="11.716577646834933" />
+          <ConnectorPoint PointX="5" PointY="11.5" />
+          <ConnectorPoint PointX="7.25" PointY="11.5" />
+          <ConnectorPoint PointX="7.25" PointY="11.980286458333332" />
+          <ConnectorPoint PointX="7.760416666666667" PointY="11.980286458333332" />
+          <ConnectorPoint PointX="7.927083333333333" PointY="11.980286458333332" />
+          <ConnectorPoint PointX="9" PointY="11.980286458333332" />
+          <ConnectorPoint PointX="9" PointY="12.625" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

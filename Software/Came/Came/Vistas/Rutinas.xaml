@@ -1,0 +1,12 @@
+﻿<Window x:Class="Came.Vistas.Rutinas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Rutinas" Height="600" Width="800">
+    <Grid>
+    	<Canvas x:Name="AdmRutinasCanvas" />
+    	<Canvas x:Name="AgregarRutinaCanvas"/>
+    	<Canvas x:Name="ActualizarRutinaCanvas" Margin="0,0,8,0"/>
+    	<Canvas x:Name="DetallesRutinaCanvas" Margin="0,0,8,8"/>
+        
+    </Grid>
+</Window>
