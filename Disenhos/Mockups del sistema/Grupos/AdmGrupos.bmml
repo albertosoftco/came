@@ -1,67 +1,145 @@
-<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1330" measuredH="714" mockupW="1307" mockupH="650">
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1309" measuredH="664" mockupW="1286" mockupH="630">
   <controls>
-    <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="849" y="382" w="481" h="332" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
-      <controlProperties>
-        <close>true</close>
-        <minimize>true</minimize>
-        <text>Grupos</text>
-      </controlProperties>
-    </control>
-    <control controlID="7" controlTypeID="com.balsamiq.mockups::Label" x="870" y="99" w="-1" h="-1" measuredW="42" measuredH="21" zOrder="1" locked="false" isInGroup="-1">
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Label" x="870" y="99" w="-1" h="-1" measuredW="42" measuredH="21" zOrder="0" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Grupo</text>
       </controlProperties>
     </control>
-    <control controlID="8" controlTypeID="com.balsamiq.mockups::ComboBox" x="929" y="97" w="-1" h="-1" measuredW="89" measuredH="48" zOrder="2" locked="false" isInGroup="-1">
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::ComboBox" x="929" y="97" w="-1" h="-1" measuredW="89" measuredH="48" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Lactantes%0A...</text>
       </controlProperties>
     </control>
-    <control controlID="9" controlTypeID="com.balsamiq.mockups::DataGrid" x="870" y="170" w="439" h="99" measuredW="343" measuredH="53" zOrder="3" locked="false" isInGroup="-1">
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::DataGrid" x="870" y="170" w="439" h="99" measuredW="343" measuredH="53" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
         <selectedIndex>0</selectedIndex>
         <text>Matricula%2C%20Nombre%2C%20Direccion%2C%20Grado%0A0123%2C%20Giacomo%20Guizilani%2C%20Direccion%20%2C%203%20Preescolar</text>
       </controlProperties>
     </control>
-    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="870" y="149" w="-1" h="-1" measuredW="52" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="870" y="149" w="-1" h="-1" measuredW="52" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Alumnos</text>
       </controlProperties>
     </control>
-    <control controlID="11" controlTypeID="com.balsamiq.mockups::Button" x="873" y="278" w="-1" h="-1" measuredW="115" measuredH="27" zOrder="5" locked="false" isInGroup="-1">
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Button" x="873" y="278" w="-1" h="-1" measuredW="115" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
         <href>AgregarAlumnoGrupo%26bm%3BAgregarAlumnoGrupo.bmml%26bm%3BAgregarAlumnoGrupo.bmml%26bm%3BAgregarAlumnoGrupo.bmml</href>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22850%2C214%2C965%2C241%22%20href%3D%22AgregarAlumnoGrupo.bmml%22%20alt%3D%22AgregarAlumnoGrupo%22%20id%3D%2211%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22850%2C244%2C965%2C271%22%20href%3D%22AgregarAlumnoGrupo.bmml%22%20alt%3D%22AgregarAlumnoGrupo%22%20id%3D%2211%22/%3E</map>
         <text>Agragar%20Alumno</text>
       </controlProperties>
     </control>
-    <control controlID="12" controlTypeID="com.balsamiq.mockups::Button" x="1005" y="278" w="-1" h="-1" measuredW="67" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Button" x="1005" y="278" w="-1" h="-1" measuredW="67" measuredH="27" zOrder="5" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Eliminar</text>
       </controlProperties>
     </control>
-    <control controlID="13" controlTypeID="com.balsamiq.mockups::Button" x="1050" y="98" w="-1" h="-1" measuredW="99" measuredH="27" zOrder="7" locked="false" isInGroup="-1">
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::Button" x="1050" y="98" w="-1" h="-1" measuredW="99" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
       <controlProperties>
         <href>AgregarGrupo%26bm%3BAgregarGrupo.bmml%26bm%3BAgregarGrupo.bmml%26bm%3BAgregarGrupo.bmml</href>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%221027%2C34%2C1126%2C61%22%20href%3D%22AgregarGrupo.bmml%22%20alt%3D%22AgregarGrupo%22%20id%3D%2213%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%221027%2C64%2C1126%2C91%22%20href%3D%22AgregarGrupo.bmml%22%20alt%3D%22AgregarGrupo%22%20id%3D%2213%22/%3E</map>
         <text>Grupo%20Nuevo</text>
       </controlProperties>
     </control>
-    <control controlID="14" controlTypeID="com.balsamiq.mockups::Button" x="1148" y="320" w="-1" h="-1" measuredW="70" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::Button" x="1148" y="320" w="-1" h="-1" measuredW="70" measuredH="27" zOrder="7" locked="false" isInGroup="-1">
       <controlProperties>
         <href>AdmGrupos%26bm%3BAdmGrupos.bmml%26bm%3BAdmGrupos.bmml%26bm%3BAdmGrupos.bmml</href>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%221125%2C256%2C1195%2C283%22%20href%3D%22AdmGrupos.bmml%22%20alt%3D%22AdmGrupos%22%20id%3D%2214%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%221125%2C286%2C1195%2C313%22%20href%3D%22AdmGrupos.bmml%22%20alt%3D%22AdmGrupos%22%20id%3D%2214%22/%3E</map>
         <text>Aceptar</text>
       </controlProperties>
     </control>
-    <control controlID="15" controlTypeID="com.balsamiq.mockups::Button" x="1233" y="320" w="-1" h="-1" measuredW="75" measuredH="27" zOrder="9" locked="false" isInGroup="-1">
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::Button" x="1233" y="320" w="-1" h="-1" measuredW="75" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Cancelar</text>
       </controlProperties>
     </control>
-    <control controlID="16" controlTypeID="com.balsamiq.mockups::TitleWindow" x="23" y="64" w="800" h="600" measuredW="450" measuredH="400" zOrder="10" locked="false" isInGroup="-1">
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::TitleWindow" x="23" y="64" w="800" h="600" measuredW="450" measuredH="400" zOrder="9" locked="true" isInGroup="-1">
       <controlProperties>
-        <text>Agregar%20Diagnostico</text>
+        <text>Administracion%20de%20Grupos</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::FieldSet" x="38" y="99" w="362" h="525" measuredW="200" measuredH="170" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Grupos%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::Label" x="632" y="99" w="-1" h="-1" measuredW="43" measuredH="21" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Fecha</text>
+      </controlProperties>
+    </control>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::Label" x="684" y="99" w="132" h="-1" measuredW="108" measuredH="21" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Lun%2018/Feb/2013</text>
+      </controlProperties>
+    </control>
+    <control controlID="22" controlTypeID="com.balsamiq.mockups::DataGrid" x="53" y="122" w="332" h="94" measuredW="294" measuredH="23" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Nombre%2C%20Capacidad%2C%20Maestro%2CDisponibilidad</text>
+      </controlProperties>
+    </control>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::FieldSet" x="53" y="253" w="332" h="356" measuredW="200" measuredH="170" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Grupo%3A--Seleccionado--</text>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::DataGrid" x="60" y="291" w="318" h="280" measuredW="128" measuredH="23" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Matricula%2CNombre</text>
+      </controlProperties>
+    </control>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::Label" x="60" y="34" w="-1" h="-1" measuredW="67" measuredH="21" zOrder="16" locked="false" isInGroup="-1"/>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::Label" x="60" y="269" w="318" h="25" measuredW="182" measuredH="21" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Maestro%20%3A%20--Maestro%20del%20Grupo--</text>
+      </controlProperties>
+    </control>
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::Button" x="151" y="579" w="-1" h="-1" measuredW="115" measuredH="27" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>40463</color>
+        <text>Agregar%20Alumno</text>
+      </controlProperties>
+    </control>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::Button" x="53" y="216" w="-1" h="-1" measuredW="109" measuredH="27" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>40463</color>
+        <text>Agregar%20Grupo</text>
+      </controlProperties>
+    </control>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::Button" x="162" y="216" w="-1" h="-1" measuredW="118" measuredH="27" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16750848</color>
+        <text>Actualizar%20Grupo</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::Button" x="280" y="216" w="105" h="27" measuredW="105" measuredH="27" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13576743</color>
+        <text>Eliminar%20Grupo</text>
+      </controlProperties>
+    </control>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::Button" x="709" y="609" w="-1" h="-1" measuredW="107" measuredH="27" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>10066329</color>
+        <text>Volver%20a%20Menu</text>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::Button" x="266" y="579" w="112" h="27" measuredW="111" measuredH="27" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13576743</color>
+        <text>Eliminar%20Alumno</text>
+      </controlProperties>
+    </control>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::Button" x="60" y="579" w="-1" h="-1" measuredW="90" measuredH="27" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>2848996</color>
+        <text>Ver%20Alumno</text>
+      </controlProperties>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::FieldSet" x="865" y="364" w="-1" h="-1" measuredW="200" measuredH="170" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Group%20Name</text>
       </controlProperties>
     </control>
   </controls>
