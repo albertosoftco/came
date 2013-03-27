@@ -1,4 +1,5 @@
 
+--create database Came;
 use Came;
 -- --------------------------------------------------
 -- Creating all tables
@@ -120,8 +121,7 @@ CREATE TABLE [dbo].[Grupo] (
 );
 GO
 
-use came;
-drop table Grupo_Alumno;
+
 -- creating table 'grupo_alumno'
 CREATE TABLE [dbo].[Grupo_Alumno] (
 	[ID] int NOT NULL,
