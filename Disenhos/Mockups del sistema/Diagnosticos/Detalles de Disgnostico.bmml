@@ -1,9 +1,56 @@
-<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="877" measuredH="637" mockupW="800" mockupH="600">
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="756" measuredH="480" mockupW="679" mockupH="443">
   <controls>
-    <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="77" y="37" w="800" h="600" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::TitleWindow" x="77" y="37" w="679" h="443" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Agregar%20Diagnostico</text>
       </controlProperties>
     </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::FieldSet" x="95" y="79" w="639" h="329" measuredW="200" measuredH="170" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Diagnostico</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::FieldSet" x="110" y="137" w="605" h="247" measuredW="200" measuredH="170" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Discapacidad</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::FieldSet" x="536" y="161" w="160" h="204" measuredW="200" measuredH="170" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Factor%20de%20Discapacidad</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="125" y="159" w="-1" h="-1" measuredW="52" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Nombre</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Label" x="125" y="204" w="78" h="21" measuredW="72" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Descripci%F3n</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::TextInput" x="125" y="177" w="399" h="-1" measuredW="79" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>disabled</state>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::Button" x="621" y="416" w="-1" h="-1" measuredW="107" measuredH="27" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>10066329</color>
+        <text>Volver%20a%20Menu</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::TextArea" x="125" y="225" w="398" h="140" measuredW="200" measuredH="140" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>disabled</state>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::Label" x="110" y="103" w="-1" h="-1" measuredW="210" measuredH="21" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Nombre%3A%20--discapacidad----%5BFactor%28es%29%5D--</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::List" x="549" y="180" w="135" h="154" measuredW="100" measuredH="126" zOrder="10" locked="false" isInGroup="-1"/>
   </controls>
 </mockup>

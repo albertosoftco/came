@@ -1,0 +1,77 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="416" measuredH="664" mockupW="393" mockupH="600">
+  <controls>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::TitleWindow" x="23" y="64" w="393" h="600" measuredW="450" measuredH="400" zOrder="0" locked="true" isInGroup="-1">
+      <controlProperties>
+        <text>Detalle%20de%20Grupo</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::FieldSet" x="38" y="99" w="362" h="495" measuredW="200" measuredH="170" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Grupo</text>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::DataGrid" x="71" y="344" w="296" h="205" measuredW="144" measuredH="23" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Matricula%2CNombre</text>
+        <verticalScrollbar>true</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::Button" x="293" y="602" w="-1" h="-1" measuredW="107" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>10066329</color>
+        <text>Volver%20a%20Menu</text>
+      </controlProperties>
+    </control>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::Label" x="45" y="122" w="74" h="25" measuredW="60" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Nombre%3A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::Label" x="265" y="122" w="68" h="25" measuredW="70" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Capacidad%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::TextInput" x="113" y="120" w="146" h="-1" measuredW="79" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13421772</color>
+        <state>disabled</state>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::TextInput" x="333" y="121" w="60" h="-1" measuredW="79" measuredH="27" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13421772</color>
+        <state>disabled</state>
+      </controlProperties>
+    </control>
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::FieldSet" x="45" y="159" w="348" h="141" measuredW="200" measuredH="170" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Maestro%28s%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::FieldSet" x="60" y="320" w="318" h="259" measuredW="200" measuredH="170" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Alumnos</text>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::DataGrid" x="56" y="181" w="326" h="84" measuredW="280" measuredH="23" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>0</selectedIndex>
+        <text>Nombre%2CFuncion%2C%20Especialidad%2Casignar</text>
+        <verticalScrollbar>true</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::Button" x="277" y="549" w="-1" h="-1" measuredW="90" measuredH="27" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>2848996</color>
+        <text>Ver%20Alumno</text>
+      </controlProperties>
+    </control>
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::Button" x="286" y="265" w="-1" h="-1" measuredW="96" measuredH="27" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>2848996</color>
+        <text>Ver%20Maestro</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
