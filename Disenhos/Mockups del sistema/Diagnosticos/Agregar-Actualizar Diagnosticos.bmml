@@ -68,7 +68,7 @@
       </controlProperties>
     </control>
     <control controlID="21" controlTypeID="com.balsamiq.mockups::TextArea" x="125" y="225" w="398" h="140" measuredW="200" measuredH="140" zOrder="13" locked="false" isInGroup="-1"/>
-    <control controlID="22" controlTypeID="com.balsamiq.mockups::Label" x="110" y="103" w="-1" h="-1" measuredW="210" measuredH="21" zOrder="14" locked="false" isInGroup="-1">
+    <control controlID="22" controlTypeID="com.balsamiq.mockups::Label" x="110" y="103" w="-1" h="-1" measuredW="212" measuredH="21" zOrder="14" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Nombre%3A%20--discapacidad----%5BFactor%28es%29%5D--</text>
       </controlProperties>
@@ -78,23 +78,33 @@
         <text>Tiene%20Factores</text>
       </controlProperties>
     </control>
-    <control controlID="24" controlTypeID="com.balsamiq.mockups::List" x="704" y="186" w="123" h="154" measuredW="100" measuredH="126" zOrder="16" locked="false" isInGroup="-1"/>
-    <control controlID="25" controlTypeID="com.balsamiq.mockups::Button" x="704" y="351" w="123" h="27" measuredW="121" measuredH="27" zOrder="17" locked="false" isInGroup="-1">
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::Button" x="704" y="351" w="123" h="27" measuredW="121" measuredH="27" zOrder="16" locked="false" isInGroup="-1">
       <controlProperties>
         <color>16750848</color>
         <text>Actualizar%20Factor</text>
       </controlProperties>
     </control>
-    <control controlID="26" controlTypeID="com.balsamiq.mockups::Label" x="545" y="180" w="-1" h="-1" measuredW="52" measuredH="21" zOrder="18" locked="false" isInGroup="-1">
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::Label" x="545" y="180" w="-1" h="-1" measuredW="52" measuredH="21" zOrder="17" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Nombre</text>
       </controlProperties>
     </control>
-    <control controlID="27" controlTypeID="com.balsamiq.mockups::TextInput" x="545" y="201" w="151" h="-1" measuredW="79" measuredH="27" zOrder="19" locked="false" isInGroup="-1"/>
-    <control controlID="28" controlTypeID="com.balsamiq.mockups::Button" x="545" y="240" w="-1" h="-1" measuredW="112" measuredH="27" zOrder="20" locked="false" isInGroup="-1">
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::TextInput" x="545" y="201" w="130" h="-1" measuredW="79" measuredH="27" zOrder="18" locked="false" isInGroup="-1"/>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::Button" x="563" y="294" w="112" h="27" measuredW="112" measuredH="27" zOrder="19" locked="false" isInGroup="-1">
       <controlProperties>
         <color>40463</color>
         <text>Agregar%20Factor</text>
+      </controlProperties>
+    </control>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::Label" x="545" y="239" w="-1" h="-1" measuredW="39" measuredH="21" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Clave</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::TextInput" x="545" y="260" w="130" h="-1" measuredW="79" measuredH="27" zOrder="21" locked="false" isInGroup="-1"/>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::DataGrid" x="696" y="176" w="130" h="170" measuredW="111" measuredH="23" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Clave%2CNombre</text>
       </controlProperties>
     </control>
   </controls>
