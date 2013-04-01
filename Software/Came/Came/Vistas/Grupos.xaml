@@ -12,7 +12,8 @@
                   Margin="6,5,0,0"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
-                  Header="Grupos" Visibility="Visible">
+                  Header="Grupos"
+                  Visibility="Visible">
             <Grid Margin="0,0,0,0">
                 <DataGrid Name="gruposDataGrid"
                           Width="302"
@@ -61,8 +62,8 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Background="#FF7492C1"
-                      
-                        Content="Ver Grupo" Click="verGrupoButton_Click" />
+                        Click="verGrupoButton_Click"
+                        Content="Ver Grupo" />
                 <Button Name="agregarGrupoButton"
                         Width="97"
                         Height="23"
@@ -70,7 +71,8 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Background="#FF009000"
-                        Content="Agregar Grupo" Click="agregarGrupoButton_Click" />
+                        Click="agregarGrupoButton_Click"
+                        Content="Agregar Grupo" />
                 <Button Name="actualizarGrupoButton"
                         Width="97"
                         Height="23"
@@ -78,7 +80,8 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Background="#FFC1B63B"
-                        Content="Actualizar Grupo" Click="actualizarGrupoButton_Click" />
+                        Click="actualizarGrupoButton_Click"
+                        Content="Actualizar Grupo" />
                 <Separator Name="separator1"
                            Width="302"
                            Margin="6,190,0,37"
@@ -92,20 +95,24 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Background="#FFD30000"
-                        Content="Eliminar Grupo" Click="eliminarGrupoButton_Click" />
+                        Click="eliminarGrupoButton_Click"
+                        Content="Eliminar Grupo" />
             </Grid>
         </GroupBox>
         <Canvas Name="grupoActionsCanvas"
-                Visibility="Hidden"
                 Width="Auto"
-                Height="Auto" HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch">
+                Height="Auto"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Visibility="Hidden">
             <Grid Width="678">
                 <GroupBox Name="grupoGroupBox"
-                          Width="666" Margin="6,6,0,35"
+                          Width="666"
+                          Height="250"
+                          Margin="6,6,0,35"
                           HorizontalAlignment="Left"
-                          Header="Grupo" Height="250">
-                    <Grid Margin="0,0,0,0" Height="Auto">
+                          Header="Grupo">
+                    <Grid Height="Auto" Margin="0,0,0,0">
                         <Label Name="idGrupoLabel"
                                Height="23"
                                Margin="10,10,0,0"
@@ -176,8 +183,9 @@
                                         HorizontalAlignment="Left"
                                         VerticalAlignment="Top"
                                         Background="#FFADADD9"
+                                        Click="verMaestroButton_Click"
                                         Content="Ver Maestro"
-                                        DataContext="{Binding}" Click="verMaestroButton_Click" />
+                                        DataContext="{Binding}" />
                                 <Button Name="agregarMaestroButton"
                                         Width="102"
                                         Height="23"
@@ -185,7 +193,8 @@
                                         HorizontalAlignment="Left"
                                         VerticalAlignment="Top"
                                         Background="#FF19DD5E"
-                                        Content="Agregar Maestro" Click="agregarMaestroButton_Click" />
+                                        Click="agregarMaestroButton_Click"
+                                        Content="Agregar Maestro" />
                                 <Button Name="eliminarMaestroButton"
                                         Width="102"
                                         Height="23"
@@ -193,7 +202,8 @@
                                         HorizontalAlignment="Left"
                                         VerticalAlignment="Top"
                                         Background="#FFD05353"
-                                        Content="Eliminar Maestro" Click="eliminarMaestroButton_Click" />
+                                        Click="eliminarMaestroButton_Click"
+                                        Content="Eliminar Maestro" />
                             </Grid>
                         </GroupBox>
                         <GroupBox Name="alumnosGroupBox"
@@ -237,7 +247,9 @@
                                         HorizontalAlignment="Left"
                                         VerticalAlignment="Top"
                                         Background="#FF8A8AE5"
-                                        Content="Ver Alumno" Click="verAlumnoButton_Click" Style="{StaticResource SimpleButtonRounded}" />
+                                        Click="verAlumnoButton_Click"
+                                        Content="Ver Alumno"
+                                        Style="{StaticResource SimpleButtonRounded}" />
                                 <Button Name="agregarAlumnoButton"
                                         Width="103"
                                         Height="23"
@@ -245,7 +257,9 @@
                                         HorizontalAlignment="Left"
                                         VerticalAlignment="Top"
                                         Background="#FF00AD00"
-                                        Content="Agregar Alumno" Click="agregarAlumnoButton_Click" Style="{StaticResource SimpleButtonRounded}" />
+                                        Click="agregarAlumnoButton_Click"
+                                        Content="Agregar Alumno"
+                                        Style="{StaticResource SimpleButtonRounded}" />
                                 <Button Name="eliminarAlumnoButton"
                                         Width="103"
                                         Height="23"
@@ -253,7 +267,9 @@
                                         HorizontalAlignment="Left"
                                         VerticalAlignment="Top"
                                         Background="#FFE53B3B"
-                                        Content="Eliminar Alumno" Click="eliminarAlumnoButton_Click" Style="{StaticResource SimpleButtonRounded}" />
+                                        Click="eliminarAlumnoButton_Click"
+                                        Content="Eliminar Alumno"
+                                        Style="{StaticResource SimpleButtonRounded}" />
                             </Grid>
                         </GroupBox>
                         <Button Name="crearGrupoButton"
@@ -262,18 +278,40 @@
                                 Margin="562,201,0,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
-                                Content="Crear Grupo" Click="crearGrupoButton_Click" Style="{StaticResource SimpleButtonBottomRounded}" Background="#FFDEDEDE"></Button>
+                                Background="#FFDEDEDE"
+                                Click="crearGrupoButton_Click"
+                                Content="Crear Grupo"
+                                Style="{StaticResource SimpleButtonBottomRounded}" />
                         <Button Name="modificarGrupoButton"
                                 Width="103"
                                 Height="20"
                                 Margin="453,201,0,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
-                                Content="Modificar Grupo" Click="modificarGrupoButton_Click" Style="{DynamicResource SimpleButtonBottomRounded}" Background="#FFDEDEDE"></Button>
+                                Background="#FFDEDEDE"
+                                Click="modificarGrupoButton_Click"
+                                Content="Modificar Grupo"
+                                Style="{DynamicResource SimpleButtonBottomRounded}" />
                     </Grid>
                 </GroupBox>
-                <Button Name="volverButton" Width="75" Height="23" Content="Volver" Margin="0,262,11,6" HorizontalAlignment="Right" Click="volverButton_Click" Visibility="Visible" Style="{StaticResource SimpleButtonBottomRoundedRight}" />
-                <Button Content="Volver a Menu" Height="23" HorizontalAlignment="Left" Margin="228,262,0,0" Name="volverMenuButton" VerticalAlignment="Top" Width="102" Style="{StaticResource SimpleButtonBottomRoundedLeft}" Click="volverMenuButton_Click" />
+                <Button Name="volverButton"
+                        Width="75"
+                        Height="23"
+                        Margin="0,262,11,6"
+                        HorizontalAlignment="Right"
+                        Click="volverButton_Click"
+                        Content="Volver"
+                        Style="{StaticResource SimpleButtonBottomRoundedRight}"
+                        Visibility="Visible" />
+                <Button Name="volverMenuButton"
+                        Width="102"
+                        Height="23"
+                        Margin="228,262,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Click="volverMenuButton_Click"
+                        Content="Volver a Menu"
+                        Style="{StaticResource SimpleButtonBottomRoundedLeft}" />
             </Grid>
         </Canvas>
     </Grid>
