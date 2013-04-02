@@ -303,7 +303,10 @@
                         Content="Volver"
                         Style="{StaticResource SimpleButtonBottomRoundedRight}"
                         Visibility="Visible" />
-                <Button Name="volverMenuButton"
+                
+            </Grid>
+        </Canvas>
+        <Button Name="volverMenuButton"
                         Width="102"
                         Height="23"
                         Margin="228,262,0,0"
@@ -312,7 +315,5 @@
                         Click="volverMenuButton_Click"
                         Content="Volver a Menu"
                         Style="{StaticResource SimpleButtonBottomRoundedLeft}" />
-            </Grid>
-        </Canvas>
     </Grid>
 </Window>

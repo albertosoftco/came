@@ -10,24 +10,20 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Came.Recursos.Constants;
-
 
 namespace Came.Vistas
 {
     /// <summary>
-    /// Lógica de interacción para Diagnosticos.xaml
+    /// Lógica de interacción para Rutinas.xaml
     /// </summary>
-    public partial class Diagnosticos : Window
+    public partial class Rutinas : Window
     {
-        TipoRutina tipoRutina;
         /// <summary>
         /// 
         /// </summary>
-        public Diagnosticos()
+        public Rutinas()
         {
             InitializeComponent();
         }
-
     }
 }
