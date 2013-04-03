@@ -1,12 +1,20 @@
 ﻿<Window x:Class="Came.Vistas.Grupos"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Modelo="clr-namespace:Came.Modelo"
         xmlns:ms="http://namespaces.mindscape.co.nz/wpf"
         Title="Grupos"
         Width="700"
-        Height="330">
+        Height="330"
+        mc:Ignorable="d">
+    <Window.Resources>
+        <CollectionViewSource x:Key="gruposViewSource" d:DesignSource="{d:DesignInstance {x:Type Modelo:Grupo}, CreateList=True}" />
+    </Window.Resources>
     <Grid>
-        <GroupBox Name="gruposGroupBox"
+
+        <GroupBox x:Name="gruposGroupBox"
                   Width="326"
                   Height="258"
                   Margin="6,5,0,0"
@@ -14,48 +22,47 @@
                   VerticalAlignment="Top"
                   Header="Grupos"
                   Visibility="Visible">
+
             <Grid Margin="0,0,0,0">
-                <DataGrid Name="gruposDataGrid"
-                          Width="302"
-                          Height="151"
-                          Margin="6,6,0,0"
+                <DataGrid x:Name="gruposDataGrid"
+                          Width="308"
+                          Height="157"
+                          Margin="0,6,0,0"
                           HorizontalAlignment="Left"
                           VerticalAlignment="Top"
-                          HorizontalContentAlignment="Stretch"
                           VerticalContentAlignment="Center"
+                          AreRowDetailsFrozen="True"
                           AutoGenerateColumns="False"
-                          FontFamily="Arial"
-                          FontWeight="Bold"
+                          DataContext="{StaticResource gruposViewSource}"
+                          EnableColumnVirtualization="False"
+                          EnableRowVirtualization="True"
                           IsReadOnly="True"
-                          Visibility="Visible">
+                          ItemsSource="{Binding}"
+                          SelectionMode="Single">
                     <DataGrid.Columns>
-                        <DataGridTemplateColumn Header="Nombre">
-                            <DataGridTemplateColumn.CellEditingTemplate>
-                                <DataTemplate />
-                            </DataGridTemplateColumn.CellEditingTemplate>
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate />
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="Capacidad">
-                            <DataGridTemplateColumn.CellEditingTemplate>
-                                <DataTemplate />
-                            </DataGridTemplateColumn.CellEditingTemplate>
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate />
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="Disponible">
-                            <DataGridTemplateColumn.CellEditingTemplate>
-                                <DataTemplate />
-                            </DataGridTemplateColumn.CellEditingTemplate>
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate />
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
+                        <DataGridTextColumn x:Name="idGrupoColumn"
+                                            Width="SizeToHeader"
+                                            Binding="{Binding ID}"
+                                            Header="IdGrupo" />
+                        <DataGridTextColumn x:Name="nombreColumn"
+                                            Width="SizeToHeader"
+                                            Binding="{Binding Nombre}"
+                                            Header="Nombre" />
+                        <DataGridTextColumn x:Name="capacidadColumn"
+                                            Width="SizeToHeader"
+                                            Binding="{Binding Capacidad}"
+                                            Header="Capacidad" />
+                        <DataGridTextColumn x:Name="idmaestroColumn"
+                                            Width="SizeToHeader"
+                                            Binding="{Binding IdMaestro}"
+                                            Header="Maestro" />
+                        <DataGridTextColumn x:Name="noAlumnoColumn"
+                                            Width="SizeToHeader"
+                                            Binding="{Binding IdMaestro}"
+                                            Header="# de Alumnos" />
                     </DataGrid.Columns>
                 </DataGrid>
-                <Button Name="verGrupoButton"
+                <Button x:Name="verGrupoButton"
                         Width="96"
                         Height="23"
                         Margin="6,163,0,0"
@@ -64,7 +71,7 @@
                         Background="#FF7492C1"
                         Click="verGrupoButton_Click"
                         Content="Ver Grupo" />
-                <Button Name="agregarGrupoButton"
+                <Button x:Name="agregarGrupoButton"
                         Width="97"
                         Height="23"
                         Margin="108,163,0,0"
@@ -73,7 +80,7 @@
                         Background="#FF009000"
                         Click="agregarGrupoButton_Click"
                         Content="Agregar Grupo" />
-                <Button Name="actualizarGrupoButton"
+                <Button x:Name="actualizarGrupoButton"
                         Width="97"
                         Height="23"
                         Margin="211,163,0,0"
@@ -82,13 +89,13 @@
                         Background="#FFC1B63B"
                         Click="actualizarGrupoButton_Click"
                         Content="Actualizar Grupo" />
-                <Separator Name="separator1"
+                <Separator x:Name="separator1"
                            Width="302"
                            Margin="6,190,0,37"
                            HorizontalAlignment="Left"
                            Background="Black"
                            BorderThickness="0" />
-                <Button Name="eliminarGrupoButton"
+                <Button x:Name="eliminarGrupoButton"
                         Width="96"
                         Height="24"
                         Margin="212,205,0,0"
@@ -99,21 +106,21 @@
                         Content="Eliminar Grupo" />
             </Grid>
         </GroupBox>
-        <Canvas Name="grupoActionsCanvas"
+        <Canvas x:Name="grupoActionsCanvas"
                 Width="Auto"
                 Height="Auto"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Visibility="Hidden">
             <Grid Width="678">
-                <GroupBox Name="grupoGroupBox"
+                <GroupBox x:Name="grupoGroupBox"
                           Width="666"
                           Height="250"
                           Margin="6,6,0,35"
                           HorizontalAlignment="Left"
                           Header="Grupo">
                     <Grid Height="Auto" Margin="0,0,0,0">
-                        <Label Name="idGrupoLabel"
+                        <Label x:Name="idGrupoLabel"
                                Height="23"
                                Margin="10,10,0,0"
                                HorizontalAlignment="Left"
@@ -122,7 +129,7 @@
                                VerticalContentAlignment="Center"
                                Content="IdGrupo"
                                Padding="1" />
-                        <TextBox Name="idGrupoBox"
+                        <TextBox x:Name="idGrupoBox"
                                  Width="72"
                                  Height="23"
                                  Margin="66,10,0,0"
@@ -130,7 +137,7 @@
                                  VerticalAlignment="Top"
                                  HorizontalContentAlignment="Stretch"
                                  VerticalContentAlignment="Center" />
-                        <Label Name="nombreGrupoLabel"
+                        <Label x:Name="nombreGrupoLabel"
                                Height="23"
                                Margin="153,10,0,0"
                                HorizontalAlignment="Left"
@@ -138,7 +145,7 @@
                                HorizontalContentAlignment="Center"
                                VerticalContentAlignment="Center"
                                Content="Nombre" />
-                        <TextBox Name="nombreGrupoBox"
+                        <TextBox x:Name="nombreGrupoBox"
                                  Width="266"
                                  Height="23"
                                  Margin="209,10,0,0"
@@ -146,7 +153,7 @@
                                  VerticalAlignment="Top"
                                  HorizontalContentAlignment="Stretch"
                                  VerticalContentAlignment="Center" />
-                        <Label Name="capacidadLabel"
+                        <Label x:Name="capacidadLabel"
                                Height="23"
                                Margin="496,9,0,0"
                                HorizontalAlignment="Left"
@@ -154,7 +161,7 @@
                                HorizontalContentAlignment="Center"
                                VerticalContentAlignment="Center"
                                Content="Capacidad" />
-                        <TextBox Name="capacidadBox"
+                        <TextBox x:Name="capacidadBox"
                                  Width="63"
                                  Height="23"
                                  Margin="567,10,0,0"
@@ -162,21 +169,15 @@
                                  VerticalAlignment="Top"
                                  HorizontalContentAlignment="Stretch"
                                  VerticalContentAlignment="Center" />
-                        <GroupBox Name="maestrosGroupBox"
-                                  Width="262"
-                                  Height="170"
-                                  Margin="4,34,0,0"
+                        <GroupBox x:Name="maestrosGroupBox"
+                                  Width="254"
+                                  Height="151"
+                                  Margin="0,34,0,0"
                                   HorizontalAlignment="Left"
                                   VerticalAlignment="Top"
                                   Header="Maestro(s)">
-                            <Grid Margin="0,0,0,0">
-                                <ListBox Name="maestroList"
-                                         Width="120"
-                                         Height="82"
-                                         Margin="6,6,0,0"
-                                         HorizontalAlignment="Left"
-                                         VerticalAlignment="Top" />
-                                <Button Name="verMaestroButton"
+                            <Grid Margin="0,0,-4,30">
+                                <Button x:Name="verMaestroButton"
                                         Width="102"
                                         Height="23"
                                         Margin="132,6,0,0"
@@ -186,7 +187,7 @@
                                         Click="verMaestroButton_Click"
                                         Content="Ver Maestro"
                                         DataContext="{Binding}" />
-                                <Button Name="agregarMaestroButton"
+                                <Button x:Name="agregarMaestroButton"
                                         Width="102"
                                         Height="23"
                                         Margin="132,35,0,0"
@@ -194,8 +195,8 @@
                                         VerticalAlignment="Top"
                                         Background="#FF19DD5E"
                                         Click="agregarMaestroButton_Click"
-                                        Content="Agregar Maestro" />
-                                <Button Name="eliminarMaestroButton"
+                                        Content="Actualizar Maestro" />
+                                <Button x:Name="eliminarMaestroButton"
                                         Width="102"
                                         Height="23"
                                         Margin="132,64,0,0"
@@ -204,9 +205,23 @@
                                         Background="#FFD05353"
                                         Click="eliminarMaestroButton_Click"
                                         Content="Eliminar Maestro" />
+                                <Label x:Name="nombreMaestroLabel"
+                                       Margin="8,35,118,37.08"
+                                       Content=" &#10;"
+                                       RenderTransformOrigin="-0.1,-0.109"
+                                       d:LayoutOverrides="Height" />
+                                <TextBox x:Name="nombreMaestroBox"
+                                         Margin="8,35,118,41.08"
+                                         Text=" &#10;"
+                                         TextWrapping="Wrap"
+                                         d:LayoutOverrides="Height" />
+                                <Label Margin="8,1.12,0,0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Top"
+                                       Content="Nombre &#10;" />
                             </Grid>
                         </GroupBox>
-                        <GroupBox Name="alumnosGroupBox"
+                        <GroupBox x:Name="alumnosGroupBox"
                                   Width="368"
                                   Height="164"
                                   Margin="281,34,0,0"
@@ -214,7 +229,7 @@
                                   VerticalAlignment="Top"
                                   Header="Alumno(s)">
                             <Grid>
-                                <DataGrid Name="alumnoDataGrid"
+                                <DataGrid x:Name="alumnoDataGrid"
                                           Width="228"
                                           Height="128"
                                           Margin="6,6,0,0"
@@ -240,7 +255,7 @@
                                         </DataGridTemplateColumn>
                                     </DataGrid.Columns>
                                 </DataGrid>
-                                <Button Name="verAlumnoButton"
+                                <Button x:Name="verAlumnoButton"
                                         Width="103"
                                         Height="23"
                                         Margin="240,7,0,0"
@@ -250,7 +265,7 @@
                                         Click="verAlumnoButton_Click"
                                         Content="Ver Alumno"
                                         Style="{StaticResource SimpleButtonRounded}" />
-                                <Button Name="agregarAlumnoButton"
+                                <Button x:Name="agregarAlumnoButton"
                                         Width="103"
                                         Height="23"
                                         Margin="240,42,0,0"
@@ -260,7 +275,7 @@
                                         Click="agregarAlumnoButton_Click"
                                         Content="Agregar Alumno"
                                         Style="{StaticResource SimpleButtonRounded}" />
-                                <Button Name="eliminarAlumnoButton"
+                                <Button x:Name="eliminarAlumnoButton"
                                         Width="103"
                                         Height="23"
                                         Margin="240,78,0,0"
@@ -272,7 +287,7 @@
                                         Style="{StaticResource SimpleButtonRounded}" />
                             </Grid>
                         </GroupBox>
-                        <Button Name="crearGrupoButton"
+                        <Button x:Name="crearGrupoButton"
                                 Width="86"
                                 Height="20"
                                 Margin="562,201,0,0"
@@ -282,7 +297,7 @@
                                 Click="crearGrupoButton_Click"
                                 Content="Crear Grupo"
                                 Style="{StaticResource SimpleButtonBottomRounded}" />
-                        <Button Name="modificarGrupoButton"
+                        <Button x:Name="modificarGrupoButton"
                                 Width="103"
                                 Height="20"
                                 Margin="453,201,0,0"
@@ -294,7 +309,7 @@
                                 Style="{DynamicResource SimpleButtonBottomRounded}" />
                     </Grid>
                 </GroupBox>
-                <Button Name="volverButton"
+                <Button x:Name="volverButton"
                         Width="75"
                         Height="23"
                         Margin="0,262,11,6"
@@ -303,17 +318,18 @@
                         Content="Volver"
                         Style="{StaticResource SimpleButtonBottomRoundedRight}"
                         Visibility="Visible" />
-                
+
             </Grid>
         </Canvas>
-        <Button Name="volverMenuButton"
-                        Width="102"
-                        Height="23"
-                        Margin="228,262,0,0"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
-                        Click="volverMenuButton_Click"
-                        Content="Volver a Menu"
-                        Style="{StaticResource SimpleButtonBottomRoundedLeft}" />
+        <Button x:Name="volverMenuButton"
+                Width="102"
+                Height="23"
+                Margin="228,262,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="volverMenuButton_Click"
+                Content="Volver a Menu"
+                Style="{StaticResource SimpleButtonBottomRoundedLeft}" />
+
     </Grid>
 </Window>
