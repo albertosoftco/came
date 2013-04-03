@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="43a8188bdb6645d98597c9aee2dc07c7" Name="Diagram1">
+        <EntityTypeShape EntityType="CameModelo.Actividad" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Actividad_Ejercicio" Width="1.5" PointX="15" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Alergia" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Alumno" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Alumno_Alergia" Width="1.5" PointX="7.5" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Alumno_Medicamento" Width="1.5" PointX="10.5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Diagnostico" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Diagnostico_Discapacidad" Width="1.5" PointX="13" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Discapacidad" Width="1.5" PointX="10.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Discapacidad_Factor" Width="1.5" PointX="13" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Ejercicio" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Factor" Width="1.5" PointX="10.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Grupo" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Grupo_Alumno" Width="1.5" PointX="10.5" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Horario" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Maestro" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Maestro_Grupo" Width="1.5" PointX="8.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Medicamento" Width="1.5" PointX="8.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Programa" Width="1.5" PointX="3" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Programa_Actividad" Width="1.5" PointX="15" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Rutina" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Rutina_Programa" Width="1.5" PointX="5.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Tutor" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CameModelo.Usuario" Width="1.5" PointX="7.75" PointY="2.125" IsExpanded="true" />
+        <AssociationConnector Association="CameModelo.FK_Actividad_Ejercicio_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Programa_Actividad_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Actividad_Ejercicio_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Alumno_Alergia_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Alumno_Alergia_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Alumno_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Alumno_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Alumno_ibfk_3" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Alumno_ibfk_4" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Alumno_Medicamento_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Grupo_Alumno_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Alumno_Medicamento_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Diagnostico_Discapacidad_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Diagnostico_Discapacidad_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Discapacidad_Factor_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Discapacidad_Factor_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Grupo_Alumno_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Grupo_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Grupo_ibfk_3" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Maestro_Grupo_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Rutina_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Rutina_ibfk_3" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Maestro_Grupo_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Programa_Actividad_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Rutina_Programa_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="CameModelo.FK_Rutina_programa_ibfk_1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
