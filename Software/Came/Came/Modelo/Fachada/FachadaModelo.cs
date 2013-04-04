@@ -8,18 +8,28 @@ namespace Came.Modelo.Fachada
 {
     class FachadaModelo : IModelo
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private Entidades modelo;
-
+        /// <summary>
+        /// 
+        /// </summary>
         public FachadaModelo()
         {
             modelo = new Entidades();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public Entidades GetModelo()
         {
             return modelo;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void SalvaCambios()
         {
             modelo.SaveChanges();
@@ -273,6 +283,12 @@ namespace Came.Modelo.Fachada
         public Horario GetHorario(int id)
         {
             return modelo.Horario.Single(i => i.ID == id);
+        }
+
+        public static IModelo GetInstance()
+        {
+            IModelo modelo = new FachadaModelo();
+            return modelo;
         }
 
     }
