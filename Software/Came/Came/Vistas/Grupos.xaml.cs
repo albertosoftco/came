@@ -80,7 +80,7 @@ namespace Came.Vistas
 
             maestrosComboBox.ItemsSource = maestros;
             
-            maestrosComboBox.IsReadOnly = true;
+            
         }
         /// <summary>
         /// 
@@ -109,13 +109,18 @@ namespace Came.Vistas
                 agregarMaestroButton.Visibility = System.Windows.Visibility.Hidden;
                 eliminarAlumnoButton.Visibility = System.Windows.Visibility.Hidden;
                 eliminarMaestroButton.Visibility = System.Windows.Visibility.Hidden;
-
+                nombreGrupoBox.IsReadOnly = true;
+                idGrupoBox.IsReadOnly = true;
+                capacidadBox.IsReadOnly = true;
+                maestrosComboBox.IsHitTestVisible = false;
+                horarioComboBox.IsHitTestVisible = false;
 
                 idGrupoBox.Text = pg.ID.ToString();
                 nombreGrupoBox.Text = pg.Nombre;
                 capacidadBox.Text = pg.Capacidad.ToString();
                 ActualizaHorario();
                 ActualizaComboBox();
+                horarioComboBox.SelectedIndex = 0;
                 maestrosComboBox.SelectedItem = grupoSeleccionado.Maestro;
                 ActualizaTablaAlumnos(id);
                 
@@ -155,7 +160,7 @@ namespace Came.Vistas
         {
 
             lista = new ObservableCollection<ParsedAlumno>();
-            var alumnos = admGrupos.GetAlumnosGrupo(id);
+            var alumnos = admGrupos.GetModelo().GetAlumnos().Where(i => i.IdGrupo == id) ;
             //checa los alumnos en el grupo
             foreach (Alumno a in alumnos)
             {
@@ -196,7 +201,8 @@ namespace Came.Vistas
             cancelarButton.Visibility = System.Windows.Visibility.Visible;
             ActualizaComboBox();
             ActualizaHorario();
-
+            horarioComboBox.SelectedIndex = 0;
+            lista = new ObservableCollection<ParsedAlumno>();
             
         }
         /// <summary>
@@ -468,7 +474,7 @@ namespace Came.Vistas
                     grupo.Maestro = maestrosComboBox.SelectedItem as Maestro;
                 }
                 
-                if(lista.Count == 0)
+                if(lista.Count == 0 || lista == null)
                 {
                     if (MessageBox.Show("¿Seguro que desea guardar el grupo \nsin alumnos registrados?", "Guardar Grupo", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                     {

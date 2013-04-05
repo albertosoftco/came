@@ -61,7 +61,7 @@
                                             Header="Maestro" />
                         <DataGridTextColumn x:Name="noAlumnoColumn"
                                             Width="SizeToHeader"
-                                            Binding="{Binding Grupo_Alumno.Count}"
+                                            Binding="{Binding Alumno.Count}"
                                             Header="# de Alumnos" />
                     </DataGrid.Columns>
                 </DataGrid>
