@@ -19,30 +19,39 @@ namespace Came.Negocios.AdministracionGrupos
 
         public void AgregaGrupo(Grupo grupo)
         {
-            Grupo g = modelo.GetGrupo(grupo.ID);
-            if(g == null)
-            {
-                throw new AdministracionGruposException("El grupo ya existe");
-            }
-            else
+            var  g = modelo.GetGrupos().Where(i => i.Nombre.Equals(grupo.Nombre)); ;
+            if(g.Count() ==0)
             {
                 modelo.GetModelo().Grupo.Add(grupo);
                 modelo.SalvaCambios();
+                
+            }
+            else
+            {
+                throw new AdministracionGruposException("El grupo ya existe");
             }
 
         }
 
         public void ActualizarGrupo(Grupo grupo)
         {
-            Grupo g = modelo.GetGrupo(grupo.ID);
-            if (g == null)
+            var g = modelo.GetGrupos().First(i=>i.ID.Equals(grupo.ID));
+            var m = modelo.GetMaestros().First(i => i.ID.Equals(grupo.Maestro.ID));
+            var h = modelo.GetHorarios().First(i => i.ID.Equals(grupo.Horario.ID));
+            var a = modelo.GetGrupos().First(i => i.ID.Equals(grupo.ID)).Alumno;
+            if (g== null)
             {
                 throw new AdministracionGruposException("El grupo no existe");
             }
             else
             {
-                g = grupo;
-                modelo.SalvaCambios();
+                modelo.GetModelo().Grupo.Attach(g);
+                //g.Alumno = a;
+                g.Capacidad = grupo.Capacidad;
+                g.Horario = h;
+                g.Maestro = m;
+                g.Nombre = grupo.Nombre;
+                modelo.GetModelo().SaveChanges();
             }
         }
 
@@ -56,6 +65,7 @@ namespace Came.Negocios.AdministracionGrupos
             }
             else
             {
+                
                 modelo.GetModelo().Grupo.Remove(g);
                 modelo.SalvaCambios();
             }
@@ -69,6 +79,11 @@ namespace Came.Negocios.AdministracionGrupos
         public Grupo GetGrupo(int id)
         {
             return modelo.GetGrupo(id);
+        }
+
+        public IEnumerable<Horario>GetHorarios()
+        {
+            return modelo.GetHorarios();
         }
     }
 }

@@ -50,5 +50,10 @@ namespace Came.Negocios.AdministracionGrupos.Fachada
         {
             return admGrupos.modelo;
         }
+
+        public IEnumerable<Horario> GetHorarios()
+        {
+            return admGrupos.GetHorarios();
+        }
     }
 }

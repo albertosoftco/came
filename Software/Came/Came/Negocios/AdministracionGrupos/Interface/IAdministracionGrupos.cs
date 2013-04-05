@@ -21,5 +21,7 @@ namespace Came.Negocios.AdministracionGrupos.Interface
         Grupo GetGrupo(int id);
 
         IModelo GetModelo();
+
+        IEnumerable<Horario> GetHorarios();
     }
 }
