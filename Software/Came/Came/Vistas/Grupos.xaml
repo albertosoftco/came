@@ -300,18 +300,24 @@
                         <Button x:Name="modificarGrupoButton"
                                 Width="103"
                                 Height="23"
-                                Margin="458,200,0,0"
-                                HorizontalAlignment="Left"
+                                Margin="0,200,93,0"
+                                HorizontalAlignment="Right"
                                 VerticalAlignment="Top"
                                 Background="#FFDEDEDE"
                                 Click="modificarGrupoButton_Click"
                                 Content="Modificar Grupo"
                                 Style="{DynamicResource SimpleButtonBottomRounded}" />
                         <Button Content="Cancelar" Height="23" HorizontalAlignment="Left" Margin="567,200,0,0" Name="cancelarButton" VerticalAlignment="Top" Width="75" Style="{StaticResource SimpleButtonBottomRounded}" Click="cancelarButton_Click" />
-                        <Label Content="Dias" Height="23" HorizontalAlignment="Left" Margin="6,198,0,0" Name="label1" VerticalAlignment="Top" />
-                        <TextBox Height="23" HorizontalAlignment="Left" Margin="42,198,0,0" Name="diasBox" VerticalAlignment="Top" Width="92" />
-                        <Label Content="Horas" Height="23" HorizontalAlignment="Left" Margin="138,200,0,0" Name="label2" VerticalAlignment="Top" />
-                        <TextBox Height="23" HorizontalAlignment="Left" Margin="185,198,0,0" Name="horasBox" VerticalAlignment="Top" Width="120" />
+                        <ComboBox 
+                            Height="28" 
+                            HorizontalAlignment="Right" 
+                            Margin="0,193,468,0" 
+                            Name="horarioComboBox" 
+                            VerticalAlignment="Top" 
+                            Width="120" 
+                            ItemsSource="{Binding Source=horarios}"
+                            DisplayMemberPath="Dias"/>
+                        <Label Content="Horario" Height="28" HorizontalAlignment="Left" Margin="6,193,0,0" Name="label1" VerticalAlignment="Top" />
                     </Grid>
                 </GroupBox>
                 <Button x:Name="volverButton"

@@ -29,9 +29,11 @@ namespace Came.Vistas
     public partial class Grupos : Window
     {
         private IModelo modelo;
+        
         public ObservableCollection<Maestro> maestros;
         public ObservableCollection<ParsedAlumno> lista;
         private IAdministracionGrupos admGrupos;
+        public ObservableCollection<Horario> horarios;
         public Grupo grupoSeleccionado;
         private IAdministracionMaestros admMaestros;
         private enum Acciones {VerGrupo,AgregaGrupo,ModificaGrupo,EliminaGrupo};
@@ -51,7 +53,7 @@ namespace Came.Vistas
             System.Windows.Data.CollectionViewSource gruposViewSource =
                 ((System.Windows.Data.CollectionViewSource)(this.FindResource("gruposViewSource")));
 
-
+            
             admGrupos.GetModelo().GetGrupos().Load();
 
             gruposViewSource.Source = admGrupos.GetModelo().GetGrupos().Local;
@@ -124,9 +126,9 @@ namespace Came.Vistas
 
         private void ActualizaHorario()
         {
-            Horario horario = grupoSeleccionado.Horario;
-            diasBox.Text = horario.Dias;
-            horasBox.Text = horario.Horas;
+            horarios = new ObservableCollection<Horario>(admGrupos.GetHorarios());
+            horarioComboBox.ItemsSource = horarios;
+            
         }
         /// <summary>
         /// limpia todos los campos del la pantalla 
@@ -141,8 +143,7 @@ namespace Came.Vistas
             alumnoDataGrid.ItemsSource = null;
             grupoSeleccionado = null;
             gruposDataGrid.SelectedItem = null;
-            diasBox.Text = "";
-            horasBox.Text = "";
+            
             
         }
 
@@ -194,6 +195,7 @@ namespace Came.Vistas
             crearGrupoButton.Visibility = System.Windows.Visibility.Visible;
             cancelarButton.Visibility = System.Windows.Visibility.Visible;
             ActualizaComboBox();
+            ActualizaHorario();
 
             
         }
@@ -204,8 +206,47 @@ namespace Came.Vistas
         /// <param name="e"></param>
         private void actualizarGrupoButton_Click(object sender, RoutedEventArgs e)
         {
-            grupoActionsCanvas.Visibility = System.Windows.Visibility.Visible;
-            gruposGroupBox.Visibility = System.Windows.Visibility.Hidden;
+            var g = gruposDataGrid.SelectedItem as Grupo;
+            if (g == null)
+            {
+                MuestraMensaje("No se ha seleccionado ningun grupo", "Error");
+            }
+            else
+            {
+                grupoActionsCanvas.Visibility = System.Windows.Visibility.Visible;
+                gruposGroupBox.Visibility = System.Windows.Visibility.Hidden;
+                verMaestroButton.Visibility = System.Windows.Visibility.Visible;
+                verAlumnoButton.Visibility = System.Windows.Visibility.Visible;
+                agregarAlumnoButton.Visibility = System.Windows.Visibility.Visible;
+                agregarAlumnoButton.Visibility = System.Windows.Visibility.Visible;
+                eliminarAlumnoButton.Visibility = System.Windows.Visibility.Visible;
+                eliminarMaestroButton.Visibility = System.Windows.Visibility.Visible;
+                crearGrupoButton.Visibility = System.Windows.Visibility.Hidden;
+                idGrupoLabel.Visibility = System.Windows.Visibility.Hidden;
+                idGrupoBox.Visibility = System.Windows.Visibility.Hidden;
+                grupoSeleccionado = g;
+                //setea las propiedades del grupo a la interfaz grafica
+                nombreGrupoBox.Text = g.Nombre;
+                capacidadBox.Text = g.Capacidad.ToString();
+                ActualizaHorario();
+                ActualizaComboBox();
+                maestrosComboBox.SelectedItem = g.Maestro;
+                horarioComboBox.SelectedItem = g.Horario;
+
+                ActualizaTablaAlumnos(g.ID);
+
+            }
+            
+
+            
+            
+        }
+
+
+        
+        private void ActualizaActionCanvas()
+        {
+            
         }
         /// <summary>
         /// 
@@ -214,7 +255,23 @@ namespace Came.Vistas
         /// <param name="e"></param>
         private void eliminarGrupoButton_Click(object sender, RoutedEventArgs e)
         {
+            var g = gruposDataGrid.SelectedItem as Grupo;
+            if(g == null)
+            {
+                MuestraMensaje("No se ha seleccionado ningun grupo", "Error");
+            }
+            else
+            {
+                if (MessageBox.Show("¿Seguro que desea eliminar el grupo?", "Eliminar", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    admGrupos.EliminarGrupo(g.ID);
+                    admGrupos.GetModelo().GetModelo().Grupo.Load();
+                    gruposDataGrid.ItemsSource = admGrupos.GetModelo().GetModelo().Grupo.Local;
+                }
 
+                else return;
+                
+            }
         }
 
         #endregion
@@ -295,7 +352,76 @@ namespace Came.Vistas
         /// <param name="e"></param>
         private void modificarGrupoButton_Click(object sender, RoutedEventArgs e)
         {
+            Grupo grupo = new Grupo();
+            try
+            {
+                grupo.ID = grupoSeleccionado.ID;
+                if (nombreGrupoBox.Text == null)
+                {
+                    MuestraMensaje("Se dejo el campo 'Nombre' en blanco", "Error");
+                }
+                else
+                {
+                    grupo.Nombre = nombreGrupoBox.Text;
+                }
+                if (capacidadBox.Text == null)
+                {
+                    MuestraMensaje("Se dejo el campo 'Capacidad' en blanco", "Error");
 
+                }
+                else
+                {
+                    grupo.Capacidad = int.Parse(capacidadBox.Text);
+                }
+                if (horarioComboBox.SelectedItem == null)
+                {
+                    MuestraMensaje("No se especifico un horario", "Error");
+                }
+
+                else
+                {
+                    grupo.Horario = horarioComboBox.SelectedItem as Horario;
+                }
+                if (maestrosComboBox.SelectedItem == null)
+                {
+                    MuestraMensaje("No se especifico un maestro", "Error");
+                }
+                else
+                {
+                    grupo.Maestro = maestrosComboBox.SelectedItem as Maestro;
+                }
+
+                if (lista.Count == 0)
+                {
+                    if (MessageBox.Show("¿Seguro que desea guardar el grupo \nsin alumnos registrados?", "Guardar Grupo", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    {
+                        admGrupos.ActualizarGrupo(grupo);
+                        MessageBox.Show("Se actualizo el grupo con exito", "Actualizado",MessageBoxButton.OK);
+                        return;
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+                else
+                {
+                    foreach (ParsedAlumno pa in lista)
+                    {
+                        grupo.Alumno.Add(ParsedAlumno.creaAlumno(pa));
+                    }
+                    admGrupos.ActualizarGrupo(grupo);
+                    MessageBox.Show("Se actualizo el grupo con exito", "Actualizado", MessageBoxButton.OK);
+                    return;
+                }
+
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error en la base de datos", "Error", MessageBoxButton.OK);
+            }
         }
         /// <summary>
         /// 
@@ -307,65 +433,71 @@ namespace Came.Vistas
             Grupo grupo = new Grupo();
             try
             {
+                if(nombreGrupoBox.Text == null)
+                {
+                    MuestraMensaje("Se dejo el campo 'Nombre' en blanco", "Error");
+                }
+                else
+                {
+                    grupo.Nombre = nombreGrupoBox.Text;
+                }
                 if (capacidadBox.Text == null)
                 {
-                    MuestraMensaje("Se dejo un campo en blanco", "Error");
+                    MuestraMensaje("Se dejo el campo 'Capacidad' en blanco", "Error");
 
                 }
                 else
                 {
                     grupo.Capacidad = int.Parse(capacidadBox.Text);
                 }
-                if(diasBox.Text == null || horasBox.Text == null)
+                if(horarioComboBox.SelectedItem == null)
                 {
-                    MuestraMensaje("Se dejo un campo en blanco", "Error");
+                    MuestraMensaje("No se especifico un horario", "Error");
                 }
-                else
-                {
-                    Horario h = new Horario();
-                    h.Dias = diasBox.Text;
-                }
-                if(nombreGrupoBox.Text == null)
-                {
 
-                    Horario h = new Horario();
-                    h.Dias = diasBox.Text;
-                }
                 else
                 {
-                    grupo.Nombre = nombreGrupoBox.Text;
+                    grupo.Horario = horarioComboBox.SelectedItem as Horario;
                 }
                 if(maestrosComboBox.SelectedItem ==null)
                 {
-                    MuestraMensaje("Se dejo un campo en blanco", "Error");
+                    MuestraMensaje("No se especifico un maestro", "Error");
                 }
                 else
                 {
                     grupo.Maestro = maestrosComboBox.SelectedItem as Maestro;
                 }
-                IEnumerable<Alumno> alumnos = alumnoDataGrid.ItemsSource.Cast<Alumno>();
                 
-                if(alumnos.Count()==0)
+                if(lista.Count == 0)
                 {
-                    MuestraMensaje("Se dejo un campo en blanco", "Error");
+                    if (MessageBox.Show("¿Seguro que desea guardar el grupo \nsin alumnos registrados?", "Guardar Grupo", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    {
+                        admGrupos.AgregarGrupo(grupo);
+                        MessageBox.Show("Se agrego el grupo con exito", "Agregado", MessageBoxButton.OK);
+                        return;
+                    }
+                    else
+                    {
+                        return;
+                    }
                 }
                 else
                 {
-                    ICollection<Alumno> al = new Collection<Alumno>();
-                    foreach(Alumno a in alumnos)
+                    foreach (ParsedAlumno pa in lista)
                     {
-                        al.Add(a);
+                        grupo.Alumno.Add(ParsedAlumno.creaAlumno(pa));
                     }
-                    grupo.Alumno = al;
-
                     admGrupos.AgregarGrupo(grupo);
-                    
+                    MessageBox.Show("Se agrego el grupo con exito", "Agregado", MessageBoxButton.OK);
+                    return;
                 }
+                
+                
 
             }
             catch(Exception)
             {
-                
+                MessageBox.Show("Error en la base de datos","Error",MessageBoxButton.OK);
             }
             
         }
@@ -452,6 +584,8 @@ namespace Came.Vistas
         public string Nombre { get; set; }
         public string Grado { get; set; }
         public bool Agregado { get; set; }
+        private IAdministracionGrupos admGrupos;
+
         public ParsedAlumno()
         {
 
@@ -461,6 +595,11 @@ namespace Came.Vistas
         {
             ParsedAlumno al = new ParsedAlumno() { Matricula = alumno.ID, Nombre = alumno.Nombre, Grado = alumno.GradoAcademico, Agregado = agregado };
             return al;
+        }
+
+        public static Alumno creaAlumno(ParsedAlumno al)
+        {
+            return FachadaModelo.GetInstance().GetAlumno(al.Matricula);
         }
 
     }
