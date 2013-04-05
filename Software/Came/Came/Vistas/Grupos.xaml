@@ -148,12 +148,8 @@
                                HorizontalContentAlignment="Center"
                                VerticalContentAlignment="Center"
                                Content="Nombre" />
-                        <TextBox x:Name="nombreGrupoBox"
-                                 Width="266"
-                                 Height="23"
-                                 Margin="209,10,0,0"
-                                 HorizontalAlignment="Left"
-                                 VerticalAlignment="Top"
+                        <TextBox x:Name="nombreGrupoBox" Height="23"
+                                 Margin="209,10,202,0" VerticalAlignment="Top"
                                  HorizontalContentAlignment="Stretch"
                                  VerticalContentAlignment="Center" />
                         <Label x:Name="capacidadLabel"
@@ -312,6 +308,10 @@
                                 Content="Modificar Grupo"
                                 Style="{DynamicResource SimpleButtonBottomRounded}" />
                         <Button Content="Cancelar" Height="23" HorizontalAlignment="Left" Margin="567,200,0,0" Name="cancelarButton" VerticalAlignment="Top" Width="75" Style="{StaticResource SimpleButtonBottomRounded}" Click="cancelarButton_Click" />
+                        <Label Content="Dias" Height="23" HorizontalAlignment="Left" Margin="6,198,0,0" Name="label1" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="42,198,0,0" Name="diasBox" VerticalAlignment="Top" Width="92" />
+                        <Label Content="Horas" Height="23" HorizontalAlignment="Left" Margin="138,200,0,0" Name="label2" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="185,198,0,0" Name="horasBox" VerticalAlignment="Top" Width="120" />
                     </Grid>
                 </GroupBox>
                 <Button x:Name="volverButton"

@@ -112,7 +112,7 @@ namespace Came.Vistas
                 idGrupoBox.Text = pg.ID.ToString();
                 nombreGrupoBox.Text = pg.Nombre;
                 capacidadBox.Text = pg.Capacidad.ToString();
-
+                ActualizaHorario();
                 ActualizaComboBox();
                 maestrosComboBox.SelectedItem = grupoSeleccionado.Maestro;
                 ActualizaTablaAlumnos(id);
@@ -120,6 +120,13 @@ namespace Came.Vistas
             }
 
 
+        }
+
+        private void ActualizaHorario()
+        {
+            Horario horario = grupoSeleccionado.Horario;
+            diasBox.Text = horario.Dias;
+            horasBox.Text = horario.Horas;
         }
         /// <summary>
         /// limpia todos los campos del la pantalla 
@@ -134,6 +141,8 @@ namespace Came.Vistas
             alumnoDataGrid.ItemsSource = null;
             grupoSeleccionado = null;
             gruposDataGrid.SelectedItem = null;
+            diasBox.Text = "";
+            horasBox.Text = "";
             
         }
 
@@ -295,7 +304,76 @@ namespace Came.Vistas
         /// <param name="e"></param>
         private void crearGrupoButton_Click(object sender, RoutedEventArgs e)
         {
+            Grupo grupo = new Grupo();
+            try
+            {
+                if (capacidadBox.Text == null)
+                {
+                    MuestraMensaje("Se dejo un campo en blanco", "Error");
 
+                }
+                else
+                {
+                    grupo.Capacidad = int.Parse(capacidadBox.Text);
+                }
+                if(diasBox.Text == null || horasBox.Text == null)
+                {
+                    MuestraMensaje("Se dejo un campo en blanco", "Error");
+                }
+                else
+                {
+                    Horario h = new Horario();
+                    h.Dias = diasBox.Text;
+                }
+                if(nombreGrupoBox.Text == null)
+                {
+
+                    Horario h = new Horario();
+                    h.Dias = diasBox.Text;
+                }
+                else
+                {
+                    grupo.Nombre = nombreGrupoBox.Text;
+                }
+                if(maestrosComboBox.SelectedItem ==null)
+                {
+                    MuestraMensaje("Se dejo un campo en blanco", "Error");
+                }
+                else
+                {
+                    grupo.Maestro = maestrosComboBox.SelectedItem as Maestro;
+                }
+                IEnumerable<Alumno> alumnos = alumnoDataGrid.ItemsSource.Cast<Alumno>();
+                
+                if(alumnos.Count()==0)
+                {
+                    MuestraMensaje("Se dejo un campo en blanco", "Error");
+                }
+                else
+                {
+                    ICollection<Alumno> al = new Collection<Alumno>();
+                    foreach(Alumno a in alumnos)
+                    {
+                        al.Add(a);
+                    }
+                    grupo.Alumno = al;
+
+                    admGrupos.AgregarGrupo(grupo);
+                    
+                }
+
+            }
+            catch(Exception)
+            {
+                
+            }
+            
+        }
+
+        
+        private void MuestraMensaje(string mensaje,string titulo)
+        {
+            MessageBox.Show(mensaje,titulo,MessageBoxButton.OK);
         }
         /// <summary>
         /// 

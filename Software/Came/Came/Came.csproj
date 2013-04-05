@@ -83,11 +83,13 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Expression.Effects" />
-    <Reference Include="Mindscape.WpfElements">
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Mindscape\WPF Elements\Bin\Mindscape.WpfElements.dll</HintPath>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Expression.Effects" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
@@ -110,12 +112,94 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Modelo\Actividad.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Actividad_Ejercicio.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Alergia.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Alumno.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Alumno_Alergia.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Alumno_Medicamento.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Diagnostico.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Diagnostico_Discapacidad.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Discapacidad.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Discapacidad_Factor.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Ejercicio.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Fachada\FachadaModelo.cs" />
+    <Compile Include="Modelo\Factor.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Grupo.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Grupo_Alumno.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Horario.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Interface\IModelo.cs" />
+    <Compile Include="Modelo\Maestro.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Maestro_Grupo.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Medicamento.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\ModeloCame.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloCame.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\ModeloCame.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\ModeloCame.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeloCame.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Programa.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Programa_Actividad.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Rutina.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Rutina_Programa.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Tutor.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Usuario.cs">
+      <DependentUpon>ModeloCame.tt</DependentUpon>
     </Compile>
     <Compile Include="Negocios\AdministracionDiagnosticos\AdministracionDiagnosticos.cs" />
     <Compile Include="Negocios\AdministracionDiagnosticos\Fachada\FachadaAdministracionDiagnosticos.cs" />
@@ -123,6 +207,9 @@
     <Compile Include="Negocios\AdministracionGrupos\AdministracionGrupos.cs" />
     <Compile Include="Negocios\AdministracionGrupos\Fachada\FachadaAdministracionGrupos.cs" />
     <Compile Include="Negocios\AdministracionGrupos\Interface\IAdministracionGrupos.cs" />
+    <Compile Include="Negocios\AdministracionMaestros\AdministracionMaestros.cs" />
+    <Compile Include="Negocios\AdministracionMaestros\Fachada\FachadaAdministracionMaestros.cs" />
+    <Compile Include="Negocios\AdministracionMaestros\Interface\IAdministracionMaestros.cs" />
     <Compile Include="Negocios\Excepciones\AdministracionGruposException.cs" />
     <Compile Include="Negocios\Excepciones\LoginException.cs" />
     <Compile Include="Negocios\InicioSesion\Fachada\FachadaInicioSesion.cs" />
@@ -218,7 +305,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -232,6 +318,20 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModeloCame.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Modelo\ModeloCame.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloCame.edmx</DependentUpon>
+      <LastGenOutput>ModeloCame.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Modelo\ModeloCame.edmx.diagram">
+      <DependentUpon>ModeloCame.edmx</DependentUpon>
+    </None>
+    <None Include="Modelo\ModeloCame.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloCame.edmx</DependentUpon>
+      <LastGenOutput>ModeloCame.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -252,7 +352,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 y x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
