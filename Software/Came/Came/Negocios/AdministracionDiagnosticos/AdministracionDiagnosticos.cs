@@ -19,7 +19,7 @@ namespace Came.Negocios.AdministracionDiagnosticos
 
         public void AgregaDiagnostico(Diagnostico diagnostico)
         {
-            this.modelo.GetModelo().AddToDiagnostico(diagnostico);
+            this.modelo.GetModelo().Diagnostico.Add(diagnostico);
             this.modelo.SalvaCambios();
         }
 
