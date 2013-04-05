@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Came.Negocios.AdministracionGrupos.Interface;
 using Came.Modelo.Interface;
+using Came.Modelo;
 
 namespace Came.Negocios.AdministracionGrupos.Fachada
 {
@@ -38,6 +39,16 @@ namespace Came.Negocios.AdministracionGrupos.Fachada
         public IEnumerable<Modelo.Alumno> GetAlumnosGrupo(int id)
         {
             return admGrupos.GetAlumnosEnGrupo(id);
+        }
+
+        public Grupo GetGrupo(int id)
+        {
+            return admGrupos.GetGrupo(id);
+        }
+
+        public IModelo GetModelo()
+        {
+            return admGrupos.modelo;
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Came.Modelo;
+using Came.Modelo.Interface;
 
 
 namespace Came.Negocios.AdministracionGrupos.Interface
@@ -17,6 +18,8 @@ namespace Came.Negocios.AdministracionGrupos.Interface
 
         IEnumerable<Alumno> GetAlumnosGrupo(int id);
 
-        
+        Grupo GetGrupo(int id);
+
+        IModelo GetModelo();
     }
 }

@@ -9,7 +9,7 @@ namespace Came.Negocios.AdministracionGrupos
 {
     class AdministracionGrupos
     {
-        private IModelo modelo;
+        public IModelo modelo{get;set;}
 
         public AdministracionGrupos(IModelo modelo)
         {
@@ -26,7 +26,7 @@ namespace Came.Negocios.AdministracionGrupos
             }
             else
             {
-                modelo.GetModelo().Grupo.AddObject(grupo);
+                modelo.GetModelo().Grupo.Add(grupo);
                 modelo.SalvaCambios();
             }
 
@@ -56,22 +56,19 @@ namespace Came.Negocios.AdministracionGrupos
             }
             else
             {
-                modelo.GetModelo().DeleteObject(g);
+                modelo.GetModelo().Grupo.Remove(g);
                 modelo.SalvaCambios();
             }
         }
 
         public IEnumerable<Alumno> GetAlumnosEnGrupo(int id)
         {
-            IQueryable<Grupo_Alumno> relaciones = modelo.GetModelo().Grupo_Alumno.Where(i => i.Alumno.ID == id);
-            IList<Alumno> alumnos = new List<Alumno>();
+            return modelo.GetAlumnosGrupo(id);
+        }
 
-            foreach (Grupo_Alumno ga in relaciones)
-            {
-                alumnos.Add(ga.Alumno);
-            }
-
-            return alumnos.AsEnumerable();
+        public Grupo GetGrupo(int id)
+        {
+            return modelo.GetGrupo(id);
         }
     }
 }
