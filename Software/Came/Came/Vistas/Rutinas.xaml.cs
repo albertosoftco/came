@@ -10,7 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Came.Recursos.Constants;
+
 
 
 namespace Came.Vistas
@@ -20,7 +20,7 @@ namespace Came.Vistas
     /// </summary>
     public partial class Diagnosticos : Window
     {
-        TipoRutina tipoRutina;
+        
         /// <summary>
         /// 
         /// </summary>

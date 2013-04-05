@@ -11,9 +11,12 @@
         mc:Ignorable="d">
     <Window.Resources>
         <CollectionViewSource x:Key="gruposViewSource" d:DesignSource="{d:DesignInstance {x:Type Modelo:Grupo}, CreateList=True}" />
+        <CollectionViewSource x:Key="maestrosViewSource" d:DesignSource="{d:DesignInstance {x:Type Modelo:Maestro},CreateList=True}"/>
+        
     </Window.Resources>
+   
     <Grid>
-
+        
         <GroupBox x:Name="gruposGroupBox"
                   Width="326"
                   Height="258"
@@ -38,7 +41,7 @@
                           EnableRowVirtualization="True"
                           IsReadOnly="True"
                           ItemsSource="{Binding}"
-                          SelectionMode="Single">
+                          SelectionMode="Single" Visibility="Visible">
                     <DataGrid.Columns>
                         <DataGridTextColumn x:Name="idGrupoColumn"
                                             Width="SizeToHeader"
@@ -54,11 +57,11 @@
                                             Header="Capacidad" />
                         <DataGridTextColumn x:Name="idmaestroColumn"
                                             Width="SizeToHeader"
-                                            Binding="{Binding IdMaestro}"
+                                            Binding="{Binding Maestro.Nombre}"
                                             Header="Maestro" />
                         <DataGridTextColumn x:Name="noAlumnoColumn"
                                             Width="SizeToHeader"
-                                            Binding="{Binding IdMaestro}"
+                                            Binding="{Binding Grupo_Alumno.Count}"
                                             Header="# de Alumnos" />
                     </DataGrid.Columns>
                 </DataGrid>
@@ -118,7 +121,7 @@
                           Height="250"
                           Margin="6,6,0,35"
                           HorizontalAlignment="Left"
-                          Header="Grupo">
+                          Header="Grupo" Visibility="Visible">
                     <Grid Height="Auto" Margin="0,0,0,0">
                         <Label x:Name="idGrupoLabel"
                                Height="23"
@@ -210,15 +213,20 @@
                                        Content=" &#10;"
                                        RenderTransformOrigin="-0.1,-0.109"
                                        d:LayoutOverrides="Height" />
-                                <TextBox x:Name="nombreMaestroBox"
-                                         Margin="8,35,118,41.08"
-                                         Text=" &#10;"
-                                         TextWrapping="Wrap"
-                                         d:LayoutOverrides="Height" />
                                 <Label Margin="8,1.12,0,0"
                                        HorizontalAlignment="Left"
                                        VerticalAlignment="Top"
                                        Content="Nombre &#10;" />
+                                <ComboBox Height="26" 
+                                          HorizontalAlignment="Left" 
+                                          Margin="8,35,0,0" 
+                                          Name="maestrosComboBox" 
+                                          VerticalAlignment="Top" 
+                                          Width="120" 
+                                          ItemsSource="{Binding Source=maestros}"
+                                          DisplayMemberPath="Nombre"
+                                          />
+                                          
                             </Grid>
                         </GroupBox>
                         <GroupBox x:Name="alumnosGroupBox"
@@ -230,35 +238,31 @@
                                   Header="Alumno(s)">
                             <Grid>
                                 <DataGrid x:Name="alumnoDataGrid"
-                                          Width="228"
+                                          Width="249"
                                           Height="128"
                                           Margin="6,6,0,0"
                                           HorizontalAlignment="Left"
                                           VerticalAlignment="Top"
-                                          AutoGenerateColumns="False">
+                                          AutoGenerateColumns="False"
+                                          AreRowDetailsFrozen="True" 
+                                          EnableColumnVirtualization="False"
+                                          EnableRowVirtualization="True"
+                                          ItemsSource="{Binding Source=lista}"
+                                          
+                                          SelectionMode="Single">
+                                          
                                     <DataGrid.Columns>
-                                        <DataGridTemplateColumn Header="Matricula">
-                                            <DataGridTemplateColumn.CellEditingTemplate>
-                                                <DataTemplate />
-                                            </DataGridTemplateColumn.CellEditingTemplate>
-                                            <DataGridTemplateColumn.CellTemplate>
-                                                <DataTemplate />
-                                            </DataGridTemplateColumn.CellTemplate>
-                                        </DataGridTemplateColumn>
-                                        <DataGridTemplateColumn Header="Nombre">
-                                            <DataGridTemplateColumn.CellEditingTemplate>
-                                                <DataTemplate />
-                                            </DataGridTemplateColumn.CellEditingTemplate>
-                                            <DataGridTemplateColumn.CellTemplate>
-                                                <DataTemplate />
-                                            </DataGridTemplateColumn.CellTemplate>
-                                        </DataGridTemplateColumn>
+                                        <DataGridTextColumn x:Name="idAlumnoColumn"  Header="ID" Binding="{Binding Matricula}" IsReadOnly="True"/>
+                                        <DataGridTextColumn x:Name="nombreAlumnoColumn" Header="Nombre" Binding="{Binding Nombre}" IsReadOnly="True"/>
+                                        <DataGridTextColumn x:Name="gradoAlumnoColumn" Header="Grado Academico" Binding="{Binding Grado}" IsReadOnly="True"/>
+                                        <DataGridCheckBoxColumn x:Name="checkBoxAgregar" Header="Agregado" Binding="{Binding Agregado}" IsReadOnly="False" />
+                                        
                                     </DataGrid.Columns>
                                 </DataGrid>
                                 <Button x:Name="verAlumnoButton"
                                         Width="103"
                                         Height="23"
-                                        Margin="240,7,0,0"
+                                        Margin="253,7,0,0"
                                         HorizontalAlignment="Left"
                                         VerticalAlignment="Top"
                                         Background="#FF8A8AE5"
@@ -268,7 +272,7 @@
                                 <Button x:Name="agregarAlumnoButton"
                                         Width="103"
                                         Height="23"
-                                        Margin="240,42,0,0"
+                                        Margin="253,38,0,0"
                                         HorizontalAlignment="Left"
                                         VerticalAlignment="Top"
                                         Background="#FF00AD00"
@@ -278,7 +282,7 @@
                                 <Button x:Name="eliminarAlumnoButton"
                                         Width="103"
                                         Height="23"
-                                        Margin="240,78,0,0"
+                                        Margin="253,75,0,0"
                                         HorizontalAlignment="Left"
                                         VerticalAlignment="Top"
                                         Background="#FFE53B3B"
@@ -289,9 +293,9 @@
                         </GroupBox>
                         <Button x:Name="crearGrupoButton"
                                 Width="86"
-                                Height="20"
-                                Margin="562,201,0,0"
-                                HorizontalAlignment="Left"
+                                Height="24"
+                                Margin="0,199,202,0"
+                                HorizontalAlignment="Right"
                                 VerticalAlignment="Top"
                                 Background="#FFDEDEDE"
                                 Click="crearGrupoButton_Click"
@@ -299,14 +303,15 @@
                                 Style="{StaticResource SimpleButtonBottomRounded}" />
                         <Button x:Name="modificarGrupoButton"
                                 Width="103"
-                                Height="20"
-                                Margin="453,201,0,0"
+                                Height="23"
+                                Margin="458,200,0,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
                                 Background="#FFDEDEDE"
                                 Click="modificarGrupoButton_Click"
                                 Content="Modificar Grupo"
                                 Style="{DynamicResource SimpleButtonBottomRounded}" />
+                        <Button Content="Cancelar" Height="23" HorizontalAlignment="Left" Margin="567,200,0,0" Name="cancelarButton" VerticalAlignment="Top" Width="75" Style="{StaticResource SimpleButtonBottomRounded}" Click="cancelarButton_Click" />
                     </Grid>
                 </GroupBox>
                 <Button x:Name="volverButton"

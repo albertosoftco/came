@@ -17,6 +17,9 @@ using Came.Modelo.Interface;
 using Came.Negocios.AdministracionGrupos.Fachada;
 using Came.Negocios.AdministracionGrupos.Interface;
 using Came.Modelo.Fachada;
+using System.Collections.ObjectModel;
+using Came.Negocios.AdministracionMaestros.Interface;
+using Came.Negocios.AdministracionMaestros.Fachada;
 
 namespace Came.Vistas
 {
@@ -25,63 +28,58 @@ namespace Came.Vistas
     /// </summary>
     public partial class Grupos : Window
     {
-        private Entidades entidad = new Entidades();
-        private IAdministracionGrupos admGrupos;
         private IModelo modelo;
-        private Grupo grupoSeleccionado;
-
+        public ObservableCollection<Maestro> maestros;
+        public ObservableCollection<ParsedAlumno> lista;
+        private IAdministracionGrupos admGrupos;
+        public Grupo grupoSeleccionado;
+        private IAdministracionMaestros admMaestros;
+        private enum Acciones {VerGrupo,AgregaGrupo,ModificaGrupo,EliminaGrupo};
+        private Acciones accion;
         /// <summary>
         /// 
         /// </summary>
-        //public Grupos(IModelo modelo)
-             public Grupos()
+
+        public Grupos()
         {
-   
+
             InitializeComponent();
-            modelo = new FachadaModelo();
-            //this.modelo = modelo;
-            //admGrupos = new FachadaAdministracionGrupos(this.modelo);
-                // grupoSeleccionado = null;
-                 //ActualizarTablaGrupos();
+            modelo = FachadaModelo.GetInstance();
+            admGrupos = new FachadaAdministracionGrupos(modelo);
+            admMaestros = new FachadaAdministracionMaestros(modelo);
 
-                 System.Windows.Data.CollectionViewSource gruposViewSource =
-                     ((System.Windows.Data.CollectionViewSource)(this.FindResource("gruposViewSource")));
-
-                 entidad.Grupo.Load();
-
-                 gruposViewSource.Source = entidad.Grupo.Local;
-        }
+            System.Windows.Data.CollectionViewSource gruposViewSource =
+                ((System.Windows.Data.CollectionViewSource)(this.FindResource("gruposViewSource")));
 
 
-        private void ActualizarTablaGrupos()
-        {
-            //ParsedGrupo par = new ParsedGrupo();
-            //par.modelo = modelo;
-            //IEnumerable<Grupo> grupos = admGrupos.GetGrupos().AsEnumerable();
-            //List<Grupo> gs = grupos.ToList();
-            //gruposDataGrid.ItemsSource = gs;
-            ////agrega las columas 
-            //DataTable dt = new DataTable();
-            //dt.Columns.Add("ID",typeof(int));
-            //dt.Columns.Add("Nombre", typeof(string));
-            //dt.Columns.Add("Capacidad", typeof(int));
-            //dt.Columns.Add("Maestro", typeof(string));
-            //dt.Columns.Add("Alumnos", typeof(int));
+            admGrupos.GetModelo().GetGrupos().Load();
 
-            //foreach(Grupo g in grupos)
-            //{
-            //    ParsedGrupo pg = par.creaParsedGrupo(g);
-            //    dt.Rows.Add(g.ID,pg.Nombre, pg.Capacidad, pg.NombreMaestro, pg.Alumnos);
-            //}
-
-            
-            //gruposDataGrid.ItemsSource = dt.AsDataView();
-            
-            
+            gruposViewSource.Source = admGrupos.GetModelo().GetGrupos().Local;
+            gruposDataGrid.SelectedItem = null;
             
         }
+
+
+
+
         #region Adm Grupos
 
+
+
+
+        private void ActualizaComboBox()
+        {
+            maestros = new ObservableCollection<Maestro>();
+            var maes = admMaestros.GetMaestros();
+            foreach (Maestro m in maes)
+            {
+                maestros.Add(m);
+            }
+
+            maestrosComboBox.ItemsSource = maestros;
+            
+            maestrosComboBox.IsReadOnly = true;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -89,64 +87,106 @@ namespace Came.Vistas
         /// <param name="e"></param>
         private void verGrupoButton_Click(object sender, RoutedEventArgs e)
         {
-            var pg = gruposDataGrid.SelectedItem as DataRowView;
-            
-            if(pg == null)
+
+            var pg = gruposDataGrid.SelectedItem as Grupo;
+
+            if (pg == null)
             {
                 MessageBox.Show("No se ha seleccionado ningun grupo.");
                 return;
             }
             else
             {
-                int id = int.Parse(pg.Row.ItemArray[0].ToString());
-                
-
-                grupoActionsCanvas.Visibility = System.Windows.Visibility.Visible;
+                int id = pg.ID;
+                grupoSeleccionado = admGrupos.GetGrupo(id);
                 gruposGroupBox.Visibility = System.Windows.Visibility.Hidden;
-                ActualizaCanvasDetallesGrupo(id);
+                grupoActionsCanvas.Visibility = System.Windows.Visibility.Visible;
+                modificarGrupoButton.Visibility = System.Windows.Visibility.Hidden;
+                crearGrupoButton.Visibility = System.Windows.Visibility.Hidden;
+                agregarAlumnoButton.Visibility = System.Windows.Visibility.Hidden;
+                agregarMaestroButton.Visibility = System.Windows.Visibility.Hidden;
+                eliminarAlumnoButton.Visibility = System.Windows.Visibility.Hidden;
+                eliminarMaestroButton.Visibility = System.Windows.Visibility.Hidden;
+
+
+                idGrupoBox.Text = pg.ID.ToString();
+                nombreGrupoBox.Text = pg.Nombre;
+                capacidadBox.Text = pg.Capacidad.ToString();
+
+                ActualizaComboBox();
+                maestrosComboBox.SelectedItem = grupoSeleccionado.Maestro;
+                ActualizaTablaAlumnos(id);
+                
             }
 
-            
-        }
 
-        private void ActualizaCanvasDetallesGrupo(int idGrupo)
-        {
-            IEnumerable<Alumno> alumnos = admGrupos.GetAlumnosGrupo(idGrupo).AsEnumerable();
-            Grupo grupo = admGrupos.GetGrupo(idGrupo);
-            idGrupoBox.Text = grupo.ID.ToString();
-            nombreGrupoBox.Text = grupo.Nombre;
-            capacidadBox.Text = grupo.Capacidad.ToString();
-            nombreMaestroBox.Text = grupo.Maestro.Nombre;
-            nombreMaestroBox.IsReadOnly = true;
-            DataTable dt = new DataTable();
-            dt.Columns.Add("Matricula", typeof(int));
-            dt.Columns.Add("Nombre", typeof(string));
-            dt.Columns.Add("Grado escolar", typeof(string));
-
-            foreach(Alumno a in alumnos)
-            {
-                ParsedAlumno al = new ParsedAlumno();
-                al.Nombre = a.Nombre;
-                al.Matricula = a.ID;
-                al.Grado = a.GradoAcademico;
-
-                dt.Rows.Add(al.Matricula, al.Nombre, al.Grado);
-            }
-            
-            alumnoDataGrid.ItemsSource = dt.AsDataView();
-            
         }
         /// <summary>
-        /// 
+        /// limpia todos los campos del la pantalla 
+        /// </summary>
+        private void LimpiaCampos()
+        {
+            idGrupoBox.Text = "";
+            nombreGrupoBox.Text = "";
+            capacidadBox.Text = "";
+            maestrosComboBox.ItemsSource = null;
+            maestrosComboBox.SelectedItem = null;
+            alumnoDataGrid.ItemsSource = null;
+            grupoSeleccionado = null;
+            gruposDataGrid.SelectedItem = null;
+            
+        }
+
+        /// <summary>
+        /// actualiza la tabla de alumnos 
+        /// </summary>
+        /// <param name="id"></param>
+        private void ActualizaTablaAlumnos(int id)
+        {
+
+            lista = new ObservableCollection<ParsedAlumno>();
+            var alumnos = admGrupos.GetAlumnosGrupo(id);
+            //checa los alumnos en el grupo
+            foreach (Alumno a in alumnos)
+            {
+                if (a.Grupo.ID == id)
+                {
+                    lista.Add(ParsedAlumno.creaAlumno(a, true));
+                }
+                else
+                {
+                    lista.Add(ParsedAlumno.creaAlumno(a, false));
+                }
+
+            }
+            alumnoDataGrid.ItemsSource = lista;
+
+
+        }
+
+
+        /// <summary>
+        /// evento del boton agregargrupo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void agregarGrupoButton_Click(object sender, RoutedEventArgs e)
         {
-            grupoActionsCanvas.Visibility = System.Windows.Visibility.Visible;
             gruposGroupBox.Visibility = System.Windows.Visibility.Hidden;
             idGrupoLabel.Visibility = System.Windows.Visibility.Hidden;
             idGrupoBox.Visibility = System.Windows.Visibility.Hidden;
+            idGrupoBox.Visibility = System.Windows.Visibility.Hidden;
+            idGrupoLabel.Visibility = System.Windows.Visibility.Hidden;
+            grupoActionsCanvas.Visibility = System.Windows.Visibility.Visible;
+            agregarMaestroButton.Visibility = System.Windows.Visibility.Visible;
+            agregarAlumnoButton.Visibility = System.Windows.Visibility.Visible;
+            eliminarAlumnoButton.Visibility = System.Windows.Visibility.Visible;
+            eliminarMaestroButton.Visibility = System.Windows.Visibility.Visible;
+            crearGrupoButton.Visibility = System.Windows.Visibility.Visible;
+            cancelarButton.Visibility = System.Windows.Visibility.Visible;
+            ActualizaComboBox();
+
+            
         }
         /// <summary>
         /// 
@@ -213,7 +253,7 @@ namespace Came.Vistas
         /// <param name="e"></param>
         private void verAlumnoButton_Click(object sender, RoutedEventArgs e)
         {
-            
+
 
         }
         /// <summary>
@@ -233,7 +273,7 @@ namespace Came.Vistas
         private void eliminarAlumnoButton_Click(object sender, RoutedEventArgs e)
         {
 
-        } 
+        }
 
         #endregion
 
@@ -246,7 +286,7 @@ namespace Came.Vistas
         /// <param name="e"></param>
         private void modificarGrupoButton_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
         /// <summary>
         /// 
@@ -266,10 +306,11 @@ namespace Came.Vistas
         {
             grupoActionsCanvas.Visibility = System.Windows.Visibility.Hidden;
             gruposGroupBox.Visibility = System.Windows.Visibility.Visible;
-        } 
+            LimpiaCampos();
+        }
 
         #endregion
-        
+
         #endregion
 
         /// <summary>
@@ -287,7 +328,17 @@ namespace Came.Vistas
 
         }
 
-       
+        private void cancelarButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("¿Seguro que desea salir?\nSe perderan los cambios no guardados", "Salir", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                volverButton_Click(sender, e);
+            }
+            else return;
+        }
+
+        
+
     }
 
 
@@ -301,7 +352,7 @@ namespace Came.Vistas
         public IModelo modelo { get; set; }
         public ParsedGrupo()
         {
-            
+
         }
 
         public ParsedGrupo creaParsedGrupo(Grupo grupo)
@@ -317,20 +368,20 @@ namespace Came.Vistas
 
     }
 
-    partial class ParsedAlumno
+    public partial class ParsedAlumno
     {
         public int Matricula { get; set; }
         public string Nombre { get; set; }
         public string Grado { get; set; }
-
+        public bool Agregado { get; set; }
         public ParsedAlumno()
         {
-            
+
         }
 
-        public ParsedAlumno creaAlumno(Alumno alumno)
+        public static ParsedAlumno creaAlumno(Alumno alumno, bool agregado)
         {
-            ParsedAlumno al = new ParsedAlumno() { Matricula = alumno.ID,Nombre = alumno.Nombre,Grado = alumno.GradoAcademico};
+            ParsedAlumno al = new ParsedAlumno() { Matricula = alumno.ID, Nombre = alumno.Nombre, Grado = alumno.GradoAcademico, Agregado = agregado };
             return al;
         }
 
