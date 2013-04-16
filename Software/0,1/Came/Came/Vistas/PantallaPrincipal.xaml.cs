@@ -133,7 +133,8 @@ namespace Came.Vistas
 
         private void diganosticosButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            Diagnosticos d = new Diagnosticos(1,Diagnosticos.Acciones.Agregar);
+            d.ShowDialog();
 
         }
 
@@ -141,8 +142,8 @@ namespace Came.Vistas
         {
             try
             {
-                Rutinas rutinas = new Rutinas(1,Rutinas.Acciones.Agregar);
-                rutinas.Show();
+                Rutinas rutinas = new Rutinas(2,Rutinas.Acciones.Agregar);
+                rutinas.ShowDialog();
             }
             catch(NotImplementedException)
             {

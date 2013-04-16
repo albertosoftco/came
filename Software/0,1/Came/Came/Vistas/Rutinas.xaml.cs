@@ -63,21 +63,25 @@ namespace Came.Vistas
             switch(accion)
             {
                 case Acciones.Agregar:
+                    //muestra la ventana en blanco para agregar una 
+                    //rutina nueva
                     rutinaActual = new Rutina();
                     MuestraRutinaNueva();
                     break;
 
                 case Acciones.Actualizar:
+                    //Muestra la rutina para actualizarla 
                     MuestraRutina(rutinaSeleccionada);
                     break;
 
                 case Acciones.Eliminar:
-                    admRutinas.EliminaRutina(idRutina);
+                    //Elimina la rutina por medio del ID 
                     break;
 
                 case Acciones.Ver:
                     //se muestra la informacion en la pantalla 
                     //INEDITABLE
+                    rutinaSeleccionada = admRutinas.GetRutina(idRutina);
                     MuestraRutina(rutinaSeleccionada);
 
                     break;
@@ -672,27 +676,39 @@ namespace Came.Vistas
 
         private void nombreBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (accion == Acciones.Ver)
+            {
+                return;
+            }
             rutinaActual.Nombre = nombreBox.Text;
                 
         }
 
         private void horarioComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (accion == Acciones.Ver)
+                return;
             rutinaActual.Horario = horarioComboBox.SelectedItem as Horario;
         }
 
         private void finalidadTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (accion == Acciones.Ver)
+                return;
             rutinaActual.Finalidad = finalidadTextBox.Text;
         }
 
         private void lugarTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (accion == Acciones.Ver)
+                return;
             rutinaActual.Lugar = lugarTextBox.Text;
         }
 
         private void maestrosComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (accion == Acciones.Ver)
+                return;
             var maestro = maestrosComboBox.SelectedItem as Maestro;
             if(maestro == null)
             {

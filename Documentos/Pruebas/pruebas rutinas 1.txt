@@ -1,0 +1,13 @@
+pruebas rutinas 
+
+poner ineditable actividades y lugar
+
+guardar informacion hasta que se oprima boton guarda o cancelar 
+
+boton volver a menu no hace nada 
+
+eventos de campo de texto 
+
+ no agrega ejercicios 
+
+no se puede asignar  un programa de los existentes auna rutina nueva

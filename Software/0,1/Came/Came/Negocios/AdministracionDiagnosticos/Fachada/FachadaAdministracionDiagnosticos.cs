@@ -6,143 +6,142 @@ using Came.Negocios.AdministracionDiagnosticos.Interface;
 using Came.Modelo.Interface;
 using Came.Modelo;
 using Came.Negocios.Excepciones;
+using Came.Modelo.Fachada;
 
 namespace Came.Negocios.AdministracionDiagnosticos.Fachada
 {
     class FachadaAdministracionDiagnosticos : IAdministracionDiagnosticos
     {
 
-        private IModelo modelo;
+        
         private AdministracionDiagnosticos admDiagnosticos;
 
-        public FachadaAdministracionDiagnosticos(IModelo modelo)
+        public FachadaAdministracionDiagnosticos()
         {
-            this.modelo = modelo;
-            this.admDiagnosticos = new AdministracionDiagnosticos(modelo);
-
+            this.admDiagnosticos = new AdministracionDiagnosticos(FachadaModelo.GetInstance());
         }
 
-        public void AgregaDiagnostico(Modelo.Diagnostico diagnostico)
+        public void AgregaDiagnostico(Diagnostico diagnostico)
         {
-            Diagnostico d = modelo.GetDiagnosticos().Where(i => i.Nombre.Equals(diagnostico.Nombre)).SingleOrDefault();
-            if(d != null)
-            {
-                throw new AdministracionDiagnosticosException("El diagnostico ya existe");
-            }
-            else
-            {
-                modelo.GetDiagnosticos().Add(d);
-                modelo.SalvaCambios();
-            }
+            admDiagnosticos.AgregaDiagnostico(diagnostico);
         }
 
-        public void AgregaDiscapacidad(Modelo.Discapacidad discapacidad)
+        public void AgregaDiscapacidad(Discapacidad discapacidad)
         {
-            Discapacidad d = modelo.GetDiscapacidades().Where(i => i.Nombre.Equals(discapacidad.Nombre)).SingleOrDefault();
-            if (d != null)
-            {
-                throw new AdministracionDiagnosticosException("La discapacidad ya existe");
-            }
-            else
-            {
-                modelo.GetDiscapacidades().Add(d);
-                modelo.SalvaCambios();
-            }
+            admDiagnosticos.AgregaDiscapacidad(discapacidad);
         }
 
-        public void AgregaFactor(Modelo.Factor factor)
+        public void AgregaFactor(Factor factor)
         {
-            Factor f = modelo.GetFactores().Where(i => i.Nombre.Equals(factor.Nombre)).SingleOrDefault();
-            if (f != null)
-            {
-                throw new AdministracionDiagnosticosException("El factor ya existe");
-            }
-            else
-            {
-                modelo.GetFactores().Add(factor);
-                modelo.SalvaCambios();
-            }
+            admDiagnosticos.AgregaFactor(factor);
         }
 
-        public void ActualizaDiagnostico(Modelo.Diagnostico diagnostico)
+        public void ActualizaDiagnostico(Diagnostico diagnostico)
         {
-            Diagnostico d = modelo.GetDiagnosticos().Where(i => i.Nombre.Equals(diagnostico.Nombre)).SingleOrDefault();
-            if (d != null)
-            {
-                d.Nombre = diagnostico.Nombre;
-                d.Diagnostico_Discapacidad = null;
-                d.Diagnostico_Discapacidad = diagnostico.Diagnostico_Discapacidad;
-                d.Descripcion = diagnostico.Descripcion;
-                modelo.SalvaCambios();
-                return;
-            }
-            else throw new AdministracionDiagnosticosException("El diagnostico no existe");
+            admDiagnosticos.ActualizaDiagnostico(diagnostico);
         }
 
-        public void ActualizaDiscapacidad(Modelo.Discapacidad discapacidad)
+        public void ActualizaDiscapacidad(Discapacidad discapacidad)
         {
-            Diagnostico d = modelo.GetDiagnosticos().Where(i => i.Nombre.Equals(discapacidad.Nombre)).SingleOrDefault();
-            if (d != null)
-            {
-                d.Nombre = discapacidad.Nombre;
-                d.Diagnostico_Discapacidad = null;
-                d.Diagnostico_Discapacidad = discapacidad.Diagnostico_Discapacidad;
-                d.Descripcion = discapacidad.Descripcion;
-                modelo.SalvaCambios();
-                return;
-            }
-            else throw new AdministracionDiagnosticosException("El diagnostico no existe");
+            admDiagnosticos.ActualizaDiscapacidad(discapacidad);
         }
 
-        public void ActualizaFactor(Modelo.Factor factor)
+        public void ActualizaFactor(Factor factor)
         {
-            Factor f = modelo.GetFactores().Where(i => i.Nombre.Equals(factor.Nombre)).SingleOrDefault();
-            if (f != null)
-            {
-                f.Nombre = factor.Nombre;
-                f.Discapacidad_Factor = null;
-                f.Discapacidad_Factor = factor.Discapacidad_Factor;
-                modelo.SalvaCambios();
-                return;
-
-            }
-            else throw new AdministracionDiagnosticosException("El factor no existe");
+            admDiagnosticos.ActualizaFactor(factor);
         }
 
         public void EliminaDiagnostico(int idDiagnostico)
         {
-            throw new NotImplementedException();
+            admDiagnosticos.EliminaDiagnostico(idDiagnostico);
         }
 
         public void EliminaDiscapacidad(int idDiscapacidad)
         {
-            throw new NotImplementedException();
+            admDiagnosticos.EliminaDiscapacidad(idDiscapacidad);
         }
 
         public void EliminaFactor(int idFactor)
         {
-            throw new NotImplementedException();
+            admDiagnosticos.EliminaFactor(idFactor);
         }
 
-        public IEnumerable<Modelo.Discapacidad> GetDiscapacidadesDiagnostico(int idDiagnostico)
+        public IEnumerable<Discapacidad> GetDiscapacidadesDiagnostico(int idDiagnostico)
         {
-            throw new NotImplementedException();
+            return admDiagnosticos.GetDiscapacidadesDiagnostico(idDiagnostico);
         }
 
-        public IEnumerable<Modelo.Factor> GetFactoresDiscapacidad(int idDiscapacidad)
+        public IEnumerable<Factor> GetFactoresDiscapacidad(int idDiscapacidad)
         {
-            throw new NotImplementedException();
+            return admDiagnosticos.GetFactoresDiscapacidad(idDiscapacidad);
         }
-
 
         public void AsignaDiscapacidadDiagnostico(int idDiscapacidad, int idDiagnostico)
         {
-            throw new NotImplementedException();
+            admDiagnosticos.AsignaDiscapacidadDiagnostico(idDiscapacidad, idDiagnostico);
         }
 
         public void AsignaFactorDiscapacidad(int idFactor, int idDiscapacidad)
         {
-            throw new NotImplementedException();
+            admDiagnosticos.AsignaFactorDiscapacidad(idFactor, idDiscapacidad);
+        }
+
+        public void AsignaDiagnosticoAlumno(int idDiagnostico, int idAlumno)
+        {
+            admDiagnosticos.AsignaDiagnosticoAlumno(idDiagnostico, idAlumno);
+        }
+
+
+        public Diagnostico GetDiagnostico(int idDiagnostico)
+        {
+            return admDiagnosticos.GetDiagnostico(idDiagnostico);
+        }
+
+        public Discapacidad GetDiscapacidad(int idDiscapacidad)
+        {
+            return admDiagnosticos.GetDiscapacidad(idDiscapacidad);
+        }
+
+        public Factor GetFactor(int idFactor)
+        {
+            return admDiagnosticos.GetFactor(idFactor);
+        }
+
+
+        public Diagnostico GetDiagnostico(string nombre)
+        {
+            return admDiagnosticos.GetDiagnostico(nombre);
+        }
+
+        public Discapacidad GetDiscapacidad(string nombre)
+        {
+            return admDiagnosticos.GetDiscapacidad(nombre);
+        }
+
+        public Factor GetFactor(string nombre)
+        {
+            return admDiagnosticos.GetFactor(nombre);
+        }
+
+
+        public System.Data.Entity.DbSet<Diagnostico_Discapacidad> GetRelacionesDiagnosticoDiscapacidad()
+        {
+            return admDiagnosticos.GetRelacionesDiagnosticoDiscapacidad();
+        }
+
+        public System.Data.Entity.DbSet<Discapacidad_Factor> GetRelacionesDiscapacidadFactor()
+        {
+            return admDiagnosticos.GetRelacionesDiscapacidadFactor();
+        }
+
+        public void AgregaRelacionDiagnosticoDiscapacidad(int idDiagnostico, int idDiscapacidad)
+        {
+            admDiagnosticos.AgregaRelacionDiagnosticoDiscapacidad(idDiagnostico, idDiscapacidad);
+        }
+
+        public void AgregaRelacionDiscapacidadFactor(int idDiscapacidad, int idFactor)
+        {
+            admDiagnosticos.AgregaRelacionDiscapacidadFactor(idDiscapacidad, idFactor);
         }
     }
 }
