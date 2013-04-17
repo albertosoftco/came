@@ -34,10 +34,10 @@ namespace Came.Vistas
         /// </summary>
         public PantallaPrincipal()
         {
-           InitializeComponent();
-           modelo = FachadaModelo.GetInstance();
-           login = new FachadaInicioSesion(modelo);
-           usuarioActual = 0;
+            InitializeComponent();
+            modelo = FachadaModelo.GetInstance();
+            login = new FachadaInicioSesion(modelo);
+            usuarioActual = 0;
         }
 
         #region login Canvas
@@ -51,7 +51,7 @@ namespace Came.Vistas
         {
             if (String.IsNullOrEmpty(usuarioBox.Text) || String.IsNullOrEmpty(passwordBox.Password))
             {
-                MessageBox.Show("Debe Ingresar \nUsuario y Contraseña","Sin especificar Usuario",MessageBoxButton.OK,MessageBoxImage.Exclamation,MessageBoxResult.OK,MessageBoxOptions.DefaultDesktopOnly);
+                MessageBox.Show("Debe Ingresar \nUsuario y Contraseña", "Sin especificar Usuario", MessageBoxButton.OK, MessageBoxImage.Exclamation, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
             }
             else
             {
@@ -62,36 +62,36 @@ namespace Came.Vistas
                 bool sesion = false;
                 try
                 {
-                     sesion = login.IniciarSesion(usuario); 
+                    sesion = login.IniciarSesion(usuario);
                     if (sesion)
-                {
-                    StringBuilder resource = new StringBuilder("login");
-                    resource.Append(login.GetPermisoActual());
+                    {
+                        StringBuilder resource = new StringBuilder("login");
+                        resource.Append(login.GetPermisoActual());
 
-                    StringBuilder builder = new StringBuilder("Bienvenido ");
+                        StringBuilder builder = new StringBuilder("Bienvenido ");
                         builder.Append(usuario.UserName);
                         builder.Append(" !!");
-                    MessageBox.Show(builder.ToString(),"Bienvendo", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
-                    Storyboard sb = (Storyboard)TryFindResource(resource.ToString());
-                    sb.Begin();
-                    passwordBox.Password = "";
-                    usuarioBox.Text = "";
-                    
+                        MessageBox.Show(builder.ToString(), "Bienvendo", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
+                        Storyboard sb = (Storyboard)TryFindResource(resource.ToString());
+                        sb.Begin();
+                        passwordBox.Password = "";
+                        usuarioBox.Text = "";
 
-                    
-                    
 
-                    
+
+
+
+
+                    }
                 }
-                }
-                catch(LoginException)
+                catch (LoginException)
                 {
                     MessageBox.Show("Usuario o contraseña Incorrecta", null,
                             MessageBoxButton.OK, MessageBoxImage.Asterisk, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
-                        usuarioBox.Text = "";
-                        passwordBox.Password = "";
+                    usuarioBox.Text = "";
+                    passwordBox.Password = "";
                 }
-                
+
 
             }
         }
@@ -133,7 +133,7 @@ namespace Came.Vistas
 
         private void diganosticosButton_Click(object sender, RoutedEventArgs e)
         {
-            Diagnosticos d = new Diagnosticos(1,Diagnosticos.Acciones.Agregar);
+            Diagnosticos d = new Diagnosticos(1, Diagnosticos.Acciones.Agregar);
             d.ShowDialog();
 
         }
@@ -142,10 +142,10 @@ namespace Came.Vistas
         {
             try
             {
-                Rutinas rutinas = new Rutinas(2,Rutinas.Acciones.Agregar);
+                Rutinas rutinas = new Rutinas(2, Rutinas.Acciones.Agregar);
                 rutinas.ShowDialog();
             }
-            catch(NotImplementedException)
+            catch (NotImplementedException)
             {
                 MessageBox.Show("Pantalla no disponible");
             }
@@ -153,7 +153,15 @@ namespace Came.Vistas
 
         private void gruposButton_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                Grupos grupos = new Grupos();
+                grupos.ShowDialog();
+            }
+            catch (NotImplementedException)
+            {
+                MessageBox.Show("Pantalla no disponible");
+            }
         }
 
         private void maestrosButton_Click(object sender, RoutedEventArgs e)
