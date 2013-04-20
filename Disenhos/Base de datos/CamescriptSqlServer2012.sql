@@ -1,6 +1,7 @@
-
---create database Came;
+create database Came;
+go
 use Came;
+go
 -- --------------------------------------------------
 -- Creating all tables
 -- --------------------------------------------------
