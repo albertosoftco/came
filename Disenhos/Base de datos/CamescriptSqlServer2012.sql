@@ -35,8 +35,8 @@ GO
 CREATE TABLE [dbo].[Alumno] (
     [ID] int  NOT NULL,
     [Nombre] varchar(1000)  NOT NULL,
-    [Apellidos] varchar(1000)  NOT NULL,
     [Direccion] varchar(1000)  NOT NULL,
+	[Matricula] varchar(1000) NOT NULL,
     [IdTutor] int  NOT NULL,
     [FechaNacimiento] datetime  NOT NULL,
     [FechaRegistro] datetime  NOT NULL,
@@ -45,7 +45,8 @@ CREATE TABLE [dbo].[Alumno] (
     [TallaUniforme] varchar(1000)  NOT NULL,
     [IdDiagnostico] int  NOT NULL,
     [IdGrupo] int  NOT NULL,
-    [IdRutina] int  NOT NULL
+    [IdRutina] int  NOT NULL,
+	[TipoSangre] varchar(1000) NOT NULL
 );
 GO
 
