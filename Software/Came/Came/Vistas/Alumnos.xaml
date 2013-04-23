@@ -1,0 +1,1069 @@
+﻿<Window x:Class="Came.Vistas.Alumnos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        Width="934"
+        Height="600"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d" Foreground="White" FontSize="11">
+
+        <Grid Margin="0">
+        <Canvas x:Name="AccionAlumnos" Visibility="Hidden">
+            <Grid Canvas.Left="-2"
+                  Canvas.Top="0"
+                  Width="930"
+                  Height="571">
+                <GroupBox x:Name="datosBasicosGroup"
+                          Width="348"
+                          Margin="11,10,0,0"
+                          HorizontalAlignment="Left"
+                          Header="Datos Básicos">
+                    <GroupBox.Foreground>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Offset="0" Color="Black" />
+                            <GradientStop Offset="1" Color="#FF1F0A0A" />
+                        </LinearGradientBrush>
+                    </GroupBox.Foreground>
+                    <Grid Width="336"
+                          Height="530"
+                          Margin="0,-3,0,0"
+                          HorizontalAlignment="Right"
+                          VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Border x:Name="imagenBorder"
+                                Width="125"
+                                Height="107.667"
+                                Margin="8,8,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                BorderThickness="2"
+                                CornerRadius="15"
+                                d:LayoutOverrides="HorizontalAlignment">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="8" RenderingBias="Quality" />
+                            </Border.Effect>
+                            <Border.BorderBrush>
+                                <LinearGradientBrush SpreadMethod="Reflect" StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="#FF767676" />
+                                    <GradientStop Color="White" />
+                                </LinearGradientBrush>
+                            </Border.BorderBrush>
+                        </Border>
+                        <Label x:Name="fechaNacimientoLabel"
+                               Height="21"
+                               Margin="183,3,45,0"
+                               VerticalAlignment="Top"
+                               HorizontalContentAlignment="Center"
+                               VerticalContentAlignment="Center"
+                               Background="{x:Null}"
+                               Content="FechaNacimiento"
+                               FontFamily="/CAME;component/Fonts/#Andalus"
+                               FontSize="11"
+                               d:LayoutOverrides="HorizontalAlignment">
+                            <Label.Foreground>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="Black" />
+                                    <GradientStop Offset="1" Color="#FF3450EF" />
+                                </LinearGradientBrush>
+                            </Label.Foreground>
+                        </Label>
+                        <Label x:Name="matriculaLabel"
+                               Height="25" Margin="155,0,0,446"
+                               Width="55"
+                               HorizontalAlignment="Left" HorizontalContentAlignment="Center"
+                               VerticalContentAlignment="Center"
+                               Background="{x:Null}"
+                               Content="Matricula"
+                               FontFamily="/CAME;component/Fonts/#Andalus"
+                               FontSize="11"
+                               RenderTransformOrigin="0.03,0.424" VerticalAlignment="Bottom">
+                            <Label.Foreground>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="Black" />
+                                    <GradientStop Offset="1" Color="#FF3450EF" />
+                                </LinearGradientBrush>
+                            </Label.Foreground>
+                        </Label>
+                        <TextBox x:Name="matriculaBox"
+                                 Height="20"
+                                 Margin="219,64,7,0"
+                                 VerticalAlignment="Top"
+                                 HorizontalContentAlignment="Center"
+                                 VerticalContentAlignment="Center"
+                                 Background="{x:Null}"
+                                 BorderThickness="1,2,1,1"
+                                 FontFamily="/CAME;component/Fonts/#Andalus"
+                                 FontSize="16"
+                                 d:LayoutOverrides="VerticalAlignment" TextChanged="matriculaBox_TextChanged">
+                            <TextBox.BorderBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="#FFF9EFEF" />
+                                    <GradientStop Offset="1" Color="Black" />
+                                </LinearGradientBrush>
+                            </TextBox.BorderBrush>
+                        </TextBox>
+                        <Separator x:Name="separator1"
+                                   Height="9.331"
+                                   Margin="2,118,-2,0"
+                                   VerticalAlignment="Top"
+                                   BorderThickness="0"
+                                   Padding="0"
+                                   SnapsToDevicePixels="True">
+                            <Separator.Background>
+                                <LinearGradientBrush SpreadMethod="Reflect" StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="#FF605C5C" />
+                                    <GradientStop Offset="1" Color="White" />
+                                </LinearGradientBrush>
+                            </Separator.Background>
+                            <Separator.Effect>
+                                <DropShadowEffect BlurRadius="6"
+                                                  Direction="300"
+                                                  RenderingBias="Quality"
+                                                  ShadowDepth="4" />
+                            </Separator.Effect>
+                        </Separator>
+                        <Label x:Name="nombreLabel"
+                               Width="96.157"
+                               Height="24.737"
+                               Margin="6.111,128.667,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               VerticalContentAlignment="Center"
+                               Content="Nombre"
+                               FontFamily="/CAME;component/Fonts/#Andalus"
+                               FontSize="11"
+                               Padding="0"
+                               d:LayoutOverrides="VerticalAlignment">
+                            <Label.Foreground>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="Black" />
+                                    <GradientStop Offset="1" Color="#FF3450EF" />
+                                </LinearGradientBrush>
+                            </Label.Foreground>
+                        </Label>
+                        <TextBox x:Name="nombreBox"
+                                 Height="20"
+                                 Margin="6,149,9,0"
+                                 VerticalAlignment="Top"
+                                 VerticalContentAlignment="Center"
+                                 BorderThickness="1,2,1,1"
+                                 FontFamily="/CAME;component/Fonts/#Andalus"
+                                 FontSize="16"
+                                 Opacity="0.5"
+                                 RenderTransformOrigin="0.482,-1.918"
+                                 d:LayoutOverrides="VerticalAlignment" TextChanged="nombreBox_TextChanged">
+                            <TextBox.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="#FFE0E0E0" />
+                                    <GradientStop Offset="1" Color="White" />
+                                </LinearGradientBrush>
+                            </TextBox.Background>
+                            <TextBox.BorderBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="#FFF9EFEF" />
+                                    <GradientStop Offset="1" Color="Black" />
+                                </LinearGradientBrush>
+                            </TextBox.BorderBrush>
+                        </TextBox>
+                        <Label x:Name="direccionLabel"
+                               Width="96.158"
+                               Height="20"
+                               Margin="6,175,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               VerticalContentAlignment="Center"
+                               Content="Dirección"
+                               FontFamily="/CAME;component/Fonts/#Andalus"
+                               FontSize="11"
+                               Padding="0"
+                               d:LayoutOverrides="VerticalAlignment">
+                            <Label.Foreground>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="Black" />
+                                    <GradientStop Offset="1" Color="#FF3450EF" />
+                                </LinearGradientBrush>
+                            </Label.Foreground>
+                        </Label>
+                        <TextBox x:Name="direccionBox"
+                                 Height="20"
+                                 Margin="6,195,9,0"
+                                 VerticalAlignment="Top"
+                                 VerticalContentAlignment="Center"
+                                 BorderThickness="1,2,1,1"
+                                 FontFamily="/CAME;component/Fonts/#Andalus"
+                                 FontSize="16"
+                                 Opacity="0.5"
+                                 d:LayoutOverrides="VerticalAlignment" TextChanged="direccionBox_TextChanged">
+                            <TextBox.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="#FFE0E0E0" />
+                                    <GradientStop Offset="1" Color="White" />
+                                </LinearGradientBrush>
+                            </TextBox.Background>
+                            <TextBox.BorderBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="#FFF9EFEF" />
+                                    <GradientStop Offset="1" Color="Black" />
+                                </LinearGradientBrush>
+                            </TextBox.BorderBrush>
+                        </TextBox>
+                        <Label x:Name="padreLabel"
+                               Width="133.431"
+                               Height="25.24"
+                               Margin="8,0,0,284"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Bottom"
+                               VerticalContentAlignment="Center"
+                               Content="Padre o Tutor"
+                               FontFamily="/CAME;component/Fonts/#Andalus"
+                               FontSize="11"
+                               Padding="0">
+                            <Label.Foreground>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="Black" />
+                                    <GradientStop Offset="1" Color="#FF3450EF" />
+                                </LinearGradientBrush>
+                            </Label.Foreground>
+                        </Label>
+                        <Label x:Name="tipoSangreLabel"
+                               Width="136.836"
+                               Height="21.4"
+                               Margin="0,0,191,212"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom"
+                               HorizontalContentAlignment="Center"
+                               VerticalContentAlignment="Center"
+                               Content="Tipo Sangre"
+                               FontFamily="/CAME;component/Fonts/#Andalus"
+                               FontSize="11"
+                               Padding="0"
+                               RenderTransformOrigin="0.818,0.643"
+                               d:LayoutOverrides="HorizontalAlignment">
+                            <Label.Foreground>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="Black" />
+                                    <GradientStop Offset="1" Color="#FF3450EF" />
+                                </LinearGradientBrush>
+                            </Label.Foreground>
+                        </Label>
+                        <ComboBox x:Name="tipoSangreComboBox"
+                                  Width="135.888"
+                                  Height="23"
+                                  Margin="191,0,0,210"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Bottom"
+                                  Background="{x:Null}"
+                                  BorderThickness="1,2,1,3"
+                                  SelectedIndex="0" SelectionChanged="tipoSangreComboBox_SelectionChanged">
+                            <ComboBoxItem  Content="Tipos de sangre"></ComboBoxItem>
+                            <ComboBoxItem Content="A+"></ComboBoxItem>
+                            <ComboBoxItem Content="A-"></ComboBoxItem>
+                            <ComboBoxItem Content="B"></ComboBoxItem>
+                            <ComboBoxItem Content="AB"></ComboBoxItem>
+                            <ComboBoxItem Content="O"></ComboBoxItem>
+                            <ComboBox.BorderBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="Black" />
+                                    <GradientStop Color="White" />
+                                </LinearGradientBrush>
+                            </ComboBox.BorderBrush>
+                            
+                            
+                        </ComboBox>
+                        <Label x:Name="curpLabel" Margin="155,0,132,418" VerticalContentAlignment="Center"
+                               Content="Curp"
+                               FontFamily="/CAME;component/Fonts/#Andalus"
+                               FontSize="11"
+                                Height="25" VerticalAlignment="Bottom">
+                            <Label.Foreground>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="Black" />
+                                    <GradientStop Offset="1" Color="#FF3450EF" />
+                                </LinearGradientBrush>
+                            </Label.Foreground>
+                        </Label>
+                        <TextBox x:Name="curpBox"
+                                 Width="111"
+                                 Height="20"
+                                 Margin="219,92,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 HorizontalContentAlignment="Center"
+                                 VerticalContentAlignment="Center"
+                                 BorderThickness="1,2,1,1"
+                                 FontFamily="/CAME;component/Fonts/#Andalus"
+                                 FontSize="16"
+                                 Opacity="0.5" TextChanged="curpBox_TextChanged">
+                            <TextBox.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="#FFE0E0E0" />
+                                    <GradientStop Offset="1" Color="White" />
+                                </LinearGradientBrush>
+                            </TextBox.Background>
+                            <TextBox.BorderBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="#FFF9EFEF" />
+                                    <GradientStop Offset="1" Color="Black" />
+                                </LinearGradientBrush>
+                            </TextBox.BorderBrush>
+                        </TextBox>
+                        <Separator x:Name="separator2"
+                                   Height="7.667"
+                                   Margin="4,0,0,151"
+                                   VerticalAlignment="Bottom"
+                                   BorderThickness="0"
+                                   Padding="1"
+                                   SnapsToDevicePixels="True">
+                            <Separator.Background>
+                                <LinearGradientBrush SpreadMethod="Reflect" StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="#FF605C5C" />
+                                    <GradientStop Offset="1" Color="White" />
+                                </LinearGradientBrush>
+                            </Separator.Background>
+                            <Separator.Effect>
+                                <DropShadowEffect BlurRadius="6"
+                                                  Direction="300"
+                                                  RenderingBias="Quality"
+                                                  ShadowDepth="4" />
+                            </Separator.Effect>
+                        </Separator>
+                        <Label x:Name="tallaUniformeLabel"
+                               Width="105"
+                               Height="21.4"
+                               Margin="13,0,0,118"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Bottom"
+                               VerticalContentAlignment="Center"
+                               Content="Talla de Uniforme"
+                               FontFamily="/CAME;component/Fonts/#Andalus"
+                               FontSize="11"
+                               Padding="0">
+                            <Label.Foreground>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="Black" />
+                                    <GradientStop Offset="1" Color="#FF3450EF" />
+                                </LinearGradientBrush>
+                            </Label.Foreground>
+                        </Label>
+                        <TextBox x:Name="tallaUniformeBox"
+                                 Height="21.4"
+                                 Margin="139,391,9,0"
+                                 VerticalAlignment="Top"
+                                 HorizontalContentAlignment="Center"
+                                 VerticalContentAlignment="Center"
+                                 Background="{x:Null}"
+                                 BorderThickness="1,2,1,1"
+                                 FontFamily="/CAME;component/Fonts/#Andalus"
+                                 FontSize="16"
+                                 Foreground="Black" TextChanged="tallaUniformeBox_TextChanged">
+                            <TextBox.BorderBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="Black" />
+                                    <GradientStop Color="#FFF9EFEF" />
+                                </LinearGradientBrush>
+                            </TextBox.BorderBrush>
+                        </TextBox>
+                        <ComboBox x:Name="grupoComboBox"
+                                  Width="137.836"
+                                  Height="23"
+                                  Margin="189,0,0,160"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Bottom"
+                                  Background="{x:Null}"
+                                  BorderThickness="1,2,1,3"
+                                  ItemsSource="{Binding Source=grupos}"
+                                  DisplayMemberPath="Nombre"
+                                  d:LayoutOverrides="GridBox" SelectionChanged="grupoComboBox_SelectionChanged">
+                            <ComboBox.Items>
+                                
+                                
+                            </ComboBox.Items>
+                                <ComboBox.BorderBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="Black" />
+                                    <GradientStop Color="White" />
+                                </LinearGradientBrush>
+                            </ComboBox.BorderBrush>
+                        </ComboBox>
+                        <Button x:Name="reestablecerButton"
+                                Width="180.976"
+                                Height="31"
+                                Margin="137.748,0,0,8"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Bottom"
+                                BorderThickness="2,3,2,2"
+                                Content="Restablecer Campos"
+                                Style="{DynamicResource SimpleButtonRounded}"
+                                d:LayoutOverrides="GridBox" Click="reestablecerButton_Click_1">
+                            <Button.Background>
+                                <LinearGradientBrush Opacity="0.5" StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="#FFC4C4C4" />
+                                    <GradientStop Offset="1" Color="White" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                            <Button.Effect>
+                                <DropShadowEffect />
+                            </Button.Effect>
+                        </Button>
+                        <Label x:Name="tipoSangreLabel_Copy"
+                               Width="136.836"
+                               Height="21.4"
+                               Margin="0,0,16.328,137.97"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom"
+                               HorizontalContentAlignment="Center"
+                               VerticalContentAlignment="Center"
+                               Content="&#10;Grupo"
+                               FontFamily="/CAME;component/Fonts/#Andalus"
+                               FontSize="16"
+                               Padding="0"
+                               RenderTransformOrigin="0.818,0.643"
+                               d:LayoutOverrides="HorizontalAlignment">
+                            <Label.Foreground>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="Black" />
+                                    <GradientStop Offset="1" Color="#FF3450EF" />
+                                </LinearGradientBrush>
+                            </Label.Foreground>
+                        </Label>
+                        <DatePicker Height="25" HorizontalAlignment="Left" Margin="155,27,0,0" Name="datePicker1" VerticalAlignment="Top" Width="175" />
+                        <Label Content="Grupo" Height="28" HorizontalAlignment="Left" Margin="46,342,0,0" Name="label1" VerticalAlignment="Top" Width="72" FontSize="11" Foreground="#FF4E4040" />
+                        <Button Content="Agregar" Height="23" HorizontalAlignment="Left" Margin="8,268,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" />
+                        <Button Content="Actualizar" Height="23" HorizontalAlignment="Left" Margin="89,268,0,0" Name="button2" VerticalAlignment="Top" Width="75" Click="button2_Click" />
+                        <Button Content="Eliminar" Height="23" HorizontalAlignment="Left" Margin="170,268,0,0" Name="button3" VerticalAlignment="Top" Width="75" Click="button3_Click_1" />
+                        <Button Content="Ver" Height="23" HorizontalAlignment="Left" Margin="252,268,0,0" Name="button4" VerticalAlignment="Top" Width="75" Click="button4_Click_1" />
+                        <Label Content="Grado Academico" Height="30" HorizontalAlignment="Left" Margin="8,432,0,0" Name="label2" VerticalAlignment="Top" Width="102" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="138,434,0,0" Name="gradoTextBox" VerticalAlignment="Top" Width="153" TextChanged="gradoTextBox_TextChanged" />
+                        <TextBox Height="28" HorizontalAlignment="Left" Margin="8,239,0,0" Name="textBox1" VerticalAlignment="Top" Width="237" IsEnabled="False" />
+                    </Grid>
+                </GroupBox>
+                <GroupBox x:Name="datosMedicosGroupBox"
+                          Height="241.587"
+                          Margin="365,10,26,0"
+                          VerticalAlignment="Top"
+                          HorizontalContentAlignment="Stretch"
+                          VerticalContentAlignment="Stretch"
+                          Grid.IsSharedSizeScope="True"
+                          Header="Datos Médicos">
+                    <GroupBox.Foreground>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Offset="0" Color="Black" />
+                            <GradientStop Offset="1" Color="#FF3450EF" />
+                        </LinearGradientBrush>
+                    </GroupBox.Foreground>
+                    <Grid Height="222.627">
+                        <GroupBox x:Name="medicamentosGroupBox"
+                                  Width="248"
+                                  Margin="10,10,0,16"
+                                  HorizontalAlignment="Left"
+                                  HorizontalContentAlignment="Stretch"
+                                  VerticalContentAlignment="Stretch"
+                                  Foreground="Black"
+                                  Header="Medicamentos"
+                                  d:LayoutOverrides="VerticalAlignment">
+                            <Grid>
+                                <Separator Height="17.333"
+                                           Margin="5,0,6,35"
+                                           VerticalAlignment="Bottom"
+                                           RenderTransformOrigin="0.5,0.5">
+                                    <Separator.Effect>
+                                        <DropShadowEffect BlurRadius="4" ShadowDepth="3" />
+                                    </Separator.Effect>
+                                </Separator>
+                                <Button Width="67" Margin="147,10,0,0"
+                                        HorizontalAlignment="Left" Content="Agregar"
+                                        Style="{DynamicResource verButtonBlue}"
+                                        d:LayoutOverrides="GridBox" Click="Button_Click_2" Height="23" VerticalAlignment="Top" />
+                                <Button Margin="148,39,22,113" Content="Actualizar"
+                                        Style="{DynamicResource addButtonLightGreen}"
+                                        d:LayoutOverrides="GridBox" Click="Button_Click_3" />
+                                <Button Margin="148,69,22,83" Content="Eliminar"
+                                        Style="{DynamicResource actButtonLightOrange}"
+                                        d:LayoutOverrides="GridBox" Click="Button_Click_4" />
+                                <Button Height="23"
+                                        Margin="148,0,0,51"
+                                        VerticalAlignment="Bottom"
+                                        Content="Ver"
+                                        Style="{DynamicResource delButtonLightRed}"
+                                        d:LayoutOverrides="GridBox" HorizontalAlignment="Left" Width="66" Click="Button_Click_5" />
+                                <ListBox 
+                                    Height="114"
+                                    HorizontalAlignment="Left" 
+                                    Margin="6,10,0,0" 
+                                    Name="listBox1" 
+                                    VerticalAlignment="Top"
+                                    Width="111" 
+                                    ItemsSource="{Binding Source=medicamentosAlumno}"
+                                    DisplayMemberPath="Nombre"/>
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox x:Name="alergiasGroupBox"
+                                  Width="200"
+                                  Margin="0,7,60,11"
+                                  HorizontalAlignment="Right"
+                                  Foreground="#FF020202"
+                                  Header="Alergias">
+                            <Grid Margin="0">
+                                <ListBox x:Name="alergiaListBox"
+                                         Margin="8,8,70,57"
+                                         BorderThickness="2,2,2,1"
+                                         Opacity="0.5"
+                                         d:LayoutOverrides="HorizontalAlignment, GridBox"
+                                         ItemsSource="{Binding Source=alergiasAlumno}"
+                                         DisplayMemberPath="Nombre">
+                                    <ListBox.BorderBrush>
+                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                            <GradientStop Color="Black" />
+                                            <GradientStop Offset="1" Color="White" />
+                                        </LinearGradientBrush>
+                                    </ListBox.BorderBrush>
+                                    <ListBox.Background>
+                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                            <GradientStop Offset="0" Color="#FFC8C4C4" />
+                                            <GradientStop Offset="1" Color="White" />
+                                        </LinearGradientBrush>
+                                    </ListBox.Background>
+                                </ListBox>
+                                <Separator Height="17.333"
+                                           Margin="8,0,8,35"
+                                           VerticalAlignment="Bottom"
+                                           RenderTransformOrigin="0.5,0.5">
+                                    <Separator.Effect>
+                                        <DropShadowEffect BlurRadius="4" ShadowDepth="3" />
+                                    </Separator.Effect>
+                                </Separator>
+                                <Button x:Name="addAleButton_Copy"
+                                        Height="23"
+                                        Margin="124,0,6,151"
+                                        VerticalAlignment="Bottom"
+                                        BorderThickness="2,2,2,1"
+                                        Content="Agregar"
+                                        d:LayoutOverrides="GridBox" Click="addAleButton_Copy_Click">
+                                    <Button.Foreground>
+                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                            <GradientStop Offset="0" Color="Black" />
+                                            <GradientStop Offset="1" Color="#FF3450EF" />
+                                        </LinearGradientBrush>
+                                    </Button.Foreground>
+                                    <Button.BorderBrush>
+                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                            <GradientStop Offset="1" Color="Black" />
+                                            <GradientStop Color="White" />
+                                        </LinearGradientBrush>
+                                    </Button.BorderBrush>
+                                    <Button.Background>
+                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                            <GradientStop Offset="1" Color="White" />
+                                            <GradientStop Color="#FF56B660" />
+                                        </LinearGradientBrush>
+                                    </Button.Background>
+                                </Button>
+                                <Button x:Name="actAleButton_Copy"
+                                        Height="23"
+                                        Margin="124,0,6,120"
+                                        VerticalAlignment="Bottom"
+                                        BorderThickness="2,2,2,1"
+                                        Content="Actualizar"
+                                        d:LayoutOverrides="GridBox" Click="actAleButton_Copy_Click">
+                                    <Button.Foreground>
+                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                            <GradientStop Offset="0" Color="Black" />
+                                            <GradientStop Offset="1" Color="#FF3450EF" />
+                                        </LinearGradientBrush>
+                                    </Button.Foreground>
+                                    <Button.BorderBrush>
+                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                            <GradientStop Offset="1" Color="Black" />
+                                            <GradientStop Color="White" />
+                                        </LinearGradientBrush>
+                                    </Button.BorderBrush>
+                                    <Button.Background>
+                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                            <GradientStop Offset="1" Color="#FFFFFEFB" />
+                                            <GradientStop Color="#FFEBB522" />
+                                        </LinearGradientBrush>
+                                    </Button.Background>
+                                </Button>
+                                <Button x:Name="delAleButton_Copy"
+                                        Height="23"
+                                        Margin="124,0,6,90"
+                                        VerticalAlignment="Bottom"
+                                        BorderThickness="2,2,2,1"
+                                        Content="Quitar"
+                                        d:LayoutOverrides="GridBox" Click="delAleButton_Copy_Click">
+                                    <Button.Foreground>
+                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                            <GradientStop Offset="0" Color="Black" />
+                                            <GradientStop Offset="1" Color="#FF3450EF" />
+                                        </LinearGradientBrush>
+                                    </Button.Foreground>
+                                    <Button.BorderBrush>
+                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                            <GradientStop Offset="1" Color="Black" />
+                                            <GradientStop Color="White" />
+                                        </LinearGradientBrush>
+                                    </Button.BorderBrush>
+                                    <Button.Background>
+                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                            <GradientStop Offset="1" Color="White" />
+                                            <GradientStop Color="Red" />
+                                        </LinearGradientBrush>
+                                    </Button.Background>
+                                </Button>
+                            </Grid>
+                        </GroupBox>
+                    </Grid>
+                </GroupBox>
+                <GroupBox x:Name="diagnosticoGroupBox"
+                          Width="220"
+                          Margin="365,258.961,335,158.706"
+                          Header="Diagnostico"
+                          d:LayoutOverrides="HorizontalAlignment, VerticalAlignment">
+                    <Grid Margin="0"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center" Height="123">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Button x:Name="addDiaButton_Copy1"
+                                Width="70.694" Margin="127.306,10,10,0" BorderThickness="2,2,2,1"
+                                Content="Agregar" Click="addDiaButton_Copy1_Click" Height="21" VerticalAlignment="Top">
+                            <Button.Foreground>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="Black" />
+                                    <GradientStop Offset="1" Color="#FF3450EF" />
+                                </LinearGradientBrush>
+                            </Button.Foreground>
+                            <Button.BorderBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="Black" />
+                                    <GradientStop Color="White" />
+                                </LinearGradientBrush>
+                            </Button.BorderBrush>
+                            <Button.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="White" />
+                                    <GradientStop Color="#FF56B660" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                        <Button x:Name="actDiaButton_Copy1"
+                                Width="68.694"
+                                Height="20.96"
+                                Margin="129,33,10,66"
+                                BorderThickness="2,2,2,1"
+                                Content="Actualizar" Click="actDiaButton_Copy1_Click">
+                            <Button.Foreground>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="Black" />
+                                    <GradientStop Offset="1" Color="#FF3450EF" />
+                                </LinearGradientBrush>
+                            </Button.Foreground>
+                            <Button.BorderBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="Black" />
+                                    <GradientStop Color="White" />
+                                </LinearGradientBrush>
+                            </Button.BorderBrush>
+                            <Button.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="#FFFFFEFB" />
+                                    <GradientStop Color="#FFEBB522" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                        <Separator Height="17.333"
+                                   Margin="6,56,14,47"
+                                   RenderTransformOrigin="0.5,0.5">
+                            <Separator.Effect>
+                                <DropShadowEffect BlurRadius="4" ShadowDepth="3" />
+                            </Separator.Effect>
+                        </Separator>
+                        <Button x:Name="verDiaButton_Copy"
+                                Width="106"
+                                Height="20.96"
+                                Margin="10,69,92,30"
+                                BorderThickness="2,2,2,1"
+                                Content="Ver Diagnostico" Click="verDiaButton_Copy_Click">
+                            <Button.Foreground>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="Black" />
+                                    <GradientStop Offset="1" Color="#FF3450EF" />
+                                </LinearGradientBrush>
+                            </Button.Foreground>
+                            <Button.BorderBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="Black" />
+                                    <GradientStop Color="White" />
+                                </LinearGradientBrush>
+                            </Button.BorderBrush>
+                            <Button.Background>
+                                <LinearGradientBrush Opacity="0.3" SpreadMethod="Reflect" StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="White" />
+                                    <GradientStop Color="#FF6B9BDC" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="8,13,0,0" Name="nombreDiagnosticoTextBox" VerticalAlignment="Top" Width="120" />
+                        <Button Content="Eliminar" Height="23" HorizontalAlignment="Left" Margin="127,58,0,0" Name="button5" VerticalAlignment="Top" Width="69" Click="button5_Click" />
+                    </Grid>
+                </GroupBox>
+                <GroupBox x:Name="rutinasGroupBox"
+                          Width="220"
+                          Margin="365,406.999,335,10.668"
+                          Header="Rutinas"
+                          d:LayoutOverrides="HorizontalAlignment">
+                    <Grid Margin="0"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Button x:Name="addRutButton_Copy3"
+                                Width="70.694" Margin="127.306,10,10,0" BorderThickness="2,2,2,1"
+                                Content="Agregar" Click="addRutButton_Copy3_Click" Height="21" VerticalAlignment="Top">
+                            <Button.Foreground>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="Black" />
+                                    <GradientStop Offset="1" Color="#FF3450EF" />
+                                </LinearGradientBrush>
+                            </Button.Foreground>
+                            <Button.BorderBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="Black" />
+                                    <GradientStop Color="White" />
+                                </LinearGradientBrush>
+                            </Button.BorderBrush>
+                            <Button.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="White" />
+                                    <GradientStop Color="#FF56B660" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                        <Button x:Name="actRutButton_Copy3"
+                                Width="68.694"
+                                Height="21"
+                                Margin="127,0,12,64"
+                                BorderThickness="2,2,2,1"
+                                Content="Actualizar" Click="actRutButton_Copy3_Click" VerticalAlignment="Bottom">
+                            <Button.Foreground>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="Black" />
+                                    <GradientStop Offset="1" Color="#FF3450EF" />
+                                </LinearGradientBrush>
+                            </Button.Foreground>
+                            <Button.BorderBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="Black" />
+                                    <GradientStop Color="White" />
+                                </LinearGradientBrush>
+                            </Button.BorderBrush>
+                            <Button.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="#FFFFFEFB" />
+                                    <GradientStop Color="#FFEBB522" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                        <Separator Height="17.333"
+                                   Margin="8,70.08,12,32.96"
+                                   RenderTransformOrigin="0.5,0.5">
+                            <Separator.Effect>
+                                <DropShadowEffect BlurRadius="4" ShadowDepth="3" />
+                            </Separator.Effect>
+                        </Separator>
+                        <Button x:Name="verRutButton_Copy2"
+                                Width="106"
+                                Height="20.96"
+                                Margin="10,91.413,92,8"
+                                BorderThickness="2,2,2,1"
+                                Content="Ver Detalle" Click="verRutButton_Copy2_Click">
+                            <Button.Foreground>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="Black" />
+                                    <GradientStop Offset="1" Color="#FF3450EF" />
+                                </LinearGradientBrush>
+                            </Button.Foreground>
+                            <Button.BorderBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="Black" />
+                                    <GradientStop Color="White" />
+                                </LinearGradientBrush>
+                            </Button.BorderBrush>
+                            <Button.Background>
+                                <LinearGradientBrush Opacity="0.3" SpreadMethod="Reflect" StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="White" />
+                                    <GradientStop Color="#FF6B9BDC" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="6,10,0,0" Name="nombreRutinaTextBox" VerticalAlignment="Top" Width="120" />
+                        <Button Content="Eliminar" Height="23" HorizontalAlignment="Left" Margin="129,64,0,0" Name="button6" VerticalAlignment="Top" Width="65" Click="button6_Click" />
+                    </Grid>
+                </GroupBox>
+                <GroupBox x:Name="groupBox2_Copy"
+                          Width="301"
+                          Height="145"
+                          Margin="609,270,0,0"
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Header="">
+                    <Grid Margin="0">
+                    	<Grid.ColumnDefinitions>
+                    		<ColumnDefinition Width="0.151*"/>
+                    		<ColumnDefinition Width="0.02*"/>
+                    		<ColumnDefinition Width="0.829*"/>
+                    	</Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="Auto" MinHeight="20.501" />
+                        </Grid.RowDefinitions>
+                    </Grid>
+                </GroupBox>
+                <GroupBox x:Name="groupBox2_Copy1"
+                          Width="311.333"
+                          Height="83.412"
+                          Margin="599,423,0,0"
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Header="">
+                    <Grid Margin="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="Auto" MinHeight="20.501" />
+                        </Grid.RowDefinitions>
+                        <Button x:Name="addAlumnoButton_Copy2"
+                                Margin="4.75,4.991,167.389,14"
+                                BorderThickness="2,2,2,1"
+                                Content="Agregar Alumno">
+                            <Button.Foreground>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="Black" />
+                                    <GradientStop Offset="1" Color="#FF697BE4" />
+                                </LinearGradientBrush>
+                            </Button.Foreground>
+                            <Button.BorderBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="Black" />
+                                    <GradientStop Color="White" />
+                                </LinearGradientBrush>
+                            </Button.BorderBrush>
+                            <Button.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="White" />
+                                    <GradientStop Color="#FF13621B" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                        <Button x:Name="actAlumnoButton_Copy2"
+                                Height="20.96"
+                                Margin="150.139,4.991,8,14"
+                                BorderThickness="2,2,2,1"
+                                Content="Actualizar Alumno">
+                            <Button.Foreground>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="Black" />
+                                    <GradientStop Offset="1" Color="#FF697BE4" />
+                                </LinearGradientBrush>
+                            </Button.Foreground>
+                            <Button.BorderBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="Black" />
+                                    <GradientStop Color="White" />
+                                </LinearGradientBrush>
+                            </Button.BorderBrush>
+                            <Button.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="#FFFFFEFB" />
+                                    <GradientStop Color="#FF8D6D17" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                        <Separator Height="17.333"
+                                   Margin="0,22.618,0,0"
+                                   RenderTransformOrigin="0.5,0.5">
+                            <Separator.Effect>
+                                <DropShadowEffect BlurRadius="4" ShadowDepth="3" />
+                            </Separator.Effect>
+                        </Separator>
+                        <Button x:Name="volverMenuButton_Copy1"
+                                Grid.Row="1"
+                                Width="106"
+                                Height="20.96"
+                                Margin="88.75,0,104.583,-0.459"
+                                BorderThickness="1"
+                                Content="Volver a Menu"
+                                Style="{DynamicResource SimpleButtonRounded}"
+                                d:LayoutOverrides="VerticalAlignment">
+                            <Button.Foreground>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="Black" />
+                                    <GradientStop Offset="1" Color="#FF3450EF" />
+                                </LinearGradientBrush>
+                            </Button.Foreground>
+                            <Button.BorderBrush>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="Black" />
+                                    <GradientStop Color="White" />
+                                </LinearGradientBrush>
+                            </Button.BorderBrush>
+                            <Button.Background>
+                                <LinearGradientBrush SpreadMethod="Reflect" StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="1" Color="White" />
+                                    <GradientStop Color="#FF272829" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                    </Grid>
+                </GroupBox>
+                <Button Content="Guardar" Height="23" HorizontalAlignment="Left" Margin="638,530,0,0" Name="button7" VerticalAlignment="Top" Width="75" Click="button7_Click" />
+                <Button Content="Atras" Height="23" HorizontalAlignment="Left" Margin="768,530,0,0" Name="button8" VerticalAlignment="Top" Width="75" Click="button8_Click" />
+            </Grid>
+        </Canvas>
+
+
+
+
+
+
+
+        <Canvas x:Name="MenuAlumnos" Visibility="Visible">
+            <Grid Name="grid1">
+
+                <Border Width="108"
+                        Height="109"
+                        Margin="20,20,-128,-129"
+                        BorderBrush="Black"
+                        BorderThickness="1">
+                    <Grid>
+                        <Image Margin="0" />
+                    </Grid>
+                </Border>
+            </Grid>
+            <Button Canvas.Left="808"
+                    Canvas.Top="527"
+                    Width="75"
+                    Content="Button" />
+            <GroupBox x:Name="alumnosRegistradosGroupBox"
+                      Canvas.Left="20"
+                      Canvas.Top="165"
+                      Width="877"
+                      Height="331.96"
+                      Header="Alumnos Registrados">
+                <Grid>
+                    <DataGrid 
+                        Margin="8,8,8,54" 
+                        RenderTransformOrigin="8.62,4.381" 
+                        Name="tAlumnos"
+                        ItemsSource="{Binding Source=alumnos}"
+                        >
+
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Matricula" Binding="{Binding Matricula}"/>
+                            <DataGridTextColumn Header="Nombre" Width="250" Binding="{Binding Nombre}"/>
+                            <DataGridTextColumn Header="Curp" Width="150" Binding="{Binding CURP}"/>
+                            <DataGridTextColumn Header="Grado Academico" Binding="{Binding GradoAcademico}"/>
+                            <DataGridTextColumn Header="Direccion" Width="280" Binding="{Binding Direccion}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Width="130"
+                            Height="32.96"
+                            Margin="443,0,0,8"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Background="#FF3B8B25"
+                            Content="Agregar Alumno"
+                            Foreground="#FFFDFDFD"
+                            Style="{DynamicResource SimpleButtonRounded}" Click="Button_Click_1" />
+                    <Button Width="130"
+                            Height="32.96"
+                            Margin="597,0,0,8"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Background="#FFB48E24"
+                            Content="Actualizar Alumno"
+                            Foreground="#FFFDFDFD"
+                            Style="{DynamicResource SimpleButtonRounded}" Click="Button_Click_7" />
+                    <Button Width="99"
+                            Height="32.96"
+                            Margin="0,0,8,8"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Background="#FF931F1F"
+                            Content="Baja de Alumno"
+                            Foreground="White"
+                            Style="{DynamicResource SimpleButtonRounded}" Click="Button_Click_6" />
+                    <Button Width="75"
+                            Height="32.96"
+                            Margin="338,268,452,8"
+                            Background="#FF5E77D8"
+                            Content="Ver Alumno"
+                            Foreground="#FFFDFDFD"
+                            Style="{DynamicResource SimpleButtonRounded}" Click="Button_Click" />
+                </Grid>
+            </GroupBox>
+            <Label Canvas.Left="149"
+                   Canvas.Top="61"
+                   Width="734"
+                   HorizontalContentAlignment="Center"
+                   VerticalContentAlignment="Center"
+                   Content="Administración de Alumnos"
+                   FontFamily="/Came;component/Recursos/Fonts/#Andalus"
+                   FontSize="40"
+                   FontWeight="Bold"
+                   Padding="0"
+                   RenderTransformOrigin="0.5,0.5" />
+            <DatePicker Canvas.Left="758"
+                        Canvas.Top="20"
+                        BorderThickness="0"
+                        Padding="0"
+                        SelectedDateFormat="Long">
+                <DatePicker.DataContext>
+                    <System:DateTime />
+                </DatePicker.DataContext>
+            </DatePicker>
+        </Canvas>
+        <Canvas x:Name="CanvasTutor" Margin="280,71,270,169" Visibility="Hidden">
+        	<Label Content="Tutor&#xd;&#xa;" Canvas.Left="148" Canvas.Top="8" Width="73.347" FontSize="21.333" FontWeight="Bold" FontFamily="Segoe UI" Height="42.747"/>
+        	<Label Content="Nombre&#xd;&#xa;" Canvas.Left="22.41" Canvas.Top="60" Height="24.92" FontSize="13.333"/>
+        	<Label Content="Direccion&#xd;&#xa;" Canvas.Left="22.41" Canvas.Top="106.92" Height="27.92" FontSize="13.333"/>
+        	<Label Content="Telefono&#xd;&#xa;" Canvas.Left="22.41" Canvas.Top="150.84" Height="25.92" FontSize="13.333"/>
+        	<Label Content="Celular&#xd;&#xa;" Canvas.Left="22.41" Canvas.Top="192" Height="32.92" FontSize="13.333"/>
+        	<TextBox x:Name="nombreTutorTextBox" Canvas.Left="115" TextWrapping="Wrap" Text="" Canvas.Top="60" Width="241" Height="24.92" TextChanged="nombreTutorTextBox_TextChanged" />
+        	<TextBox x:Name="direccionTutorTextBox" Canvas.Left="115" TextWrapping="Wrap" Canvas.Top="112.88" Width="241" TextChanged="direccionTutorTextBox_TextChanged" />
+        	<TextBox x:Name="telefonoTutorTextBox" Canvas.Left="115" TextWrapping="Wrap" Canvas.Top="154.8" Width="152" TextChanged="telefonoTutorTextBox_TextChanged" />
+        	<TextBox x:Name="celularTutorTextBox" Canvas.Left="115" TextWrapping="Wrap" Canvas.Top="195.436" Width="152" TextChanged="celularTutorTextBox_TextChanged" />
+        	<Button x:Name="botonGuardarTutor" Content="Guardar" Canvas.Left="80" Canvas.Top="268" Width="75" Click="botonGuardarTutor_Click" />
+        	<Button x:Name="botonCancelarTutor" Content="Cancelar" Canvas.Left="244" Canvas.Top="268" Width="75" Click="botonCancelarTutor_Click" />
+        </Canvas>
+        <Canvas x:Name="CanvasMedicamentos" Margin="270,136,277,202" Visibility="Hidden">
+        	<Label Content="Medicamento&#xd;&#xa;" Canvas.Left="102" Canvas.Top="8" FontSize="26.667" Height="48.94"/>
+        	<Label Content="Nombre&#xd;&#xa;" Canvas.Left="22.333" Canvas.Top="55.666" Height="25.26" Width="52.193"/>
+        	<Label Content="Descripcion&#xd;&#xa;" Canvas.Left="22.333" Canvas.Top="143.333" Height="24.593" Width="69.917"/>
+        	<Label Content="Horas&#xd;&#xa;" Canvas.Left="22.333" Canvas.Top="103.259" Height="25.26" Width="69.917"/>
+        	<TextBox x:Name="nombreMedTextBox" Canvas.Left="109.333" TextWrapping="Wrap" Text="" Canvas.Top="60.94" RenderTransformOrigin="0.5,0.5" Width="228.667" Height="19.986" TextChanged="nombreMedTextBox_TextChanged" />
+        	<TextBox x:Name="descripcionMedTextBox" Canvas.Left="109.333" TextWrapping="Wrap" Text="" Canvas.Top="143.333" Width="228.667" Height="38.593" TextChanged="descripcionMedTextBox_TextChanged" />
+        	<TextBox x:Name="horasMedTextBox" Canvas.Left="109.333" TextWrapping="Wrap" Text="" Canvas.Top="103.259" Width="228.667" Height="18.593" TextChanged="horasMedTextBox_TextChanged" />
+        	<Button x:Name="botonGuardarMed" Content="Guardar" Canvas.Left="109.333" Canvas.Top="198.666" Width="75" Click="botonGuardarMed_Click" />
+        	<Button x:Name="botonAtrasMed" Content="Atras" Canvas.Left="251.667" Canvas.Top="198.666" Width="75" Click="botonAtrasMed_Click" />
+        </Canvas>
+        <Canvas x:Name="CanvasAlergias" HorizontalAlignment="Left" Margin="165,127.667,0,210.333" Width="381" Height="234" Visibility="Hidden">
+        	<Label Content="Alergia&#xd;&#xa;" Canvas.Left="141.999" Canvas.Top="8" Width="79.406" FontSize="21.333" Height="40.08"/>
+        	<Label Content="Nombre" Canvas.Left="32.879" Canvas.Top="55.999"/>
+        	<Label Content="Tratamiento" Canvas.Left="32.879" Canvas.Top="101.332" Width="72.584"/>
+        	<Label Content="Descripcion&#xd;&#xa;" Canvas.Left="32.879" Canvas.Top="142.666" Height="25.26"/>
+        	<TextBox x:Name="nombreAlergiaTextBox" Canvas.Left="109.333" TextWrapping="Wrap" Text="" Canvas.Top="55.999" Width="226.667" Height="24.63" RenderTransformOrigin="0.324,0.541" TextChanged="nombreAlergiaTextBox_TextChanged" />
+        	<TextBox x:Name="tratamientoAlergiaTextBox" Canvas.Left="109.463" TextWrapping="Wrap" Text="" Canvas.Top="101.369" Width="226.537" Height="24.593" TextChanged="tratamientoAlergiaTextBox_TextChanged" />
+        	<TextBox x:Name="descripcionAlergiaTextBox" Canvas.Left="109.333" TextWrapping="Wrap" Text="" Canvas.Top="142.666" Height="40.593" Width="226.667" TextChanged="descripcionAlergiaTextBox_TextChanged" />
+        	<Button x:Name="botonGuardarAlergia" Content="Guardar" Canvas.Left="109.463" Canvas.Top="203.999" Width="75" Click="botonGuardarAlergia_Click" />
+        	<Button x:Name="botonAtrasAlergia" Content="Atras" Canvas.Left="261" Canvas.Top="203.999" Width="75" Click="botonAtrasAlergia_Click" />
+        </Canvas>
+
+    </Grid>
+</Window>
